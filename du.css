@@ -1,6 +1,22 @@
 #minime {
     height: 15%;
-    position: absolute;
+    position: fixed;
     top: 83%;
-    left: 10%;
+    left: 40%;
+}
+
+#Hello {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    animation: slideleft 2s ease-in-out;
+    transition: 5s;
+}
+
+
+/* Animations */
+
+@keyframes slideleft {
+    from {transform: translate(1000%);}
+    to {transform: translate(0%);}
 }

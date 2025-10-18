@@ -1,5 +1,5 @@
 const minime = document.getElementById("minime");
-let pos = 10;
+let pos = 40;
 let stationary_status = true;
 
 document.addEventListener("keydown", (event)=>{
@@ -19,7 +19,7 @@ document.addEventListener("keydown", (event)=>{
         stationary_status = false;
         if(pos >= 86){
             pos = 86;
-            window.location.href = "https://www.facebook.com";
+            window.location.href = "https://andrewpanimdim.github.io/gameportfolio/projects.html";
         }
     }
 });
