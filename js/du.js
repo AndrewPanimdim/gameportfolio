@@ -19,7 +19,7 @@ document.addEventListener("keydown", (event)=>{
         stationary_status = false;
         if(pos >= 94){
             pos = 94;
-            window.location.href = "https://andrewpanimdim.github.io/gameportfolio/projects.html";
+            window.location.href = "https://andrewpanimdim.github.io/gameportfolio/seemore.html";
         }
     }
 });
