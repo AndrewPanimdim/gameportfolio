@@ -7,11 +7,47 @@
 
 #Hello {
     position: fixed;
-    top: 10%;
+    top: 20%;
     left: 50%;
-    animation: slideleft 2s ease-in-out;
+    animation: slideleft 1s ease-in-out;
     transition: 3s;
     font-size: 5vw;
+}
+
+#HTML, #CSS, #JavaScript {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    position: fixed;
+    top: 5%;
+}
+
+#HTML{
+    left: 45%;
+    background-color: orange;
+    width: 4vw;
+    height: 6vh;
+    color: white;
+    animation: slideright 1s ease-in-out;
+}
+
+#CSS {
+    left: 39%;
+    background-color: rgb(107, 206, 231);
+    width: 4vw;
+    height: 6vh;
+    color: rgb(0, 0, 0);
+    animation: slideright 2s ease-in-out;
+}
+
+#JavaScript {
+    left: 29%;
+    background-color: yellow;
+    width: 8vw;
+    height: 6vh;
+    color: black;
+    animation: slideright 2s ease-in-out;
 }
 
 
@@ -20,4 +56,9 @@
 @keyframes slideleft {
     from {transform: translate(1000%);}
     to {transform: translate(0%);}
+}
+
+@keyframes slideright {
+    from {opacity: 0; transform: translate(-1000%);}
+    to {opacity: 1; transform: translate(0%);}
 }
