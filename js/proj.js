@@ -1,5 +1,5 @@
 const minime = document.getElementById("minime");
-let pos = 10;
+let pos = -2;
 let stationary_status = true;
 
 document.addEventListener("keydown", (event)=>{
@@ -8,8 +8,8 @@ document.addEventListener("keydown", (event)=>{
         minime.style.left = pos + "%";
         minime.src = "character/runningleft.gif";
         stationary_status = false;
-        if(pos <= -5){
-            pos = 1;
+        if(pos <= -9){
+            pos = -9;
             window.location.href = "https://andrewpanimdim.github.io/gameportfolio/index.html";
         }
     }

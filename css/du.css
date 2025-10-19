@@ -10,7 +10,8 @@
     top: 10%;
     left: 50%;
     animation: slideleft 2s ease-in-out;
-    transition: 5s;
+    transition: 3s;
+    font-size: 5vw;
 }
 
 
