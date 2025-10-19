@@ -8,8 +8,8 @@ document.addEventListener("keydown", (event)=>{
         minime.style.left = pos + "%";
         minime.src = "character/runningleft.gif";
         stationary_status = false;
-        if(pos <= -9){
-            pos = -9;
+        if(pos <= -8){
+            pos = -8;
             window.location.href = "https://andrewpanimdim.github.io/gameportfolio/index.html";
         }
     }
@@ -18,8 +18,8 @@ document.addEventListener("keydown", (event)=>{
         minime.style.left = pos + "%";
         minime.src = "character/runningright.gif";
         stationary_status = false;
-        if(pos >= 86){
-            pos = 86;
+        if(pos >= 85){
+            pos = 85;
         }
     }
 });
