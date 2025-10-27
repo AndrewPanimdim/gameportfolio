@@ -10,7 +10,7 @@ document.addEventListener("keydown", (event)=>{
         stationary_status = false;
         if(pos <= -8){
             pos = -8;
-            window.location.href = "https://andrewpanimdim.github.io/gameportfolio/seemore.html";
+            window.location.href = "https://andrewpanimdim.github.io/gameportfolio/index.html";
         }
     }
     else if(event.key === "D" || event.key === "d"){
