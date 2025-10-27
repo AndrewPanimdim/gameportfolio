@@ -1,12 +1,13 @@
 #minime {
     height: 15%;
-    position: fixed;
+    position: absolute;
     top: 83%;
     left: 40%;
+    animation: fadein 3s ease-in-out;
 }
 
 #Hello {
-    position: fixed;
+    position: absolute;
     top: 15%;
     right: 20%;
     animation: slideleft 2s ease-in-out;
@@ -20,7 +21,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 15px;
-    position: fixed;
+    position: absolute;
     top: 33%;
     cursor: pointer;
     transition: 0.7s;
@@ -34,6 +35,12 @@
     color: black;
 }
 
+#JavaScript:hover{
+    color: rgb(62, 62, 60);
+}
+#HTML:hover{
+    color: rgb(255, 255, 255);
+}
 
 #HTML{
     top: 23%;
@@ -60,6 +67,58 @@
     animation: slideright 3s ease-in-out;
 }
 
+#keycontainer {
+    position: absolute;
+    top: 70%;
+    left: 35%;
+    width: 25vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadein 4s ease-in-out;
+
+}
+
+#a, #d {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 4vw;
+    height: 6vh;
+    margin: 1vw;
+    background-color: lightgray;
+    font-size: 2vw;
+    cursor: pointer;
+    transition: 0.3s;
+    color: rgb(28, 29, 29);
+}
+
+#bio {
+    position: absolute;
+    top: 43%;
+    left: 29%;
+    font-size: 0.8vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(153, 151, 151);
+    animation: fadein 3s ease-in-out;
+}
+
+body.lightmode {
+    background-color: white !important;
+    color: black !important;
+    transition: 0.5s;
+}
+
+body {
+    transition: background-color 0.5s, color 0.5s;
+}
+
+
 
 
 
@@ -79,4 +138,16 @@
     from {opacity: 0;}
     50% {opacity: 0;}
     to {opacity: 1;}
+}
+
+@keyframes fadeout {
+    from {opacity: 1;}
+    50% {opacity: 0;}
+    to {opacity: 0;}
+}
+
+@keyframes bouncing {
+    from {transform: translateY(0);}
+    50% {transform: translateY(-20px);}
+    to {transform: translateY(0);}
 }
