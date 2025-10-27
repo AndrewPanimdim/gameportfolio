@@ -13,5 +13,5 @@
     height: 100%;
     z-index: -1;
     background: linear-gradient(to bottom, #040e3c8e, #030a2745, #06074800);
-    opacity: 1;
+    opacity: 0;
 }

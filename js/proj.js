@@ -2,6 +2,16 @@ const minime = document.getElementById("minime");
 let pos = -2;
 let stationary_status = true;
 
+
+window.addEventListener('scroll', () => {
+    let scrollPosition = window.scrollY;
+    if (scrollPosition > 120) {
+        minime.style.opacity = 0;
+    }else{
+        minime.style.opacity = 1;
+    }
+})
+
 document.addEventListener("keydown", (event)=>{
     if(event.key === "A" || event.key === "a"){
         pos -= 2;
