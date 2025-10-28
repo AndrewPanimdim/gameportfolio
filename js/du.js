@@ -7,10 +7,95 @@ const keycontainer = document.getElementById("keycontainer");
 const akey = document.getElementById("a");
 const dkey = document.getElementById("d");
 const bio = document.getElementById("bio");
-const minimepositions = [83, 150, 200, 250, 300];
+const minimepositions = [82, 150, 200, 250, 300];
 let currentMinimeIndex = 0;
-const scrollpositions = [ 100, 1000, 2000, 3000, 4000];
+const scrollpositions = [ 20, 1000, 2000, 3000, 4000];
 let currentScrollIndex = 0;
+const aboutme = document.getElementById("aboutme");
+const optionbutton = document.getElementById("optionbutton");
+const option = document.getElementById("option");
+const gamemode = document.getElementById("game-mode");
+const webmode = document.getElementById("web-mode");
+const weight = document.getElementById("weight");
+
+
+
+
+
+
+
+
+let moveInterval; 
+
+webmode.addEventListener("click", () => {
+  keycontainer.style.animation = "fadeout 1s ease-in-out forwards";
+  webmode.style.color = "rgba(76, 74, 74, 1)";
+  document.body.classList.remove("lightmode");
+document.body.style.transition = "all 0.5s ease-in-out";
+    document.body.style.backgroundColor = "rgb(9, 9, 9)";
+    bio.style.color = "rgba(76, 74, 74, 1)";
+    weight.style.display = "block";
+    minime.style.position = "fixed";
+
+  clearInterval(moveInterval);
+
+  moveInterval = setInterval(() => {
+    if (pos > -3) {
+      pos -= 3; 
+      minime.style.left = pos + "%";
+      minime.src = "character/runningleft.gif";
+    } else {
+      pos = -3;
+      minime.style.left = pos + "%";
+        minime.src = "character/standing.gif";
+      clearInterval(moveInterval);
+    }
+  }, 100); 
+});
+
+
+gamemode.addEventListener("click", () => {
+    keycontainer.style.animation = "fadein 1s ease-in-out forwards";
+    weight.style.display = "none";
+});
+
+
+
+
+
+
+
+
+
+
+
+
+optionbutton.addEventListener("click", ()=>{
+    if(optionbutton){
+        gamemode.style.display = "block";
+        webmode.style.display = "block";
+    }
+});
+
+
+optionbutton.addEventListener("click", ()=>{
+    if(optionbutton){
+        gamemode.style.display = "block";
+        webmode.style.display = "block";
+        optionbutton.style.display = "none";
+    }
+});
+
+document.addEventListener("click", (event) => {
+    if(event.target === document.body || event.target === document){
+        gamemode.style.display = "none";
+        webmode.style.display = "none";
+        optionbutton.style.display = "block";
+    }
+});
+
+
+
 
 setInterval(()=>{
     akey.style.animation = "bouncing 1s ease-in-out infinite";
@@ -18,6 +103,16 @@ setInterval(()=>{
 },3500);
 
 
+window.addEventListener("scroll", ()=>{
+    let scrollY = window.scrollY;
+
+    if(scrollY > 50){
+        aboutme.style.animation = "fadein 1s ease-in-out forwards";
+        aboutme.style.display = "block";
+    }else if(scrollY < 50){
+        aboutme.style.display = "none";
+    }
+});
 
 
 document.addEventListener("keydown",(event)=>{
@@ -53,13 +148,13 @@ document.addEventListener("keydown", (event)=>{
             document.body.classList.add("lightmode");
             document.body.style.transition = "all 0.5s ease-in-out";
             document.body.style.backgroundColor = "white";
-            bio.style.color = "black";
+            bio.style.color = "rgba(76, 74, 74, 1)";
             }
         if(pos < 50){
                 document.body.classList.remove("lightmode");
                 document.body.style.transition = "all 0.5s ease-in-out";
                 document.body.style.backgroundColor = "rgb(9, 9, 9)";
-                bio.style.color = "rgb(153, 151, 151)";
+                bio.style.color = "rgba(76, 74, 74, 1)";
             }
         
     }
@@ -77,13 +172,13 @@ document.addEventListener("keydown", (event)=>{
             document.body.classList.add("lightmode");
             document.body.style.transition = "all 0.5s ease-in-out";
             document.body.style.backgroundColor = "white";
-            bio.style.color = "black";
+            bio.style.color = "rgba(76, 74, 74, 1)";
         }
         if(pos < 50){
             document.body.classList.remove("lightmode");
             document.body.style.transition = "all 0.5s ease-in-out";
             document.body.style.backgroundColor = "rgb(9, 9, 9)";
-            bio.style.color = "rgb(153, 151, 151)";        
+            bio.style.color = "rgba(76, 74, 74, 1)";      
         }
 
     }

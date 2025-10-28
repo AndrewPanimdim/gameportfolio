@@ -104,7 +104,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgb(153, 151, 151);
+    color: rgba(76, 74, 74, 1);
     animation: fadein 3s ease-in-out;
 }
 
@@ -118,6 +118,48 @@ body {
     transition: background-color 0.5s, color 0.5s;
 }
 
+#aboutme {
+    position: absolute;
+    top: 120%;
+    left: 44%;
+    font-size: 3.5vw;
+    font-family: 'oswald';
+    animation: fadein 3s ease-in-out;
+    font-weight: bold;
+    display: none;
+}
+
+#option {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    animation: fadein 4s ease-in-out;
+}
+
+#optionbutton {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    animation: fadein 5s ease-in-out;
+    cursor: pointer;
+}
+
+#game-mode, #web-mode {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-size: 1vw;
+    cursor: pointer;
+    transition: 0.3s;
+    display: none;
+}
+
+#weight {
+    display: none;
+    position: absolute;
+    top: 300%;
+}
 
 
 
