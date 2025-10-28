@@ -7,10 +7,15 @@ const keycontainer = document.getElementById("keycontainer");
 const akey = document.getElementById("a");
 const dkey = document.getElementById("d");
 const bio = document.getElementById("bio");
+const minimepositions = [83, 150, 200, 250, 300];
+let currentMinimeIndex = 0;
+const scrollpositions = [ 100, 1000, 2000, 3000, 4000];
+let currentScrollIndex = 0;
+
 setInterval(()=>{
-    akey.style.animation = "bouncing 1.5s ease-in-out infinite";
-    dkey.style.animation = "bouncing 2s ease-in-out infinite";
-},4000);
+    akey.style.animation = "bouncing 1s ease-in-out infinite";
+    dkey.style.animation = "bouncing 1.5s ease-in-out infinite";
+},3500);
 
 
 
@@ -30,21 +35,27 @@ document.addEventListener("keydown", (event)=>{
         stationary_status = false;
         if(pos <= -2){
             pos = -2;
-            minime.style.top = 150 + "%";
+            minime.style.top = minimepositions[currentScrollIndex] + "%";
                 window.scrollTo({
-                top: 1000,
+                top: scrollpositions[currentScrollIndex],
                 left: 0,
                 behavior: 'smooth'
                 });
+            currentScrollIndex++;
+            if(currentScrollIndex >= scrollpositions.length){
+                currentScrollIndex = 0;
+            }if(currentMinimeIndex >= minimepositions.length){
+                currentMinimeIndex = 0;
         }
+    }
 
-        if(pos > 70){
+        if(pos > 50){
             document.body.classList.add("lightmode");
             document.body.style.transition = "all 0.5s ease-in-out";
             document.body.style.backgroundColor = "white";
             bio.style.color = "black";
             }
-        if(pos < 70){
+        if(pos < 50){
                 document.body.classList.remove("lightmode");
                 document.body.style.transition = "all 0.5s ease-in-out";
                 document.body.style.backgroundColor = "rgb(9, 9, 9)";
@@ -62,13 +73,13 @@ document.addEventListener("keydown", (event)=>{
             window.location.href = "https://andrewpanimdim.github.io/gameportfolio/projects.html";
         }
 
-        if(pos > 70){
+        if(pos > 50){
             document.body.classList.add("lightmode");
             document.body.style.transition = "all 0.5s ease-in-out";
             document.body.style.backgroundColor = "white";
             bio.style.color = "black";
         }
-        if(pos < 70){
+        if(pos < 50){
             document.body.classList.remove("lightmode");
             document.body.style.transition = "all 0.5s ease-in-out";
             document.body.style.backgroundColor = "rgb(9, 9, 9)";
