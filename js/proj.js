@@ -5,7 +5,7 @@ let stationary_status = true;
 
 window.addEventListener('scroll', () => {
     let scrollPosition = window.scrollY;
-    if (scrollPosition > 120) {
+    if (scrollPosition > 100) {
         minime.style.opacity = 0;
     }else{
         minime.style.opacity = 1;
