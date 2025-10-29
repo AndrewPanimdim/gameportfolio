@@ -7,7 +7,7 @@ const keycontainer = document.getElementById("keycontainer");
 const akey = document.getElementById("a");
 const dkey = document.getElementById("d");
 const bio = document.getElementById("bio");
-const minimepositions = [82, 150, 200, 250, 300];
+const minimepositions = [82, 190];
 let currentMinimeIndex = 0;
 const scrollpositions = [ 20, 1000, 2000, 3000, 4000];
 let currentScrollIndex = 0;
@@ -17,7 +17,7 @@ const option = document.getElementById("option");
 const gamemode = document.getElementById("game-mode");
 const webmode = document.getElementById("web-mode");
 const weight = document.getElementById("weight");
-
+const seemore = document.getElementById("seemore")
 
 
 gamemode.style.display = "block";
@@ -31,19 +31,33 @@ gamemode.style.color = "rgba(76, 74, 74, 1)";
 let moveInterval; 
 
 webmode.addEventListener("click", () => {
-  keycontainer.style.animation = "fadeout 1s ease-in-out forwards";
-  webmode.style.color = "rgba(76, 74, 74, 1)";
-  document.body.classList.remove("lightmode");
-document.body.style.transition = "all 0.5s ease-in-out";
+    keycontainer.style.animation = "fadeout 1s ease-in-out forwards";
+    webmode.style.color = "rgba(76, 74, 74, 1)";
+    document.body.classList.remove("lightmode");
+    document.body.style.transition = "all 0.5s ease-in-out";
     document.body.style.backgroundColor = "rgb(9, 9, 9)";
     bio.style.color = "rgba(76, 74, 74, 1)";
     weight.style.display = "block";
     minime.style.position = "fixed";
     gamemode.style.color = "white";
+    seemore.style.display = "block";
+    seemore.style.animation = "fadein 1s ease-in-out forwards";
+    setInterval(()=>{
+        seemore.style.animation = "bouncing 1s infinite";
+    },1500);
 
-  clearInterval(moveInterval);
+    window.addEventListener('scroll', ()=>{
+    let scrolly = window.scrollY
+    if(scrolly > 40){
+        seemore.style.animation = "fadeout 1s ease-in-out forwards";
+        setInterval(()=>{
+            seemore.style.display = "none";
+        },950);
+    }
+    });
+    clearInterval(moveInterval);
 
-  moveInterval = setInterval(() => {
+    moveInterval = setInterval(() => {
     if (pos > -3) {
       pos -= 3; 
       minime.style.left = pos + "%";
@@ -102,7 +116,7 @@ window.addEventListener("scroll", ()=>{
     let scrollY = window.scrollY;
 
     if(scrollY > 50){
-        aboutme.style.animation = "fadein 1s ease-in-out forwards";
+        aboutme.style.animation = "fadein 1.3s ease-in-out forwards";
         aboutme.style.display = "block";
     }else if(scrollY < 50){
         aboutme.style.display = "none";

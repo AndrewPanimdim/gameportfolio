@@ -136,13 +136,6 @@ body {
     animation: fadein 4s ease-in-out;
 }
 
-#optionbutton {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    animation: fadein 5s ease-in-out;
-    cursor: pointer;
-}
 
 #game-mode, #web-mode {
     display: flex;
@@ -159,6 +152,13 @@ body {
     display: none;
     position: absolute;
     top: 300%;
+}
+
+#seemore{
+    position:absolute;
+    top: 95%;
+    left: 45%;
+    display:none;
 }
 
 
@@ -193,3 +193,11 @@ body {
     50% {transform: translateY(-20px);}
     to {transform: translateY(0);}
 }
+
+@keyframes fadeout {
+    from {opacity: 1;}
+    50% {opacity: 0.5;}
+    to {opacity: 0;}
+}
+
+
