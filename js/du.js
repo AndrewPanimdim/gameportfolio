@@ -7,7 +7,6 @@ const keycontainer = document.getElementById("keycontainer");
 const akey = document.getElementById("a");
 const dkey = document.getElementById("d");
 const bio = document.getElementById("bio");
-const minimepositions = [82, 190];
 let currentMinimeIndex = 0;
 const scrollpositions = [ 20, 1000, 2000, 3000, 4000];
 let currentScrollIndex = 0;
@@ -24,11 +23,13 @@ gamemode.style.display = "block";
 webmode.style.display = "block";
 gamemode.style.color = "rgba(76, 74, 74, 1)";
 
-
-
-
+const minimepositionscontainer = [82, 190,250]
+const minimepositions = [82,190,250, 460];
 
 let moveInterval; 
+if(minime.style.top == '460%'){
+    document.body.style.backgroundColor = "red";
+}
 
 webmode.addEventListener("click", () => {
     keycontainer.style.animation = "fadeout 1s ease-in-out forwards";
@@ -79,6 +80,8 @@ gamemode.addEventListener("click", () => {
     webmode.style.color = "white"
     aboutme.style.display = 'none';
     minime.style.position = "absolute";
+    minime.style.top = '82%';
+    seemore.style.display = 'none'
     
 
     moveIntervalright = setInterval(() => {
