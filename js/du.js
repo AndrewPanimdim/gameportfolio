@@ -145,9 +145,10 @@ document.addEventListener("keydown", (event)=>{
         stationary_status = false;
         if(pos <= -2){
             pos = -2;
-            minime.style.top = minimepositions[currentScrollIndex] + "%";
+            weight.style.display = 'block';
+            minime.style.position = 'fixed'
                 window.scrollTo({
-                top: scrollpositions[currentScrollIndex],
+                top: 800,
                 left: 0,
                 behavior: 'smooth'
                 });
