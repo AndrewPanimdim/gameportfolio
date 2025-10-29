@@ -130,7 +130,7 @@ body {
 }
 
 #option {
-    position: absolute;
+    position: fixed;
     top: 5%;
     left: 5%;
     animation: fadein 4s ease-in-out;

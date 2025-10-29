@@ -77,7 +77,10 @@ gamemode.addEventListener("click", () => {
     weight.style.display = "none";
     gamemode.style.color = "rgba(76, 74, 74, 1)";
     webmode.style.color = "white"
-    minime.style.position = "absolute"
+    aboutme.style.display = 'none';
+    minime.style.position = "absolute";
+    
+
     moveIntervalright = setInterval(() => {
     if (pos < 40) {
       pos += 2; 
