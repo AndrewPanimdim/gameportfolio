@@ -20,6 +20,9 @@ const weight = document.getElementById("weight");
 
 
 
+gamemode.style.display = "block";
+webmode.style.display = "block";
+gamemode.style.color = "rgba(76, 74, 74, 1)";
 
 
 
@@ -36,6 +39,7 @@ document.body.style.transition = "all 0.5s ease-in-out";
     bio.style.color = "rgba(76, 74, 74, 1)";
     weight.style.display = "block";
     minime.style.position = "fixed";
+    gamemode.style.color = "white";
 
   clearInterval(moveInterval);
 
@@ -57,34 +61,25 @@ document.body.style.transition = "all 0.5s ease-in-out";
 gamemode.addEventListener("click", () => {
     keycontainer.style.animation = "fadein 1s ease-in-out forwards";
     weight.style.display = "none";
-});
-
-
-
-
-
-
-
-
-
-
-
-
-optionbutton.addEventListener("click", ()=>{
-    if(optionbutton){
-        gamemode.style.display = "block";
-        webmode.style.display = "block";
+    gamemode.style.color = "rgba(76, 74, 74, 1)";
+    webmode.style.color = "white"
+    minime.style.position = "absolute"
+    moveIntervalright = setInterval(() => {
+    if (pos < 40) {
+      pos += 2; 
+      minime.style.left = pos + "%";
+      minime.src = "character/runningright.gif";
+    } else {
+      pos = 40;
+      minime.style.left = pos + "%";
+        minime.src = "character/standing.gif";
+      clearInterval(moveIntervalright);
     }
+  }, 100); 
+
 });
 
 
-optionbutton.addEventListener("click", ()=>{
-    if(optionbutton){
-        gamemode.style.display = "block";
-        webmode.style.display = "block";
-        optionbutton.style.display = "none";
-    }
-});
 
 document.addEventListener("click", (event) => {
     if(event.target === document.body || event.target === document){
