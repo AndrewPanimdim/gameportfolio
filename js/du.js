@@ -17,7 +17,7 @@ const gamemode = document.getElementById("game-mode");
 const webmode = document.getElementById("web-mode");
 const weight = document.getElementById("weight");
 const seemore = document.getElementById("seemore")
-
+const info1 = document.getElementById('info1')
 
 gamemode.style.display = "block";
 webmode.style.display = "block";
@@ -43,6 +43,8 @@ webmode.addEventListener("click", () => {
     gamemode.style.color = "white";
     seemore.style.display = "block";
     seemore.style.animation = "fadein 1s ease-in-out forwards";
+    info1.style.display = 'block'
+
     setInterval(()=>{
         seemore.style.animation = "bouncing 1s infinite";
     },1500);
@@ -82,7 +84,7 @@ gamemode.addEventListener("click", () => {
     minime.style.position = "absolute";
     minime.style.top = '82%';
     seemore.style.display = 'none'
-    
+    info1.style.display = 'none'
 
     moveIntervalcenter = setInterval(() => {
     if (pos < 40) {
@@ -154,8 +156,11 @@ document.addEventListener("keydown", (event)=>{
             pos = -2;
             weight.style.display = 'block';
             minime.style.position = 'fixed'
+            info1.style.display = 'block'
+            
+                
                 window.scrollTo({
-                top: 800,
+                top: 700,
                 left: 0,
                 behavior: 'smooth'
                 });

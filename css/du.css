@@ -161,6 +161,15 @@ body {
     display:none;
 }
 
+#info1 {
+    position:absolute;
+    top: 140%;
+    left: 35%;
+    font-family: 'poppins';
+    font-size: 1.3vw;
+    display: none;
+    animation: fadein 2s ease-in-out;
+}
 
 
 
