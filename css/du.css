@@ -242,6 +242,14 @@ body {
     z-index: -5;
 }
 
+#seeproj {
+    position: fixed;
+    top: 70%;
+    right: 10%;
+    display: none;
+    
+}
+
 
 
 

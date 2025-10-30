@@ -16,8 +16,9 @@ const option = document.getElementById("option");
 const gamemode = document.getElementById("game-mode");
 const webmode = document.getElementById("web-mode");
 const weight = document.getElementById("weight");
-const seemore = document.getElementById("seemore")
-const info1 = document.getElementById('info1')
+const seemore = document.getElementById("seemore");
+const info1 = document.getElementById('info1');
+const seeproj = document.getElementById('seeproj');
 
 gamemode.style.display = "block";
 webmode.style.display = "block";
@@ -121,13 +122,16 @@ gamemode.addEventListener("click", () => {
 
   window.addEventListener('scroll', ()=>{
     let scrolly = window.scrollY;
-    if(scrolly <= 700){
+    if(scrolly <= 650){
         message.style.display = 'block'
         setInterval(() => {
             message.style.animation = 'bouncing 3s infinite';
         }, 5000);
-    }else if (scrolly>720){
-        message.style.display = 'none'
+    }else if (scrolly>740){
+        message.style.animation = 'fadeout 1.5s ease-in-out';
+        setInterval(() => {
+            message.style.display = 'none'
+        }, 1400);
     }
 });
 
@@ -197,17 +201,25 @@ document.addEventListener("keydown", (event)=>{
         }
     }
 
-        if(pos > 50){
+        if(pos > 60){
             document.body.classList.add("lightmode");
             document.body.style.transition = "all 0.5s ease-in-out";
             document.body.style.backgroundColor = "white";
             bio.style.color = "rgba(76, 74, 74, 1)";
+            seeproj.style.animation = 'fadein 0.9s ease-in-out';
+            setTimeout(() => {
+                seeproj.style.display = 'block';
+            }, 800);
             }
-        if(pos < 50){
+        if(pos < 60){
                 document.body.classList.remove("lightmode");
                 document.body.style.transition = "all 0.5s ease-in-out";
                 document.body.style.backgroundColor = "rgb(9, 9, 9)";
                 bio.style.color = "rgba(76, 74, 74, 1)";
+                seeproj.style.animation = 'fadeout 0.9s ease-in-out';
+                setTimeout(() => {
+                seeproj.style.display = 'none';
+                }, 800);
             }
         
     }
@@ -221,17 +233,25 @@ document.addEventListener("keydown", (event)=>{
             window.location.href = "https://andrewpanimdim.github.io/gameportfolio/projects.html";
         }
 
-        if(pos > 50){
+        if(pos > 60){
             document.body.classList.add("lightmode");
             document.body.style.transition = "all 0.5s ease-in-out";
             document.body.style.backgroundColor = "white";
             bio.style.color = "rgba(76, 74, 74, 1)";
+            seeproj.style.animation = 'fadein 0.9s ease-in-out';
+            setTimeout(() => {
+                seeproj.style.display = 'block';
+            }, 800);
         }
-        if(pos < 50){
+        if(pos < 60){
             document.body.classList.remove("lightmode");
             document.body.style.transition = "all 0.5s ease-in-out";
             document.body.style.backgroundColor = "rgb(9, 9, 9)";
-            bio.style.color = "rgba(76, 74, 74, 1)";      
+            bio.style.color = "rgba(76, 74, 74, 1)";
+            seeproj.style.animation = 'fadeout 0.9s ease-in-out';
+                setTimeout(() => {
+                seeproj.style.display = 'none';
+            }, 800);
         }
 
     }
