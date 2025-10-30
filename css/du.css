@@ -3,7 +3,7 @@
     position: absolute;
     top: 83%;
     left: 40%;
-    animation: fadein 2s ease-in-out;
+    animation: fadein 5s ease-in-out;
 }
 
 #Hello {
@@ -127,19 +127,60 @@ body {
     animation: fadein 3s ease-in-out;
     font-weight: bold;
     display: none;
-}
+} 
 
 #option {
     position: fixed;
     top: 5%;
     left: 5%;
-    animation: fadein 4s ease-in-out;
+    animation: fadein 7s ease-in-out;
+}
+#stacks, #projects, #certificates{
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
 }
 
+#stacks:hover, #projects:hover, #certificates:hover {
+    scale: 1.5;
+    color: rgb(0, 0, 0);
+}
+#stacks{
+    background-color: rgb(101, 181, 235);
+    width: 10%;
+    height: 10%;
+    position: absolute;
+    top: 220%;
+    left: 25%;
+    animation: slideright 4s ease-in-out;
+}
 
+#projects {
+    background-color: rgb(166, 101, 235);
+    width: 10%;
+    height: 10%;
+    position: absolute;
+    top: 220%;
+    left: 45%;
+    animation: slideright 3s ease-in-out;
+}
+
+#certificates {
+    background-color: rgb(84, 174, 129);
+    width: 10%;
+    height: 10%;
+    position: absolute;
+    top: 220%;
+    left: 65%;
+    animation: slideright 2s ease-in-out;
+}
 #game-mode, #web-mode {
     display: flex;
-    align-items: center;
+   align-items: center;
     justify-content: center;
     border-radius: 15px;
     font-size: 1vw;
@@ -151,7 +192,7 @@ body {
 #weight {
     display: none;
     position: absolute;
-    top: 300%;
+    top: 350%;
     width: 100%;
     left: 0%;
     background-color: rgb(28, 28, 28);
@@ -174,6 +215,9 @@ body {
     animation: fadein 2s ease-in-out;
 }
 
+#infocontainer{
+    display: block;
+}
 
 
 

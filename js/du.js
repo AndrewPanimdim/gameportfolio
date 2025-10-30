@@ -24,6 +24,11 @@ gamemode.style.display = "block";
 webmode.style.display = "block";
 gamemode.style.color = "rgba(76, 74, 74, 1)";
 
+const stacks = document.getElementById('stacks');
+const certificates = document.getElementById('certificates');
+const projects =document.getElementById('projects');
+const infocontainer = document.getElementById('infocontainer');
+
 const minimepositionscontainer = [82, 190,250]
 const minimepositions = [82,190,250, 460];
 
@@ -92,7 +97,7 @@ webmode.addEventListener("click", () => {
 
 
 gamemode.addEventListener("click", () => {
-    keycontainer.style.animation = "fadein 3s ease-in-out forwards";
+    keycontainer.style.animation = "fadein 8s ease-in-out forwards";
     weight.style.display = "none";
     gamemode.style.color = "rgba(76, 74, 74, 1)";
     webmode.style.color = "white"
@@ -102,6 +107,7 @@ gamemode.addEventListener("click", () => {
     seemore.style.display = 'none';
     info1.style.display = 'none';
     message.style.display = 'none'
+    infocontainer.style.display = 'none';
 
     moveIntervalcenter = setInterval(() => {
     if (pos < 40) {
@@ -134,6 +140,20 @@ gamemode.addEventListener("click", () => {
         }, 1400);
     }
 });
+
+    window.addEventListener('scroll', ()=>{
+        let scrolly = window.scrollY;
+        if(scrolly > 710){
+            infocontainer.style.display = 'block';
+        }else{
+            
+            infocontainer.style.display = 'none';
+        }
+    });
+
+
+    
+// dito
 
 
 
@@ -206,20 +226,20 @@ document.addEventListener("keydown", (event)=>{
             document.body.style.transition = "all 0.5s ease-in-out";
             document.body.style.backgroundColor = "white";
             bio.style.color = "rgba(76, 74, 74, 1)";
-            seeproj.style.animation = 'fadein 0.9s ease-in-out';
+            seeproj.style.animation = 'fadein 0.5s ease-in-out';
             setTimeout(() => {
                 seeproj.style.display = 'block';
-            }, 800);
+            }, 400);
             }
         if(pos < 60){
                 document.body.classList.remove("lightmode");
                 document.body.style.transition = "all 0.5s ease-in-out";
                 document.body.style.backgroundColor = "rgb(9, 9, 9)";
                 bio.style.color = "rgba(76, 74, 74, 1)";
-                seeproj.style.animation = 'fadeout 0.9s ease-in-out';
+                seeproj.style.animation = 'fadeout 0.5s ease-in-out';
                 setTimeout(() => {
                 seeproj.style.display = 'none';
-                }, 800);
+                }, 400);
             }
         
     }
@@ -238,23 +258,26 @@ document.addEventListener("keydown", (event)=>{
             document.body.style.transition = "all 0.5s ease-in-out";
             document.body.style.backgroundColor = "white";
             bio.style.color = "rgba(76, 74, 74, 1)";
-            seeproj.style.animation = 'fadein 0.9s ease-in-out';
+            seeproj.style.animation = 'fadein 0.5s ease-in-out';
             setTimeout(() => {
                 seeproj.style.display = 'block';
-            }, 800);
+            }, 400);
         }
         if(pos < 60){
             document.body.classList.remove("lightmode");
             document.body.style.transition = "all 0.5s ease-in-out";
             document.body.style.backgroundColor = "rgb(9, 9, 9)";
             bio.style.color = "rgba(76, 74, 74, 1)";
-            seeproj.style.animation = 'fadeout 0.9s ease-in-out';
+            seeproj.style.animation = 'fadeout 0.5s ease-in-out';
                 setTimeout(() => {
                 seeproj.style.display = 'none';
-            }, 800);
+            }, 400);
         }
 
     }
+
+
+
 
 });
 
