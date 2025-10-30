@@ -84,20 +84,27 @@ gamemode.addEventListener("click", () => {
     seemore.style.display = 'none'
     
 
-    moveIntervalright = setInterval(() => {
+    moveIntervalcenter = setInterval(() => {
     if (pos < 40) {
-      pos += 2; 
+      pos += 1; 
       minime.style.left = pos + "%";
       minime.src = "character/runningright.gif";
+    } else if(pos > 40){
+        pos -=1;
+        minime.style.left = pos + "%";
+        minime.src = "character/runningleft.gif";
     } else {
       pos = 40;
       minime.style.left = pos + "%";
         minime.src = "character/standing.gif";
-      clearInterval(moveIntervalright);
+      clearInterval(moveIntervalcenter);
     }
-  }, 100); 
+  }, 100);
+  
+  
 
 });
+
 
 
 
