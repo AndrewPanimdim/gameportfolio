@@ -27,9 +27,24 @@ const minimepositionscontainer = [82, 190,250]
 const minimepositions = [82,190,250, 460];
 
 let moveInterval; 
-if(minime.style.top == '460%'){
-    document.body.style.backgroundColor = "red";
-}
+
+const message = document.getElementById('message')
+
+setTimeout(() => {
+    gamemode.click();
+}, 100); 
+
+
+
+window.addEventListener('scroll', ()=>{
+    let scrolly = window.scrolly;
+    if(scrolly >100){
+        message.style.display= 'none';
+    }
+});
+
+
+
 
 webmode.addEventListener("click", () => {
     keycontainer.style.animation = "fadeout 1s ease-in-out forwards";
@@ -76,15 +91,16 @@ webmode.addEventListener("click", () => {
 
 
 gamemode.addEventListener("click", () => {
-    keycontainer.style.animation = "fadein 1s ease-in-out forwards";
+    keycontainer.style.animation = "fadein 3s ease-in-out forwards";
     weight.style.display = "none";
     gamemode.style.color = "rgba(76, 74, 74, 1)";
     webmode.style.color = "white"
     aboutme.style.display = 'none';
     minime.style.position = "absolute";
     minime.style.top = '82%';
-    seemore.style.display = 'none'
-    info1.style.display = 'none'
+    seemore.style.display = 'none';
+    info1.style.display = 'none';
+    message.style.display = 'none'
 
     moveIntervalcenter = setInterval(() => {
     if (pos < 40) {
@@ -101,9 +117,21 @@ gamemode.addEventListener("click", () => {
         minime.src = "character/standing.gif";
       clearInterval(moveIntervalcenter);
     }
-  }, 100);
-  
-  
+  }, 100);  
+
+  window.addEventListener('scroll', ()=>{
+    let scrolly = window.scrollY;
+    if(scrolly <= 700){
+        message.style.display = 'block'
+        setInterval(() => {
+            message.style.animation = 'bouncing 3s infinite';
+        }, 5000);
+    }else if (scrolly>720){
+        message.style.display = 'none'
+    }
+});
+
+
 
 });
 
@@ -117,7 +145,6 @@ document.addEventListener("click", (event) => {
         optionbutton.style.display = "block";
     }
 });
-
 
 
 
@@ -157,8 +184,6 @@ document.addEventListener("keydown", (event)=>{
             weight.style.display = 'block';
             minime.style.position = 'fixed'
             info1.style.display = 'block'
-            
-                
                 window.scrollTo({
                 top: 700,
                 left: 0,
