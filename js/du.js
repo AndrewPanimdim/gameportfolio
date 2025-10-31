@@ -85,12 +85,12 @@ webmode.addEventListener("click", () => {
     clearInterval(moveInterval);
 
     moveInterval = setInterval(() => {
-    if (pos > -3) {
-      pos -= 3; 
+    if (pos > -2) {
+      pos -= 2; 
       minime.style.left = pos + "%";
       minime.src = "character/runningleft.gif";
     } else {
-      pos = -3;
+      pos = -2;
       minime.style.left = pos + "%";
         minime.src = "character/standing.gif";
       clearInterval(moveInterval);
@@ -159,7 +159,7 @@ gamemode.addEventListener("click", () => {
         if (!allowProjectAnimation) return; // stop if in webmode
 
             const interval = setInterval(() => {
-            pos += 5;
+            pos += 3;
             minime.style.left = pos + '%';
             minime.src = "character/runningright.gif";
 
