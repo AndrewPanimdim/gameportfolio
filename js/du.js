@@ -32,6 +32,8 @@ const infocontainer = document.getElementById('infocontainer');
 const minimepositionscontainer = [82, 190,250]
 const minimepositions = [82,190,250, 460];
 
+let allowProjectAnimation = true; // true = works in gamemode, false = stop in webmode
+
 let moveInterval; 
 
 const message = document.getElementById('message')
@@ -65,6 +67,7 @@ webmode.addEventListener("click", () => {
     seemore.style.display = "block";
     seemore.style.animation = "fadein 1s ease-in-out forwards";
     info1.style.display = 'block'
+    allowProjectAnimation = false;
 
     setInterval(()=>{
         seemore.style.animation = "bouncing 1s infinite";
@@ -108,14 +111,15 @@ gamemode.addEventListener("click", () => {
     info1.style.display = 'none';
     message.style.display = 'none'
     infocontainer.style.display = 'none';
+    allowProjectAnimation = true;
 
     moveIntervalcenter = setInterval(() => {
     if (pos < 40) {
-      pos += 1; 
+      pos += 2; 
       minime.style.left = pos + "%";
       minime.src = "character/runningright.gif";
     } else if(pos > 40){
-        pos -=1;
+        pos -=2;
         minime.style.left = pos + "%";
         minime.src = "character/runningleft.gif";
     } else {
@@ -151,8 +155,22 @@ gamemode.addEventListener("click", () => {
         }
     });
 
+    projects.addEventListener('click',()=>{
+        if (!allowProjectAnimation) return; // stop if in webmode
 
-    
+            const interval = setInterval(() => {
+            pos += 5;
+            minime.style.left = pos + '%';
+            minime.src = "character/runningright.gif";
+
+            if (pos >= 90) {
+            clearInterval(interval);
+            window.location.href = "https://andrewpanimdim.github.io/gameportfolio/projects.html";
+            }
+        }, 200);
+
+    });
+
 // dito
 
 
