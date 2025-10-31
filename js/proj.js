@@ -2,6 +2,11 @@ const minime = document.getElementById("minime");
 let pos = -2;
 let stationary_status = true;
 
+setInterval(() => {
+    document.body.style.backgroundColor = 'black';
+    document.body.style.transition = '1s';
+    document.body.style.color = 'white';
+}, 2000);
 
 window.addEventListener('scroll', () => {
     let scrollPosition = window.scrollY;

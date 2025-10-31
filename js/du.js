@@ -38,11 +38,13 @@ let moveInterval;
 
 const message = document.getElementById('message')
 
+
+
+
+
 setTimeout(() => {
     gamemode.click();
 }, 100); 
-
-
 
 window.addEventListener('scroll', ()=>{
     let scrolly = window.scrolly;
@@ -50,9 +52,6 @@ window.addEventListener('scroll', ()=>{
         message.style.display= 'none';
     }
 });
-
-
-
 
 webmode.addEventListener("click", () => {
     keycontainer.style.animation = "fadeout 1s ease-in-out forwards";
@@ -159,15 +158,15 @@ gamemode.addEventListener("click", () => {
         if (!allowProjectAnimation) return; // stop if in webmode
 
             const interval = setInterval(() => {
-            pos += 3;
+            pos += 4;
             minime.style.left = pos + '%';
             minime.src = "character/runningright.gif";
 
-            if (pos >= 90) {
+            if (pos >= 96) {
             clearInterval(interval);
             window.location.href = "https://andrewpanimdim.github.io/gameportfolio/projects.html";
             }
-        }, 200);
+        }, 100);
 
     });
 
