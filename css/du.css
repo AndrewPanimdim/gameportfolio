@@ -369,7 +369,9 @@ body {
     font-size: 0.7vw;
 }
 
-
+#weight {
+    display: none;
+}
 
 
 
@@ -432,6 +434,12 @@ body {
     right: 2%;
 }
 
+#aboutme {
+    top: 40%;
+    display: block;
+    opacity: 1;
+}
+
 #JavaScript, #CSS {
     top: 10%;   
 }
@@ -477,11 +485,17 @@ body {
     display: none;
   }
   #seemore2{
+    left: -10%;
     display: none;
     opacity: 0;
   }
 
   #option{
+    display: none;
+    opacity: 0;
+  }
+
+  #web-mode, #game-mode {
     display: none;
     opacity: 0;
   }
