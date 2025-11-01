@@ -6,7 +6,7 @@ setInterval(() => {
     document.body.style.backgroundColor = 'black';
     document.body.style.transition = '4s';
     document.body.style.color = 'white';
-},1000);
+},100);
 
 document.addEventListener("keydown", (event)=>{
     if(event.key === "A" || event.key === "a"){
