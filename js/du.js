@@ -51,9 +51,6 @@ setTimeout(() => {
     gamemode.click();
 }, 100); 
 
-setTimeout(() => {
-    seemore2.style.display = 'block';
-}, 6000);
 
 setTimeout(() => {
     seemore2.style.animation = 'slideleftright 2s infinite';
@@ -94,6 +91,8 @@ webmode.addEventListener("click", () => {
     setInterval(()=>{
         seemore.style.animation = "bouncing 1s infinite";
     },1500);
+
+    
 
     window.addEventListener('scroll', ()=>{
     let scrolly = window.scrollY
@@ -143,9 +142,15 @@ gamemode.addEventListener("click", () => {
     stackinfo.style.display = 'none';
     stackcontainer.style.display = 'none';
 
+    setTimeout(() => {
+    seemore2.style.display = 'block';
+    }, 6000);
+
+
+
     window.addEventListener('scroll', ()=>{
         let scrolly = window.scrollY;
-        if(scroll > 100){
+        if(scrolly > 100){
              seemore2.style.display = 'none';
              seeprojects.style.display = 'none';
         }else{
