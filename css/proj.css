@@ -19,8 +19,8 @@
 #projheader{
     animation: slideright 2s ease-in-out;
     position: fixed;
-    left: 40%;
-    font-size: 4vw;
+    left: 30%;
+    font-size: 12vw;
 }
 
 #cover {
