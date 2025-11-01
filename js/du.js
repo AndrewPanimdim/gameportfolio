@@ -36,18 +36,20 @@ let allowProjectAnimation = true; // true = works in gamemode, false = stop in w
 
 let moveInterval; 
 
-const message = document.getElementById('message')
-
-
-
-
+const message = document.getElementById('message');
+const py = document.getElementById('py');
+const js = document.getElementById('js');
+const cs= document.getElementById('cs');
+const ht = document.getElementById('ht');
+const stackcontainer = document.getElementById('stackscontainer');
+const stackinfo = document.getElementById('stackinfo');
 
 setTimeout(() => {
     gamemode.click();
 }, 100); 
 
 window.addEventListener('scroll', ()=>{
-    let scrolly = window.scrolly;
+    let scrolly = window.scrollY;
     if(scrolly >100){
         message.style.display= 'none';
     }
@@ -148,6 +150,10 @@ gamemode.addEventListener("click", () => {
         let scrolly = window.scrollY;
         if(scrolly > 710){
             infocontainer.style.display = 'block';
+            setTimeout(() => {
+                stackinfo.style.display = 'block';
+            }, 1000);
+            
         }else{
             
             infocontainer.style.display = 'none';
@@ -169,6 +175,34 @@ gamemode.addEventListener("click", () => {
         }, 100);
 
     });
+
+    stacks.addEventListener('click', () => {
+    if (stackcontainer.style.display === 'block') {
+        stackinfo.style.animation = 'fadeout 0.4s ease-out';
+        stackcontainer.style.animation = 'fadeout 0.4s ease-out';
+        setTimeout(() => {
+            stackinfo.style.display = 'none';
+            stackcontainer.style.display = 'none'
+        }, 500);
+    } else {
+        stackcontainer.style.display = 'block';
+        stackinfo.style.display = 'block';
+    }
+});
+
+window.addEventListener('scroll', ()=>{
+    let scrolly = window.scrollY;
+    if(scrolly >= 700){
+        setTimeout(() => {
+            stackcontainer.style.display = 'block';
+            }, 4000);
+    }
+})
+
+
+    
+
+
 
 // dito
 

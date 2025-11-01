@@ -4,6 +4,7 @@
     top: 83%;
     left: 40%;
     animation: fadein 5s ease-in-out;
+    z-index: 100;
 }
 
 #Hello {
@@ -133,7 +134,7 @@ body {
     position: fixed;
     top: 5%;
     left: 5%;
-    animation: fadein 7s ease-in-out;
+    animation: fadein 5s ease-in-out;
 }
 #stacks, #projects, #certificates{
     border-radius: 20px;
@@ -293,9 +294,66 @@ body {
     display: none;
     
 }
+#stackscontainer{
+    position: absolute;
+    top: 240%;
+    width: 100%;
+    left:0%;
+    height: 40%;
+    display: none;
+}
 
+#js {
+    left: 49%;
+    animation: slideright 2s ease-in-out;
+    background-color:rgb(238, 255, 0) ;
+    width:9%;
+    color: black;
+}
 
+#py {
+    left:59%;
+    animation: slideright 1s ease-in-out;
+    background-color:rgb(54, 170, 238) ;
+    width:6%;
+}
 
+#ht {
+    left: 35%;
+    animation: slideright 4s ease-in-out;
+    background-color:orange;
+    width:6%;
+}
+
+#cs {
+    left: 43%;
+    animation: slideright 3s ease-in-out;
+    background-color:rgb(133, 216, 228) ;
+    width:5%;
+    color: black;
+    display: 'none';
+}
+
+#js, #py, #ht, #cs {
+    position: absolute;
+    top: 90%;
+    border-radius:20px;
+    height: 2.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: 'none';
+}
+
+#stackinfo {
+    top: 20%;
+    position: absolute;
+    width: 30%;
+    left: 35%;
+    animation: fadein 1s ease-in-out;
+    font-size: 1.5vw;
+    display: none;
+}
 
 /* Animations */
 

@@ -28,11 +28,11 @@
     top: 130%;
     left: 0%;
     width: 100%;
-    background-color:rgb(50, 50, 50) ;
+    background-color:rgb(22, 22, 22) ;
     height: 200%;
     animation: cover 5s linear;
     animation-timeline:view();
-    animation-range: entry 0% cover 30%;
+    animation-range: entry 0% cover 35%;
 }
 
 
