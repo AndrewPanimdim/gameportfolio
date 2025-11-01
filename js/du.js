@@ -41,6 +41,8 @@ const stackinfo = document.getElementById('stackinfo');
 const seemore2 = document.getElementById('seemore2');
 const seeprojects = document.getElementById('seeprojects');
 
+
+
 function isMobile() {
     return window.innerWidth <= 568;
 }
@@ -64,6 +66,8 @@ if (isMobile()) {
             aboutme.style.left =  '33%';
             aboutme.style.display = 'block';
         }, 4000); 
+
+
         
         
     }
