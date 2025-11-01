@@ -284,7 +284,7 @@ body {
 #seeproj {
     position: fixed;
     top: 70%;
-    right: 10%;
+    right: 1%;
     display: none;
     
 }
@@ -359,7 +359,7 @@ body {
 }
 
 #seeprojects {
-    animation: fadein 9s ease-in-out;
+    animation: fadein 0.9s ease-in-out;
     position: fixed;
     bottom: 5%;
     right: 1%;

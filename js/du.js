@@ -59,9 +59,6 @@ setTimeout(() => {
     seemore2.style.animation = 'slideleftright 2s infinite';
 }, 7900);
 
-setTimeout(() => {
-    seeprojects.style.animation = 'slideleftright 3s infinite';
-}, 8900);
 
 window.addEventListener('scroll', ()=>{
     let scrolly = window.scrollY;
@@ -348,6 +345,8 @@ document.addEventListener("keydown", (event)=>{
             setTimeout(() => {
                 seeproj.style.display = 'block';
             }, 400);
+            
+            seeproj.style.animation = 'slideleftright 1s infinite';
         }
         if(pos < 60){
             document.body.classList.remove("lightmode");
