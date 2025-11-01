@@ -135,6 +135,7 @@ body {
     top: 5%;
     left: 5%;
     animation: fadein 5s ease-in-out;
+    z-index: 999;
 }
 #stacks, #projects, #certificates{
     border-radius: 20px;
@@ -187,7 +188,8 @@ body {
     font-size: 1vw;
     cursor: pointer;
     transition: 0.3s;
-    display: none;
+    color: grey;
+    z-index: 999;
 }
 
 
@@ -421,3 +423,66 @@ body {
 }
 
 
+
+
+@media (max-width: 568px) {
+#Hello {
+    font-size: 10vw;
+    top: 2%;
+    right: 2%;
+}
+
+#JavaScript, #CSS {
+    top: 10%;   
+}
+
+#CSS {
+    left: 20%;
+    width: 10%;
+}
+
+#HTML {
+    top: 2.5%;
+    left: 15%;
+    width: 15%;
+}
+
+#JavaScript {
+    top: 10%;
+    left: 3%;
+    width: 15%;
+}
+
+#keycontainer {
+    display: none;
+    opacity: 0;
+}
+
+#weight{
+    display: block;
+}
+
+#message {
+    display: none;
+}
+
+#bio {
+    font-size: 2vw;
+    left: 10%;
+    width: 80%;
+    top: 20%;
+}
+
+  #minime {
+    display: none;
+  }
+  #seemore2{
+    display: none;
+    opacity: 0;
+  }
+
+  #option{
+    display: none;
+    opacity: 0;
+  }
+}

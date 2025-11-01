@@ -72,27 +72,21 @@ window.addEventListener('scroll', ()=>{
 });
 
 webmode.addEventListener("click", () => {
-    seemore2.style.opacity = 0;
-    seeprojects.style.opacity = 0;
+    gamemode.style.color = 'grey';
+    webmode.style.color = 'white';
     keycontainer.style.animation = "fadeout 1s ease-in-out forwards";
-    webmode.style.color = "rgba(76, 74, 74, 1)";
-    document.body.classList.remove("lightmode");
-    document.body.style.transition = "all 0.5s ease-in-out";
-    document.body.style.backgroundColor = "rgb(9, 9, 9)";
-    bio.style.color = "rgba(76, 74, 74, 1)";
     weight.style.display = "block";
     minime.style.position = "fixed";
-    gamemode.style.color = "white";
     seemore.style.display = "block";
     seemore.style.animation = "fadein 1s ease-in-out forwards";
-    info1.style.display = 'block'
-    allowProjectAnimation = false;
-
+    seemore2.style.opacity = 0;
+    seemore2.style.display = 'none';
+    message.style.display = 'none';
+    
+    
     setInterval(()=>{
         seemore.style.animation = "bouncing 1s infinite";
     },1500);
-
-    
 
     window.addEventListener('scroll', ()=>{
     let scrolly = window.scrollY
@@ -116,21 +110,46 @@ webmode.addEventListener("click", () => {
         minime.src = "character/standing.gif";
       clearInterval(moveInterval);
     }
-  }, 100); 
+  }, 100);
 
   projects.addEventListener('click', ()=>{
           window.location.href = "https://andrewpanimdim.github.io/gameportfolio/projects.html";   
   });
 
+  window.addEventListener('scroll', ()=>{
+        let scrolly = window.scrollY;
+        if(scrolly > 710){
+            infocontainer.style.display = 'block';
+            message.style.display = 'none'
+        }else{
+            stackcontainer.style.display = 'none';
+            infocontainer.style.display = 'none';
+        }
+    });
+
+    window.addEventListener('scroll', ()=>{
+    let scrolly = window.scrollY;
+    if(scrolly <= 650){
+        message.style.display = 'block'
+        setTimeout(() => {
+            message.style.animation = 'bouncing 3s infinite';
+        }, 4000);
+    }});
+
+    
 
 });
 
 
+
+
+
 gamemode.addEventListener("click", () => {
+    option.style.display = 'block';
     keycontainer.style.animation = "fadein 8s ease-in-out forwards";
     weight.style.display = "none";
-    gamemode.style.color = "rgba(76, 74, 74, 1)";
-    webmode.style.color = "white"
+    gamemode.style.color = "white";
+    webmode.style.color = "grey"
     aboutme.style.display = 'none';
     minime.style.position = "absolute";
     minime.style.top = '82%';
@@ -235,26 +254,13 @@ window.addEventListener('scroll', ()=>{
 })
 
 
-    
-
-
-
-// dito
-
-
 
 });
 
 
 
 
-document.addEventListener("click", (event) => {
-    if(event.target === document.body || event.target === document){
-        gamemode.style.display = "none";
-        webmode.style.display = "none";
-        optionbutton.style.display = "block";
-    }
-});
+
 
 
 
@@ -270,6 +276,10 @@ window.addEventListener("scroll", ()=>{
     if(scrollY > 50){
         aboutme.style.animation = "fadein 1.3s ease-in-out forwards";
         aboutme.style.display = "block";
+        setTimeout(() => {
+            info1.style.display = 'block';
+        }, 500);
+        
     }else if(scrollY < 50){
         aboutme.style.display = "none";
     }
@@ -378,4 +388,3 @@ document.addEventListener("keyup", (event)=>{
         minime.src = "character/standing.gif";
     }
 });
-
