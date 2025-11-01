@@ -56,6 +56,14 @@ if (isMobile()) {
     if (message) message.style.display = "none";
     
     if (aboutme) {
+        cs.style.display = 'none';
+        ht.style.display = 'none';
+        js.style.display = 'none';
+        py.style.display = 'none';
+        stacks.style.display = 'none';
+        projects.style.display = 'none';
+        aboutme.style.display = 'none';
+        stackinfo.style.display = 'none';
         setTimeout(() => {
             info1.style.top = '60%'
             info1.style.display = 'block'
@@ -65,7 +73,57 @@ if (isMobile()) {
             aboutme.style.top = '45%';
             aboutme.style.left =  '33%';
             aboutme.style.display = 'block';
-        }, 4000); 
+        }, 2000); 
+
+        setTimeout(() => {
+            stacks.style.display = 'flex';
+            projects.style.display = 'flex';
+
+            stacks.style.opacity = 1;
+            projects.style.opacity = 1;
+        }, 3800);
+
+        infocontainer.style.display = 'block';
+
+        stacks.innerText = 'Stacks';
+        stacks.addEventListener('click',()=>{
+            window.scrollTo({
+                    top: 700,
+                    left: 0,
+                    behavior: 'smooth'
+                    });
+            stackinfo.style.display = 'block';
+            
+            setTimeout(() => {
+                cs.style.display = 'flex';
+                ht.style.display = 'flex';
+                js.style.display = 'flex';
+                py.style.display = 'flex';
+            },  1000);
+        
+        });
+
+
+        projects.addEventListener('click',()=>{
+            window.scrollTo({
+                    top: 1500,
+                    left: 0,
+                    behavior: 'smooth'
+                    });
+        });
+        
+        window.addEventListener('scroll',()=>{
+            let scrolly = window.scrollY;
+            if(scrolly >= 400){
+            stackinfo.style.display = 'block';
+            setTimeout(() => {
+                cs.style.display = 'flex';
+                ht.style.display = 'flex';
+                js.style.display = 'flex';
+                py.style.display = 'flex';
+            },  500);
+            }
+        });
 
 
         

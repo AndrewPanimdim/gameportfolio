@@ -448,6 +448,68 @@ body {
     font-size: 8vw;
 }
 
+
+#stackscontainer {
+    top: 90%;
+    display: block;
+}
+
+#stacks {
+    top: 85%;
+    width: 30%;
+    height: 8%;
+    left: 15%;
+    font-size: 3.5vw;
+}
+
+#projects {
+    top: 85%;
+    height: 8%;
+    left: 50%;
+    width: 40%;
+    font-size: 3.5vw;
+}
+
+#js, #py, #ht, #cs {
+    display: flex;
+    height: 10%;
+    top:240%;
+}
+
+#js {
+    width: 35%;
+    left: 55%;
+}
+
+#py{
+    width: 25%;
+    top: 260%;
+    left: 8%;
+}
+
+#stackinfo {
+    top: 100%;
+    font-size: 4vw;
+    width:80%;
+    left: 10%;
+}
+
+#certificates {
+    display: none;
+}
+
+#ht {
+    width: 20%;
+    left: 28%;
+}
+
+#cs{
+     width: 20%;
+     left: 5%;
+}
+
+
+
 #JavaScript, #CSS {
     top: 10%;   
 }
