@@ -52,6 +52,7 @@ if (isMobile()) {
     if (option) option.style.display = "none";
     if (seemore2) seemore2.style.display = "none";
     if (message) message.style.display = "none";
+    
     if (aboutme) {
         setTimeout(() => {
             info1.style.top = '60%'
@@ -420,8 +421,3 @@ if (isMobile()) {
 
 } 
 
-window.addEventListener('resize', () => {
-    if (isMobile()) {
-        location.reload(); 
-    }
-});
