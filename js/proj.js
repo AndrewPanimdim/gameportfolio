@@ -1,21 +1,12 @@
 const minime = document.getElementById("minime");
-let pos = -2;
+let pos = 10;
 let stationary_status = true;
 
 setInterval(() => {
     document.body.style.backgroundColor = 'black';
     document.body.style.transition = '1s';
     document.body.style.color = 'white';
-}, 2000);
-
-window.addEventListener('scroll', () => {
-    let scrollPosition = window.scrollY;
-    if (scrollPosition > 100) {
-        minime.style.opacity = 0;
-    }else{
-        minime.style.opacity = 1;
-    }
-})
+}, 1000);
 
 document.addEventListener("keydown", (event)=>{
     if(event.key === "A" || event.key === "a"){

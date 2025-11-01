@@ -2,7 +2,7 @@
     height: 15%;
     position: fixed;
     top: 83%;
-    left: -2%;
+    left: 10%;
 }
 
 #background1 {
@@ -18,7 +18,7 @@
 
 #projheader{
     animation: slideright 2s ease-in-out;
-    position: absolute;
+    position: fixed;
     left: 40%;
     font-size: 4vw;
 }
