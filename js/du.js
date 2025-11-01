@@ -28,7 +28,7 @@ const stacks = document.getElementById('stacks');
 const certificates = document.getElementById('certificates');
 const projects =document.getElementById('projects');
 const infocontainer = document.getElementById('infocontainer');
-
+const boxcontainer = document.getElementById('boxcontainer');
 const minimepositionscontainer = [82, 190,250]
 const minimepositions = [82,190,250, 460];
 
@@ -43,19 +43,43 @@ const cs= document.getElementById('cs');
 const ht = document.getElementById('ht');
 const stackcontainer = document.getElementById('stackscontainer');
 const stackinfo = document.getElementById('stackinfo');
+const seemore2 = document.getElementById('seemore2');
+
+const seeprojects = document.getElementById('seeprojects');
 
 setTimeout(() => {
     gamemode.click();
 }, 100); 
 
+setTimeout(() => {
+    seemore2.style.display = 'block';
+}, 6000);
+
+setTimeout(() => {
+    seemore2.style.animation = 'slideleftright 2s infinite';
+}, 7900);
+
+setTimeout(() => {
+    seeprojects.style.animation = 'slideleftright 3s infinite';
+}, 8900);
+
 window.addEventListener('scroll', ()=>{
     let scrolly = window.scrollY;
     if(scrolly >100){
-        message.style.display= 'none';
+        message.style.display= 'block';
+        seemore2.style.display = 'none';
+        seeprojects.style.display = 'block';
+        seemore2.style.opacity = 0;
+        seeprojects.style.opacity = 0;
+    }else{
+        seemore2.style.opacity = 1;
+        seeprojects.style.opacity = 1;
     }
 });
 
 webmode.addEventListener("click", () => {
+    seemore2.style.opacity = 0;
+    seeprojects.style.opacity = 0;
     keycontainer.style.animation = "fadeout 1s ease-in-out forwards";
     webmode.style.color = "rgba(76, 74, 74, 1)";
     document.body.classList.remove("lightmode");
@@ -113,6 +137,19 @@ gamemode.addEventListener("click", () => {
     message.style.display = 'none'
     infocontainer.style.display = 'none';
     allowProjectAnimation = true;
+    stackinfo.style.display = 'none';
+    stackcontainer.style.display = 'none';
+
+    window.addEventListener('scroll', ()=>{
+        let scrolly = window.scrollY;
+        if(scroll > 100){
+             seemore2.style.display = 'none';
+             seeprojects.style.display = 'none';
+        }else{
+             seemore2.style.display = 'block';  
+             seeprojects.style.display = 'block';
+        }   
+    });
 
     moveIntervalcenter = setInterval(() => {
     if (pos < 40) {
@@ -135,27 +172,18 @@ gamemode.addEventListener("click", () => {
     let scrolly = window.scrollY;
     if(scrolly <= 650){
         message.style.display = 'block'
-        setInterval(() => {
+        setTimeout(() => {
             message.style.animation = 'bouncing 3s infinite';
-        }, 5000);
-    }else if (scrolly>740){
-        message.style.animation = 'fadeout 1.5s ease-in-out';
-        setInterval(() => {
-            message.style.display = 'none'
-        }, 1400);
-    }
-});
+        }, 4000);
+}});
 
     window.addEventListener('scroll', ()=>{
         let scrolly = window.scrollY;
         if(scrolly > 710){
             infocontainer.style.display = 'block';
-            setTimeout(() => {
-                stackinfo.style.display = 'block';
-            }, 1000);
-            
+            message.style.display = 'none'
         }else{
-            
+            stackcontainer.style.display = 'none';
             infocontainer.style.display = 'none';
         }
     });
@@ -177,25 +205,24 @@ gamemode.addEventListener("click", () => {
     });
 
     stacks.addEventListener('click', () => {
-    if (stackcontainer.style.display === 'block') {
-        stackinfo.style.animation = 'fadeout 0.4s ease-out';
-        stackcontainer.style.animation = 'fadeout 0.4s ease-out';
-        setTimeout(() => {
-            stackinfo.style.display = 'none';
-            stackcontainer.style.display = 'none'
-        }, 500);
-    } else {
+        window.scrollTo({
+                top: 1800,
+                left: 0,
+                behavior: 'smooth'
+                });
+                
         stackcontainer.style.display = 'block';
         stackinfo.style.display = 'block';
-    }
+        infocontainer.style.display = 'block';
 });
 
 window.addEventListener('scroll', ()=>{
     let scrolly = window.scrollY;
-    if(scrolly >= 700){
+    if(scrolly >= 1400){
         setTimeout(() => {
             stackcontainer.style.display = 'block';
-            }, 4000);
+            stackinfo.style.display = 'block';
+            }, 500);
     }
 })
 
@@ -242,6 +269,8 @@ window.addEventListener("scroll", ()=>{
 
 
 document.addEventListener("keydown",(event)=>{
+
+
     if(event.key == "A" || event.key == "a" || event.key == "D" || event.key == "d"){
         keycontainer.style.animation = "fadeout 1s ease-in-out forwards";
     }
