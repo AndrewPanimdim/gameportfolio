@@ -25,15 +25,122 @@
 
 #cover {
     position: absolute;
-    top: 130%;
+    top: 100%;
     left: 0%;
     width: 100%;
     background-color:rgb(22, 22, 22) ;
-    height: 200%;
+    height: 380%;
     animation: cover 5s linear;
     animation-timeline:view();
     animation-range: entry 0% cover 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
+.Projects {
+    position: absolute;
+    top:35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10vw;
+    font-size: clamp(1.5rem, 2vh, 4rem);
+    color: orange;
+
+    
+}
+
+.Projects div {
+    text-align: center;
+    transition: 
+        text-shadow 0.5s cubic-bezier(0.4,0,0.2,1),
+        transform 0.5s cubic-bezier(0.4,0,0.2,1);
+    cursor: pointer;
+    animation: appearright 5s linear;
+    animation-timeline:view();
+    animation-range: entry 0% cover 44%;
+
+}
+
+.Projects div:hover {
+    text-shadow: 5px 5px 10px rgb(0, 0, 0);
+    transform: scale(2);
+
+}
+
+.Projects div a {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+.Projects div:hover a {
+    opacity: 1;
+}
+
+
+#boxcontainer {
+    background-color: rgba(9, 9, 9, 0);
+    position: absolute;
+    top: 97%;
+    left: 10%;
+    width: 80%;
+    height: 3%;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    font-size: clamp(0.2rem, calc(0.7rem + 0.8vw), 1.2rem);
+    flex-wrap: wrap; /* allow wrap on smaller screens */
+    gap: 5%;
+    color: rgba(118, 117, 117, 0.552);
+    border-radius: 20;
+}
+
+#boxcontainer div {
+
+    flex-grow: 1;
+    transition: background-color 0.3s, color 0.3s, flex-grow 0.6s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    font-family: bungee;
+    transition: 0.8s;
+    animation: slidedown 5s ease-in-out;
+
+}
+
+#boxcontainer div a {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.8em;
+    font-family: arial;
+    font-size: 0.5rem;
+}
+
+#boxcontainer div:hover {
+    color: white;
+    flex-grow: 10;
+    border-radius: 1vw;
+    background-color: rgb(53, 53, 53);
+    scale: 1.5;
+}
+
+#boxcontainer div:hover a {
+    opacity: 1;
+}
+
+
 
 
 

@@ -121,6 +121,12 @@ webmode.addEventListener("click", () => {
       clearInterval(moveInterval);
     }
   }, 100); 
+
+  projects.addEventListener('click', ()=>{
+          window.location.href = "https://andrewpanimdim.github.io/gameportfolio/projects.html";   
+  });
+
+
 });
 
 
