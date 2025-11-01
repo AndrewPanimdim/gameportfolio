@@ -67,13 +67,13 @@ if (isMobile()) {
         setTimeout(() => {
             info1.style.top = '60%'
             info1.style.display = 'block'
-        }, 3500); 
+        }, 2500); 
 
         setTimeout(() => {
             aboutme.style.top = '45%';
             aboutme.style.left =  '33%';
             aboutme.style.display = 'block';
-        }, 2000); 
+        }, 1500); 
 
         setTimeout(() => {
             stacks.style.display = 'flex';
@@ -81,7 +81,7 @@ if (isMobile()) {
 
             stacks.style.opacity = 1;
             projects.style.opacity = 1;
-        }, 3800);
+        }, 3000);
 
         infocontainer.style.display = 'block';
 
@@ -482,4 +482,5 @@ if (isMobile()) {
     });
 
 } 
+
 

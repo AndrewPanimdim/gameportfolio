@@ -473,7 +473,7 @@ body {
 #js, #py, #ht, #cs {
     display: flex;
     height: 10%;
-    top:240%;
+    top:160%;
 }
 
 #js {
@@ -483,7 +483,7 @@ body {
 
 #py{
     width: 25%;
-    top: 260%;
+    top: 180%;
     left: 8%;
 }
 
@@ -492,6 +492,10 @@ body {
     font-size: 4vw;
     width:80%;
     left: 10%;
+}
+
+#stackinfo {
+    animation: fadein 1s ease-in-out;
 }
 
 #certificates {
