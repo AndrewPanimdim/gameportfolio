@@ -23,9 +23,26 @@
     font-size: 12vw;
 }
 
+#return {
+    position: fixed;
+    bottom: 5%;
+    color: grey;
+    animation: sliderightleft 2s infinite;
+    left: -2;
+
+}
+
+#scroll {
+    color: grey;
+    position: fixed;
+    bottom: 2%;
+    left: 47%;
+    animation: bouncing 3s infinite;
+}
+
 #cover {
     position: absolute;
-    top: 100%;
+    top: 20%;
     left: 0%;
     width: 100%;
     background-color:rgb(22, 22, 22) ;
@@ -149,9 +166,17 @@
 
 
 
+@keyframes bouncing {
+    from {transform: translateY(0);}
+    50% {transform: translateY(-20px);}
+    to {transform: translateY(0);}
+}
 
-
-
+@keyframes sliderightleft {
+    from {transform: translateX(0);}
+    50% {transform: translateX(40px);}
+    to {transform: translateX(0);}
+}
 
 @keyframes slideleft {
     from {transform: translate(100%);}
