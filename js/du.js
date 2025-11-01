@@ -55,12 +55,12 @@ if (isMobile()) {
     
     if (aboutme) {
         setTimeout(() => {
-            info1.style.top = '120%'
+            info1.style.top = '60%'
             info1.style.display = 'block'
         }, 3500); 
 
         setTimeout(() => {
-            aboutme.style.top = '105%';
+            aboutme.style.top = '45%';
             aboutme.style.left =  '33%';
             aboutme.style.display = 'block';
         }, 4000); 
@@ -421,8 +421,3 @@ if (isMobile()) {
 
 } 
 
-window.addEventListener('resize', () => {
-    if (isMobile()) {
-        location.reload(); // Reload page when switching to mobile
-    }
-});
