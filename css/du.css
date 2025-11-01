@@ -434,10 +434,17 @@ body {
     right: 2%;
 }
 
+#info1 {
+    font-size: 3vw;
+    width: 100%;
+    left: 10%;
+}
+
 #aboutme {
-    top: 40%;
+    top: 90%;
     display: block;
     opacity: 1;
+    font-size: 8vw;
 }
 
 #JavaScript, #CSS {

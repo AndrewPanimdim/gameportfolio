@@ -45,9 +45,7 @@ function isMobile() {
     return window.innerWidth <= 568;
 }
 
-// STOP ALL CODE IF MOBILE
 if (isMobile()) {
-    // Mobile-only display settings
     if (weight) weight.style.display = "block";
     if (minime) minime.style.display = "none";
     if (keycontainer) keycontainer.style.display = "none";
@@ -55,15 +53,21 @@ if (isMobile()) {
     if (seemore2) seemore2.style.display = "none";
     if (message) message.style.display = "none";
     if (aboutme) {
-        aboutme.style.top = '20%';
-        aboutme.style.display = 'block';
+        setTimeout(() => {
+            info1.style.top = '60%'
+            info1.style.display = 'block'
+        }, 2500); 
+
+        setTimeout(() => {
+            aboutme.style.top = '45%';
+            aboutme.style.left =  '33%';
+            aboutme.style.display = 'block';
+        }, 2000); 
+        
+        
     }
     
-    // Stop all code execution here - nothing below this runs on mobile
 } else {
-    // ==========================================
-    // ALL DESKTOP CODE BELOW - ONLY RUNS ON DESKTOP
-    // ==========================================
     
     gamemode.style.display = "block";
     webmode.style.display = "block";
@@ -241,7 +245,7 @@ if (isMobile()) {
         });
 
         projects.addEventListener('click',()=>{
-            if (!allowProjectAnimation) return; // stop if in webmode
+            if (!allowProjectAnimation) return; 
 
                 const interval = setInterval(() => {
                 pos += 4;
@@ -414,11 +418,10 @@ if (isMobile()) {
         }
     });
 
-} // END OF DESKTOP-ONLY CODE
+} 
 
-// Handle window resize
 window.addEventListener('resize', () => {
     if (isMobile()) {
-        location.reload(); // Reload page when switching to mobile
+        location.reload(); 
     }
 });
