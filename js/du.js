@@ -136,9 +136,13 @@ if (isMobile()) {
 
         window.addEventListener('scroll',()=>{
             let scrolly = window.scrollY;
-            if(scrolly >= 400){
+            if(scrolly >= 120){
+                aboutme.style.animation = 'animation: fadein 2s ease-in-out;';
                 aboutme.style.display = 'block';
-                info1.style.display = 'block';
+                setTimeout(() => {
+                    info1.style.display = 'block';
+            },  1500);
+                
             }if(scrolly >= 800){
             stackinfo.style.display = 'block';
             setTimeout(() => {
@@ -146,7 +150,7 @@ if (isMobile()) {
                 ht.style.display = 'flex';
                 js.style.display = 'flex';
                 py.style.display = 'flex';
-            },  500);
+            },  1000);
             }
         });
 

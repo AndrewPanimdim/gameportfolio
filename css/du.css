@@ -474,7 +474,8 @@ body {
     height: 8%;
     top: 85%;
     position: fixed;
-    background-color:rgba(46, 46, 46, 0.234);   
+    background-color:rgba(46, 46, 46, 0.234);  
+    z-index: 10000; 
 }
 
 #abmebutton {
@@ -505,12 +506,14 @@ body {
 #js {
     width: 35%;
     left: 55%;
+    animation: slideright 1s ease-in-out;
 }
 
 #py{
     width: 25%;
     top: 380%;
     left: 8%;
+    animation: slideright 2.5s ease-in-out;
 }
 
 #stackinfo {
@@ -531,11 +534,13 @@ body {
 #ht {
     width: 20%;
     left: 28%;
+    animation: slideright 1.5s ease-in-out;
 }
 
 #cs{
      width: 20%;
      left: 5%;
+     animation: slideright 2s ease-in-out;
 }
 
 
