@@ -131,10 +131,15 @@ if (isMobile()) {
         });
         
 
+        
+
 
         window.addEventListener('scroll',()=>{
             let scrolly = window.scrollY;
-            if(scrolly >= 800){
+            if(scrolly >= 400){
+                aboutme.style.display = 'block';
+                info1.style.display = 'block';
+            }if(scrolly >= 800){
             stackinfo.style.display = 'block';
             setTimeout(() => {
                 cs.style.display = 'flex';
@@ -504,9 +509,9 @@ if (isMobile()) {
 } 
 
 //window.addEventListener('resize', () => {
-  //  if (isMobile()) {
-    //    location.reload(); // Reload page when switching to mobile
-    //}
+//    if (isMobile()) {
+//        location.reload(); // Reload page when switching to mobile
+//    }
 //});
 
 
