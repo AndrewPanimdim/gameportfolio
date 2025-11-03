@@ -36,6 +36,7 @@ const py = document.getElementById('py');
 const js = document.getElementById('js');
 const cs= document.getElementById('cs');
 const ht = document.getElementById('ht');
+const java = document.getElementById('java');
 const stackcontainer = document.getElementById('stackscontainer');
 const stackinfo = document.getElementById('stackinfo');
 const seemore2 = document.getElementById('seemore2');
@@ -43,6 +44,7 @@ const seeprojects = document.getElementById('seeprojects');
 
 const aboutmebutton = document.getElementById('abmebutton');
 const contact = document.getElementById('contact');
+
 
 function isMobile() {
     return window.innerWidth <= 568;
@@ -61,6 +63,7 @@ if (isMobile()) {
         ht.style.display = 'none';
         js.style.display = 'none';
         py.style.display = 'none';
+        java.style.display = 'none';
         stacks.style.display = 'none';
         projects.style.display = 'none';
         aboutme.style.display = 'none';
@@ -73,10 +76,22 @@ if (isMobile()) {
         aboutme.style.left =  '33%';
         contact.style.display = 'flex'
         stackinfo.style.display = 'none';
+        java.style.display = 'none';
+        
+
+        boxcontainer.style.top = '360%';
 
         aboutmebutton.style.display = 'flex';
 
         infocontainer.style.display = 'block';
+
+        contact.addEventListener('click', ()=>{
+            window.scrollTo({
+                    top: 3200,
+                    left: 0,
+                    behavior: 'smooth'
+                    });
+        });
 
         setTimeout(() => {
             stacks.style.display = 'flex';
@@ -104,7 +119,7 @@ if (isMobile()) {
 
         stacks.addEventListener('click', ()=>{
             window.scrollTo({
-                    top: 1300,
+                    top: 1200,
                     left: 0,
                     behavior: 'smooth'
                     });
@@ -116,6 +131,7 @@ if (isMobile()) {
                 ht.style.display = 'flex';
                 js.style.display = 'flex';
                 py.style.display = 'flex';
+                java.style.display = 'flex';
             },  1000);
         });
 
@@ -124,10 +140,12 @@ if (isMobile()) {
 
         projects.addEventListener('click',()=>{
             window.scrollTo({
-                    top: 1500,
+                    top: 10,
                     left: 0,
                     behavior: 'smooth'
                     });
+                    window.location.href = "https://andrewpanimdim.github.io/gameportfolio/projects.html";   
+
         });
         
 
@@ -150,6 +168,7 @@ if (isMobile()) {
                 ht.style.display = 'flex';
                 js.style.display = 'flex';
                 py.style.display = 'flex';
+                java.style.display = 'flex';
             },  1000);
             }
         });
@@ -514,7 +533,7 @@ if (isMobile()) {
 
 //window.addEventListener('resize', () => {
 //    if (isMobile()) {
-//        location.reload(); // Reload page when switching to mobile
+//        location.reload(); 
 //    }
 //});
 

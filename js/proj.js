@@ -2,6 +2,22 @@ const minime = document.getElementById("minime");
 let pos = 10;
 let stationary_status = true;
 
+
+
+
+
+function isMobile() {
+    return window.innerWidth <= 568;
+}
+
+if (isMobile()) {
+
+}
+
+
+
+
+
 setInterval(() => {
     document.body.style.backgroundColor = 'black';
     document.body.style.transition = '4s';
