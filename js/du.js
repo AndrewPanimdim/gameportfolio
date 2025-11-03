@@ -41,7 +41,8 @@ const stackinfo = document.getElementById('stackinfo');
 const seemore2 = document.getElementById('seemore2');
 const seeprojects = document.getElementById('seeprojects');
 
-
+const aboutmebutton = document.getElementById('abmebutton');
+const contact = document.getElementById('contact');
 
 function isMobile() {
     return window.innerWidth <= 568;
@@ -64,16 +65,18 @@ if (isMobile()) {
         projects.style.display = 'none';
         aboutme.style.display = 'none';
         stackinfo.style.display = 'none';
-        setTimeout(() => {
-            info1.style.top = '60%'
-            info1.style.display = 'block'
-        }, 2500); 
+        stacks.style.position = 'fixed';
+        projects.style.position = 'fixed';
+        stacks.innerText = 'Stacks';
+        info1.style.top = '130%'
+        aboutme.style.top = '115%';
+        aboutme.style.left =  '33%';
+        contact.style.display = 'flex'
+        stackinfo.style.display = 'none';
 
-        setTimeout(() => {
-            aboutme.style.top = '45%';
-            aboutme.style.left =  '33%';
-            aboutme.style.display = 'block';
-        }, 1500); 
+        aboutmebutton.style.display = 'flex';
+
+        infocontainer.style.display = 'block';
 
         setTimeout(() => {
             stacks.style.display = 'flex';
@@ -81,27 +84,42 @@ if (isMobile()) {
 
             stacks.style.opacity = 1;
             projects.style.opacity = 1;
-        }, 3000);
+        }, 1000);
 
-        infocontainer.style.display = 'block';
 
-        stacks.innerText = 'Stacks';
-        stacks.addEventListener('click',()=>{
+       
+        aboutmebutton.addEventListener('click',()=>{
             window.scrollTo({
                     top: 700,
                     left: 0,
                     behavior: 'smooth'
                     });
             stackinfo.style.display = 'block';
-            
+            aboutme.style.display = 'block';
+            info1.style.display = 'block'    
+        });
+
+
+
+
+        stacks.addEventListener('click', ()=>{
+            window.scrollTo({
+                    top: 1300,
+                    left: 0,
+                    behavior: 'smooth'
+                    });
+        
+            stackinfo.style.display = 'block';
+
             setTimeout(() => {
                 cs.style.display = 'flex';
                 ht.style.display = 'flex';
                 js.style.display = 'flex';
                 py.style.display = 'flex';
             },  1000);
-        
         });
+
+
 
 
         projects.addEventListener('click',()=>{
@@ -112,9 +130,11 @@ if (isMobile()) {
                     });
         });
         
+
+
         window.addEventListener('scroll',()=>{
             let scrolly = window.scrollY;
-            if(scrolly >= 400){
+            if(scrolly >= 800){
             stackinfo.style.display = 'block';
             setTimeout(() => {
                 cs.style.display = 'flex';
@@ -482,5 +502,11 @@ if (isMobile()) {
     });
 
 } 
+
+//window.addEventListener('resize', () => {
+  //  if (isMobile()) {
+    //    location.reload(); // Reload page when switching to mobile
+    //}
+//});
 
 

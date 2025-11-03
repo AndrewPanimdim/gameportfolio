@@ -137,7 +137,7 @@ body {
     animation: fadein 5s ease-in-out;
     z-index: 999;
 }
-#stacks, #projects, #certificates{
+#stacks, #projects, #certificates, #abmebutton, #contact{
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -147,7 +147,7 @@ body {
     transition: 0.5s ease-in-out;
 }
 
-#stacks:hover, #projects:hover, #certificates:hover {
+#stacks:hover, #projects:hover, #certificates:hover, #abmebutton:hover, #contact:hover {
     scale: 1.5;
     color: rgb(0, 0, 0);
 }
@@ -373,8 +373,9 @@ body {
     display: none;
 }
 
-
-
+#abmebutton, #contact {
+    display: none;
+}
 
 /* Animations */
 
@@ -428,6 +429,12 @@ body {
 
 
 @media (max-width: 568px) {
+
+#stacks:hover, #projects:hover, #certificates:hover, #abmebutton:hover, #contact:hover {
+    scale: 1.1;
+    color: orange;
+}
+    
 #Hello {
     font-size: 10vw;
     top: 2%;
@@ -456,24 +463,41 @@ body {
 
 #stacks {
     top: 85%;
-    width: 30%;
+    width: 20%;
+    left: 28%;
+    background-color: rgb(26, 120, 243);
+}
+
+#abmebutton, #contact, #projects, #stacks {
+    font-size: 3vw;
     height: 8%;
-    left: 15%;
-    font-size: 3.5vw;
+    top: 85%;
+    position: fixed;
+    background-color:rgba(46, 46, 46, 0.234);   
+}
+
+#abmebutton {
+    width: 20%;
+    left: 5%;
+    animation: slideright 1s ease-in-out;
+}
+
+#contact {
+    width: 19%;
+    left: 51%;
+    animation: slideright 1s ease-in-out;
 }
 
 #projects {
     top: 85%;
-    height: 8%;
-    left: 50%;
-    width: 40%;
-    font-size: 3.5vw;
+    left: 73%;
+    width: 22%;
 }
 
 #js, #py, #ht, #cs {
     display: flex;
     height: 10%;
-    top:160%;
+    top:360%;
 }
 
 #js {
@@ -483,12 +507,12 @@ body {
 
 #py{
     width: 25%;
-    top: 180%;
+    top: 380%;
     left: 8%;
 }
 
 #stackinfo {
-    top: 100%;
+    top: 300%;
     font-size: 4vw;
     width:80%;
     left: 10%;
