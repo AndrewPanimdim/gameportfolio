@@ -466,7 +466,7 @@ body {
     width: 20%;
     left: 28%;
     background-color: rgb(26, 120, 243);
-    animation: slideright 1.5s ease-in-out;
+    animation: slideright 2.5s ease-in-out;
 }
 
 #abmebutton, #contact, #projects, #stacks {
@@ -481,20 +481,20 @@ body {
 #abmebutton {
     width: 20%;
     left: 5%;
-    animation: slideright 1s ease-in-out;
+    animation: slideright 2s ease-in-out;
 }
 
 #contact {
     width: 19%;
     left: 51%;
-    animation: slideright 2s ease-in-out;
+    animation: slideright 3s ease-in-out;
 }
 
 #projects {
     top: 85%;
     left: 73%;
     width: 22%;
-    animation: slideright 2.5s ease-in-out;
+    animation: slideright 4s ease-in-out;
 }
 
 #js, #py, #ht, #cs {
