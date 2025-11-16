@@ -4,6 +4,7 @@ let posx = 0
 let stationary_status = true;
 let moveright = false;
 let moveleft = false;
+let facingright = true;
 
 const keycontainer = document.getElementById("keycontainer");
 const akey = document.getElementById("a");
@@ -47,14 +48,21 @@ const seeprojects = document.getElementById('seeprojects');
 const aboutmebutton = document.getElementById('abmebutton');
 const contact = document.getElementById('contact');
 
-// Update minime animation based on movement status
+// Update minime animation based on movement status AND facing direction
 function updateMinimeAnimation() {
     if (stationary_status) {
-        minime.src = "character/standing.gif";
+        // When stationary, show standing based on facing direction
+        if (facingright) {
+            minime.src = "character/standing.gif";
+        } else {
+            minime.src = "character/standingleft.gif";
+        }
     } else if (moveleft) {
         minime.src = "character/runningleft.gif";
+        facingright = false;
     } else if (moveright) {
         minime.src = "character/runningright.gif";
+        facingright = true;
     }
 }
 
@@ -167,7 +175,7 @@ if (isMobile()) {
         window.addEventListener('scroll',()=>{
             let scrolly = window.scrollY;
             if(scrolly >= 120){
-                aboutme.style.animation = 'animation: fadein 2s ease-in-out;';
+                aboutme.style.animation = 'fadein 2s ease-in-out';
                 aboutme.style.display = 'block';
                 setTimeout(() => {
                     info1.style.display = 'block';
@@ -472,7 +480,7 @@ if (isMobile()) {
             moveright = false;
             stationary_status = false;
             updateMinimeAnimation();
-            
+                
             if(pos <= -2){
                 pos = -2;
                 weight.style.display = 'block';
@@ -566,10 +574,4 @@ if (isMobile()) {
         }
     });
 
-} 
-
-//window.addEventListener('resize', () => {
-  //  if (isMobile()) {
-    //    location.reload(); 
-    //}
-//});
+}
