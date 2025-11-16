@@ -2,6 +2,8 @@ const minime = document.getElementById("minime");
 let pos = 40;
 let posx = 0
 let stationary_status = true;
+let moveright = false;
+let moveleft = false;
 
 const keycontainer = document.getElementById("keycontainer");
 const akey = document.getElementById("a");
@@ -45,6 +47,16 @@ const seeprojects = document.getElementById('seeprojects');
 const aboutmebutton = document.getElementById('abmebutton');
 const contact = document.getElementById('contact');
 
+// Update minime animation based on movement status
+function updateMinimeAnimation() {
+    if (stationary_status) {
+        minime.src = "character/standing.gif";
+    } else if (moveleft) {
+        minime.src = "character/runningleft.gif";
+    } else if (moveright) {
+        minime.src = "character/runningright.gif";
+    }
+}
 
 function isMobile() {
     return window.innerWidth <= 568;
@@ -179,7 +191,7 @@ if (isMobile()) {
     }
     
 } else {
-    
+
     gamemode.style.display = "block";
     webmode.style.display = "block";
     gamemode.style.color = "rgba(76, 74, 74, 1)";
@@ -243,11 +255,16 @@ if (isMobile()) {
         if (pos > -2) {
           pos -= 2; 
           minime.style.left = pos + "%";
-          minime.src = "character/runningleft.gif";
+          moveleft = true;
+          moveright = false;
+          stationary_status = false;
+          updateMinimeAnimation();
         } else {
           pos = -2;
           minime.style.left = pos + "%";
-            minime.src = "character/standing.gif";
+          moveleft = false;
+          stationary_status = true;
+          updateMinimeAnimation();
           clearInterval(moveInterval);
         }
       }, 100);
@@ -322,15 +339,24 @@ if (isMobile()) {
         if (pos < 40) {
           pos += 2; 
           minime.style.left = pos + "%";
-          minime.src = "character/runningright.gif";
+          moveright = true;
+          moveleft = false;
+          stationary_status = false;
+          updateMinimeAnimation();
         } else if(pos > 40){
             pos -=2;
             minime.style.left = pos + "%";
-            minime.src = "character/runningleft.gif";
+            moveleft = true;
+            moveright = false;
+            stationary_status = false;
+            updateMinimeAnimation();
         } else {
           pos = 40;
           minime.style.left = pos + "%";
-            minime.src = "character/standing.gif";
+          moveright = false;
+          moveleft = false;
+          stationary_status = true;
+          updateMinimeAnimation();
           clearInterval(moveIntervalcenter);
         }
       }, 100);  
@@ -361,7 +387,10 @@ if (isMobile()) {
                 const interval = setInterval(() => {
                 pos += 4;
                 minime.style.left = pos + '%';
-                minime.src = "character/runningright.gif";
+                moveright = true;
+                moveleft = false;
+                stationary_status = false;
+                updateMinimeAnimation();
 
                 if (pos >= 96) {
                 clearInterval(interval);
@@ -439,8 +468,11 @@ if (isMobile()) {
         if(event.key === "A" || event.key === "a"){
             pos -= 2;
             minime.style.left = pos + "%";
-            minime.src = "character/runningleft.gif";
+            moveleft = true;
+            moveright = false;
             stationary_status = false;
+            updateMinimeAnimation();
+            
             if(pos <= -2){
                 pos = -2;
                 weight.style.display = 'block';
@@ -484,8 +516,11 @@ if (isMobile()) {
         else if(event.key === "D" || event.key === "d"){
             pos += 2;
             minime.style.left = pos + "%";
-            minime.src = "character/runningright.gif";
+            moveright = true;
+            moveleft = false;
             stationary_status = false;
+            updateMinimeAnimation();
+            
             if(pos >= 94){
                 pos = 94;
                 window.location.href = "https://andrewpanimdim.github.io/gameportfolio/projects.html";
@@ -525,16 +560,16 @@ if (isMobile()) {
     document.addEventListener("keyup", (event)=>{
         if(['a','d','A','D'].includes(event.key)){
             stationary_status = true;
-            minime.src = "character/standing.gif";
+            moveright = false;
+            moveleft = false;
+            updateMinimeAnimation();
         }
     });
 
 } 
 
 //window.addEventListener('resize', () => {
-//    if (isMobile()) {
-//        location.reload(); 
-//    }
+  //  if (isMobile()) {
+    //    location.reload(); 
+    //}
 //});
-
-
