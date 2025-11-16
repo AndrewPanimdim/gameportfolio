@@ -20,8 +20,8 @@
 
 @keyframes entryanimation {
     0% {opacity: 0; transform: translateY(-80%) scale(0.5);}
-    50% {opacity: 1; transform: translateY(0%) scale(9);}
-    80% {opacity: 1; transform: translateY(0%) scale(12);}
+    50% {opacity: 1; transform: translateY(0%) scale(14);}
+    80% {opacity: 1; transform: translateY(0%) scale(10);}
     90% {opacity: 1; transform: translateY(0%) scale(30);}
     100% {opacity: 0; transform: translateY(40%) scale(0.5);}
 }
