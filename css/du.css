@@ -7,6 +7,27 @@
     z-index: 100;
 }
 
+#entry {
+    background-color: rgb(41, 208, 208);
+    top: 45%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: entryanimation 4.5s ease-in-out;
+    border-radius: 25px;
+    padding: 0% 0.5%;
+}
+
+@keyframes entryanimation {
+    0% {opacity: 0; transform: translateY(-80%) scale(0.5);}
+    50% {opacity: 1; transform: translateY(0%) scale(9);}
+    80% {opacity: 1; transform: translateY(0%) scale(9);}
+    90% {opacity: 1; transform: translateY(0%) scale(30);}
+    100% {opacity: 0; transform: translateY(40%) scale(0.5);}
+}
+
+
+
 #Hello {
     position: absolute;
     top: 15%;
@@ -65,7 +86,7 @@
     background-color: yellow;
     width: 12vw;
     height: 6vh;
-    animation: slideright 3s ease-in-out;
+    animation: slideright 11s ease-in-out;
 }
 
 #keycontainer {

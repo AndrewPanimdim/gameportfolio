@@ -6,6 +6,10 @@ let moveright = false;
 let moveleft = false;
 let facingright = true;
 
+const hello = document.getElementById("Hello");
+const HTML = document.getElementById("HTML");
+const CSS = document.getElementById("CSS");
+const JavaScript = document.getElementById("JS");
 const keycontainer = document.getElementById("keycontainer");
 const akey = document.getElementById("a");
 const dkey = document.getElementById("d");
@@ -47,11 +51,89 @@ const seeprojects = document.getElementById('seeprojects');
 
 const aboutmebutton = document.getElementById('abmebutton');
 const contact = document.getElementById('contact');
+const entry = document.getElementById('entry'); 
 
-// Update minime animation based on movement status AND facing direction
+
+    setInterval(()=>{
+    entry.style.display = 'none';
+    }, 4500);
+
+const originalDisplays = {
+    hello: hello ? (hello.style.display || 'block') : 'block',
+    HTML: HTML ? (HTML.style.display || 'block') : 'block',
+    CSS: CSS ? (CSS.style.display || 'block') : 'block',
+    JavaScript: JavaScript ? (JavaScript.style.display || 'block') : 'block',
+    body: document.body.style.display || 'block',
+    minime: minime ? (minime.style.display || 'block') : 'block',
+    keycontainer: keycontainer ? (keycontainer.style.display || 'flex') : 'flex',
+    akey: akey ? (akey.style.display || 'inline-flex') : 'inline-flex',
+    dkey: dkey ? (dkey.style.display || 'inline-flex') : 'inline-flex',
+    bio: bio ? (bio.style.display || 'flex') : 'flex',
+    aboutme: aboutme ? (aboutme.style.display || 'none') : 'none',
+    option: option ? (option.style.display || 'block') : 'block',
+    gamemode: gamemode ? (gamemode.style.display || 'flex') : 'flex',
+    webmode: webmode ? (webmode.style.display || 'flex') : 'flex',
+    weight: weight ? (weight.style.display || 'none') : 'none',
+    seemore: seemore ? (seemore.style.display || 'none') : 'none',
+    info1: info1 ? (info1.style.display || 'none') : 'none',
+    seeproj: seeproj ? (seeproj.style.display || 'none') : 'none',
+    stacks: stacks ? (stacks.style.display || 'flex') : 'flex',
+    certificates: certificates ? (certificates.style.display || 'flex') : 'flex',
+    projects: projects ? (projects.style.display || 'flex') : 'flex',
+    infocontainer: infocontainer ? (infocontainer.style.display || 'none') : 'none',
+    boxcontainer: boxcontainer ? (boxcontainer.style.display || 'flex') : 'flex',
+    message: message ? (message.style.display || 'none') : 'none',
+    py: py ? (py.style.display || 'flex') : 'flex',
+    js: js ? (js.style.display || 'flex') : 'flex',
+    cs: cs ? (cs.style.display || 'flex') : 'flex',
+    ht: ht ? (ht.style.display || 'flex') : 'flex',
+    java: java ? (java.style.display || 'none') : 'none',
+    stackcontainer: stackcontainer ? (stackcontainer.style.display || 'none') : 'none',
+    stackinfo: stackinfo ? (stackinfo.style.display || 'none') : 'none',
+    seemore2: seemore2 ? (seemore2.style.display || 'block') : 'block',
+    seeprojects: seeprojects ? (seeprojects.style.display || 'block') : 'block',
+    aboutmebutton: aboutmebutton ? (aboutmebutton.style.display || 'none') : 'none',
+    contact: contact ? (contact.style.display || 'none') : 'none'
+};
+
+document.body.style.backgroundColor = "black";
+if (hello) hello.style.display = 'none';
+if (HTML) HTML.style.display = 'none';
+if (CSS) CSS.style.display = 'none';
+if (JavaScript) JavaScript.style.display = 'none';
+if (minime) minime.style.display = 'none';
+if (keycontainer) keycontainer.style.display = 'none';
+if (akey) akey.style.display = 'none';
+if (dkey) dkey.style.display = 'none';
+if (bio) bio.style.display = 'none';
+if (aboutme) aboutme.style.display = 'none';
+if (option) option.style.display = 'none';
+if (gamemode) gamemode.style.display = 'none';
+if (webmode) webmode.style.display = 'none';
+if (weight) weight.style.display = 'none';
+if (seemore) seemore.style.display = 'none';
+if (info1) info1.style.display = 'none';
+if (seeproj) seeproj.style.display = 'none';
+if (stacks) stacks.style.display = 'none';
+if (certificates) certificates.style.display = 'none';
+if (projects) projects.style.display = 'none';
+if (infocontainer) infocontainer.style.display = 'none';
+if (boxcontainer) boxcontainer.style.display = 'none';
+if (message) message.style.display = 'none';
+if (py) py.style.display = 'none';
+if (js) js.style.display = 'none';
+if (cs) cs.style.display = 'none';
+if (ht) ht.style.display = 'none';
+if (java) java.style.display = 'none';
+if (stackcontainer) stackcontainer.style.display = 'none';
+if (stackinfo) stackinfo.style.display = 'none';
+if (seemore2) seemore2.style.display = 'none';
+if (seeprojects) seeprojects.style.display = 'none';
+if (aboutmebutton) aboutmebutton.style.display = 'none';
+if (contact) contact.style.display = 'none';
+
 function updateMinimeAnimation() {
     if (stationary_status) {
-        // When stationary, show standing based on facing direction
         if (facingright) {
             minime.src = "character/standing.gif";
         } else {
@@ -69,6 +151,42 @@ function updateMinimeAnimation() {
 function isMobile() {
     return window.innerWidth <= 568;
 }
+setTimeout(() => {
+    document.body.style.display = originalDisplays.body;
+    if (hello) hello.style.display = originalDisplays.hello;
+    if (HTML) HTML.style.display = originalDisplays.HTML;
+    if (CSS) CSS.style.display = originalDisplays.CSS;
+    if (JavaScript) JavaScript.style.display = originalDisplays.JavaScript;
+    if (minime) minime.style.display = originalDisplays.minime;
+    if (keycontainer) keycontainer.style.display = originalDisplays.keycontainer;
+    if (akey) akey.style.display = originalDisplays.akey;
+    if (dkey) dkey.style.display = originalDisplays.dkey;
+    if (bio) bio.style.display = originalDisplays.bio;
+    if (aboutme) aboutme.style.display = originalDisplays.aboutme;
+    if (option) option.style.display = originalDisplays.option;
+    if (gamemode) gamemode.style.display = originalDisplays.gamemode;
+    if (webmode) webmode.style.display = originalDisplays.webmode;
+    if (weight) weight.style.display = originalDisplays.weight;
+    if (seemore) seemore.style.display = originalDisplays.seemore;
+    if (info1) info1.style.display = originalDisplays.info1;
+    if (seeproj) seeproj.style.display = originalDisplays.seeproj;
+    if (stacks) stacks.style.display = originalDisplays.stacks;
+    if (certificates) certificates.style.display = originalDisplays.certificates;
+    if (projects) projects.style.display = originalDisplays.projects;
+    if (infocontainer) infocontainer.style.display = originalDisplays.infocontainer;
+    if (boxcontainer) boxcontainer.style.display = originalDisplays.boxcontainer;
+    if (message) message.style.display = originalDisplays.message;
+    if (py) py.style.display = originalDisplays.py;
+    if (js) js.style.display = originalDisplays.js;
+    if (cs) cs.style.display = originalDisplays.cs;
+    if (ht) ht.style.display = originalDisplays.ht;
+    if (java) java.style.display = originalDisplays.java;
+    if (stackcontainer) stackcontainer.style.display = originalDisplays.stackcontainer;
+    if (stackinfo) stackinfo.style.display = originalDisplays.stackinfo;
+    if (seemore2) seemore2.style.display = originalDisplays.seemore2;
+    if (seeprojects) seeprojects.style.display = originalDisplays.seeprojects;
+    if (aboutmebutton) aboutmebutton.style.display = originalDisplays.aboutmebutton;
+    if (contact) contact.style.display = originalDisplays.contact;
 
 if (isMobile()) {
     if (weight) weight.style.display = "block";
@@ -97,6 +215,7 @@ if (isMobile()) {
         contact.style.display = 'flex'
         stackinfo.style.display = 'none';
         java.style.display = 'none';
+        entry.style.display = 'none';
         
 
         boxcontainer.style.top = '360%';
@@ -199,6 +318,10 @@ if (isMobile()) {
     }
     
 } else {
+
+    setInterval(()=>{
+    entry.style.display = 'none';
+    }, 4500);
 
     gamemode.style.display = "block";
     webmode.style.display = "block";
@@ -575,3 +698,5 @@ if (isMobile()) {
     });
 
 }
+
+}, 5000); // 5 SECOND DELAY
