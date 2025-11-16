@@ -8,22 +8,21 @@
 }
 
 #entry {
-    background-color: rgb(41, 208, 208);
+    background-color: rgba(255, 255, 255, 0.499);
     top: 45%;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 49%;
     animation: entryanimation 5.5s ease-in-out;
     border-radius: 25px;
     padding: 0% 0.5%;
 }
 
 @keyframes entryanimation {
-    0% {opacity: 0; transform: translateY(-80%) scale(0.5);}
-    50% {opacity: 1; transform: translateY(0%) scale(4);}
-    75% {opacity: 1; transform: translateY(0%) scale(3);}
-    85% {opacity: 1; transform: translateY(0%) scale(30);}
-    100% {opacity: 0; transform: translateY(40%) scale(0.5);}
+    0% {opacity: 0; transform: translateY(-80%) scale(0.5);background-color: rgb(235, 68, 26); box-shadow: rgba(0, 200, 255, 0.626);}
+    50% {opacity: 1; transform: translateY(0%) scale(4);background-color: rgba(239, 133, 237, 0.908); box-shadow: rgba(0, 200, 255, 0.626);}
+    75% {opacity: 1; transform: translateY(0%) scale(3); background-color: rgb(136, 221, 221); box-shadow: rgba(0, 200, 255, 0.626);}
+    85% {opacity: 1; transform: translateY(0%) scale(30);background-color: rgb(230, 147, 64); box-shadow: rgba(0, 200, 255, 0.626);}
+    100% {opacity: 0; transform: translateY(40%) scale(0.5);background-color: rgb(170, 60, 60); box-shadow: rgba(0, 200, 255, 0.626);}
 }
 
 
@@ -407,6 +406,33 @@ body {
 #abmebutton, #contact {
     display: none;
 }
+
+
+
+
+#map-container {
+    display: none;
+    position: absolute;
+    top: 158%;  
+    left: 11%;
+    width: 80%;
+    text-align: center;
+    animation: fadein 2s ease-in-out;
+}
+
+#map-container h2 {
+    font-size: 3vw;
+    margin-bottom: 20px;
+    font-family: 'oswald';
+}
+
+#map-container iframe {
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+
 
 /* Animations */
 

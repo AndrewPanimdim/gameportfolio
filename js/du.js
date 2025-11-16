@@ -26,6 +26,7 @@ const weight = document.getElementById("weight");
 const seemore = document.getElementById("seemore");
 const info1 = document.getElementById('info1');
 const seeproj = document.getElementById('seeproj');
+const map = document.getElementById('map-container');
 
 const stacks = document.getElementById('stacks');
 const certificates = document.getElementById('certificates');
@@ -59,6 +60,7 @@ const entry = document.getElementById('entry');
     }, 5500);
 
 const originalDisplays = {
+    map: map ? (map.style.display || 'block') : 'block',
     hello: hello ? (hello.style.display || 'block') : 'block',
     HTML: HTML ? (HTML.style.display || 'block') : 'block',
     CSS: CSS ? (CSS.style.display || 'block') : 'block',
@@ -97,6 +99,7 @@ const originalDisplays = {
 };
 
 document.body.style.backgroundColor = "black";
+if (map) map.style.display = 'none';
 if (hello) hello.style.display = 'none';
 if (HTML) HTML.style.display = 'none';
 if (CSS) CSS.style.display = 'none';
@@ -153,6 +156,7 @@ function isMobile() {
 }
 setTimeout(() => {
     document.body.style.display = originalDisplays.body;
+    if (map) map.style.display = originalDisplays.map;
     if (hello) hello.style.display = originalDisplays.hello;
     if (HTML) HTML.style.display = originalDisplays.HTML;
     if (CSS) CSS.style.display = originalDisplays.CSS;
@@ -195,7 +199,7 @@ if (isMobile()) {
     if (option) option.style.display = "none";
     if (seemore2) seemore2.style.display = "none";
     if (message) message.style.display = "none";
-    
+    if (map) map.style.display = "none";
     if (aboutme) {
         cs.style.display = 'none';
         ht.style.display = 'none';
@@ -298,6 +302,7 @@ if (isMobile()) {
                 aboutme.style.display = 'block';
                 setTimeout(() => {
                     info1.style.display = 'block';
+                    map.style.display = 'block';
             },  1500);
                 
             }if(scrolly >= 800){
@@ -321,11 +326,12 @@ if (isMobile()) {
 
     setInterval(()=>{
     entry.style.display = 'none';
-    }, 5500);
+    }, 5600);
 
     gamemode.style.display = "block";
     webmode.style.display = "block";
     gamemode.style.color = "rgba(76, 74, 74, 1)";
+    map.style.display = 'none';
 
     setTimeout(() => {
         gamemode.click();
@@ -578,6 +584,7 @@ if (isMobile()) {
             aboutme.style.display = "block";
             setTimeout(() => {
                 info1.style.display = 'block';
+                map.style.display = 'block';
             }, 500);
             
         }else if(scrollY < 50){
