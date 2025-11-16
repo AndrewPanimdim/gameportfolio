@@ -127,7 +127,6 @@ if (py) py.style.display = 'none';
 if (js) js.style.display = 'none';
 if (cs) cs.style.display = 'none';
 if (ht) ht.style.display = 'none';
-if (java) java.style.display = 'none';
 if (stackcontainer) stackcontainer.style.display = 'none';
 if (stackinfo) stackinfo.style.display = 'none';
 if (seemore2) seemore2.style.display = 'none';
@@ -184,7 +183,6 @@ setTimeout(() => {
     if (js) js.style.display = originalDisplays.js;
     if (cs) cs.style.display = originalDisplays.cs;
     if (ht) ht.style.display = originalDisplays.ht;
-    if (java) java.style.display = originalDisplays.java;
     if (stackcontainer) stackcontainer.style.display = originalDisplays.stackcontainer;
     if (stackinfo) stackinfo.style.display = originalDisplays.stackinfo;
     if (seemore2) seemore2.style.display = originalDisplays.seemore2;
@@ -205,7 +203,6 @@ if (isMobile()) {
         ht.style.display = 'none';
         js.style.display = 'none';
         py.style.display = 'none';
-        java.style.display = 'none';
         stacks.style.display = 'none';
         projects.style.display = 'none';
         aboutme.style.display = 'none';
@@ -218,7 +215,6 @@ if (isMobile()) {
         aboutme.style.left =  '33%';
         contact.style.display = 'flex'
         stackinfo.style.display = 'none';
-        java.style.display = 'none';
         entry.style.display = 'none';
         
 
