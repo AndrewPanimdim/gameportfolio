@@ -1,7 +1,9 @@
 const minime = document.getElementById("minime");
-let pos = 10;
+let pos = 80;
 let stationary_status = true;
-
+let moveleft = false;
+let moveright = false;
+let facingright = true;
 
 
 
@@ -24,31 +26,56 @@ setInterval(() => {
     document.body.style.color = 'white';
 },100);
 
-document.addEventListener("keydown", (event)=>{
-    if(event.key === "A" || event.key === "a"){
-        pos -= 2;
-        minime.style.left = pos + "%";
+
+function updateMinimeAnimation() {
+    if (stationary_status) {
+        minime.src = facingright 
+            ? "character/standing.gif" 
+            : "character/standingleft.gif";
+    } 
+    else if (moveleft) {
         minime.src = "character/runningleft.gif";
+        facingright = false;
+    } 
+    else if (moveright) {
+        minime.src = "character/runningright.gif";
+        facingright = true;
+    }
+}
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "A" || event.key === "a") {
+        pos -= 2;
+        moveleft = true;
+        moveright = false;
         stationary_status = false;
-        if(pos <= -8){
+        updateMinimeAnimation();
+
+        if (pos <= -8) {
             pos = -8;
             window.location.href = "https://andrewpanimdim.github.io/gameportfolio/";
         }
-    }
-    else if(event.key === "D" || event.key === "d"){
+    } 
+    else if (event.key === "D" || event.key === "d") {
         pos += 2;
-        minime.style.left = pos + "%";
-        minime.src = "character/runningright.gif";
+        moveright = true;
+        moveleft = false;
         stationary_status = false;
-        if(pos >= 85){
-            pos = 85;
+        updateMinimeAnimation();
+
+        if (pos >= 85) {
+            pos = 85; // right wall
         }
     }
+
+    minime.style.left = pos + "%";
 });
 
-document.addEventListener("keyup", (event)=>{
-    if(['a','d','A','D'].includes(event.key)){
+document.addEventListener("keyup", (event) => {
+    if (['a','A','d','D'].includes(event.key)) {
         stationary_status = true;
-        minime.src = "character/standing.gif";
+        moveleft = false;
+        moveright = false;
+        updateMinimeAnimation();
     }
 });

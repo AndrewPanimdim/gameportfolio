@@ -2,7 +2,7 @@
     height: 15%;
     position: fixed;
     top: 83%;
-    left: 10%;
+    left: 80%;
 }
 
 #background1 {
@@ -28,7 +28,8 @@
     bottom: 5%;
     color: grey;
     animation: sliderightleft 2s infinite;
-    left: -2;
+    left: -2%;
+    font-size: 0.8rem;
 
 }
 
