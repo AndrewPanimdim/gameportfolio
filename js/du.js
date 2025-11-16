@@ -62,8 +62,8 @@ const entry = document.getElementById('entry');
 const originalDisplays = {
     map: map ? (map.style.display || 'block') : 'block',
     hello: hello ? (hello.style.display || 'block') : 'block',
-    HTML: HTML ? (HTML.style.display || 'block') : 'block',
-    CSS: CSS ? (CSS.style.display || 'block') : 'block',
+    HTML: HTML ? (HTML.style.display || 'flex') : 'flex',
+    CSS: CSS ? (CSS.style.display || 'flex') : 'flex',
     JavaScript: JavaScript ? (JavaScript.style.display || 'block') : 'block',
     body: document.body.style.display || 'block',
     minime: minime ? (minime.style.display || 'block') : 'block',

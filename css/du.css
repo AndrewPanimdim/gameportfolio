@@ -141,7 +141,7 @@ body {
 
 #aboutme {
     position: absolute;
-    top: 120%;
+    top: 110%;
     left: 44%;
     font-size: 3.5vw;
     font-family: 'oswald';
@@ -223,7 +223,7 @@ body {
 
 #info1 {
     position:absolute;
-    top: 140%;
+    top: 130%;
     left: 35%;
     font-family: 'poppins';
     font-size: 1.3vw;
@@ -413,8 +413,8 @@ body {
 #map-container {
     display: none;
     position: absolute;
-    top: 158%;  
-    left: 11%;
+    top: 148%;  
+    left: 12%;
     width: 80%;
     text-align: center;
     animation: fadein 2s ease-in-out;
