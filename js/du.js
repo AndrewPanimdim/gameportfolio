@@ -56,7 +56,7 @@ const entry = document.getElementById('entry');
 
     setInterval(()=>{
     entry.style.display = 'none';
-    }, 4500);
+    }, 5500);
 
 const originalDisplays = {
     hello: hello ? (hello.style.display || 'block') : 'block',
@@ -321,7 +321,7 @@ if (isMobile()) {
 
     setInterval(()=>{
     entry.style.display = 'none';
-    }, 4500);
+    }, 5500);
 
     gamemode.style.display = "block";
     webmode.style.display = "block";
@@ -699,4 +699,4 @@ if (isMobile()) {
 
 }
 
-}, 5000); // 5 SECOND DELAY
+}, 6000); 

@@ -13,16 +13,16 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    animation: entryanimation 4.5s ease-in-out;
+    animation: entryanimation 5.5s ease-in-out;
     border-radius: 25px;
     padding: 0% 0.5%;
 }
 
 @keyframes entryanimation {
     0% {opacity: 0; transform: translateY(-80%) scale(0.5);}
-    50% {opacity: 1; transform: translateY(0%) scale(14);}
-    80% {opacity: 1; transform: translateY(0%) scale(10);}
-    90% {opacity: 1; transform: translateY(0%) scale(30);}
+    50% {opacity: 1; transform: translateY(0%) scale(4);}
+    75% {opacity: 1; transform: translateY(0%) scale(3);}
+    85% {opacity: 1; transform: translateY(0%) scale(30);}
     100% {opacity: 0; transform: translateY(40%) scale(0.5);}
 }
 
