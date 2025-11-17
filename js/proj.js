@@ -1,5 +1,5 @@
 const minime = document.getElementById("minime");
-let pos = 80;
+let pos = 20;
 let stationary_status = true;
 let moveleft = false;
 let moveright = false;

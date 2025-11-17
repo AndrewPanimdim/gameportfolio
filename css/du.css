@@ -8,13 +8,31 @@
 }
 
 #entry {
-    background-color: rgba(255, 255, 255, 0.499);
-    top: 45%;
+    width: 350px;
+    height: 12px;
+    background: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #444;
+    margin-bottom: 10px;
     position: absolute;
-    left: 49%;
-    animation: entryanimation 5.5s ease-in-out;
-    border-radius: 25px;
-    padding: 0% 0.5%;
+    top: 50%;
+    left: 40%;
+}
+
+#percent {
+    font-size: 20px;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+}
+
+#loading {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #007bff, #00d4ff);
+    transition: width 0.15s ease-out;
 }
 
 @keyframes entryanimation {
@@ -85,7 +103,7 @@
     background-color: yellow;
     width: 12vw;
     height: 6vh;
-    animation: slideright 11s ease-in-out;
+    animation: slideright 15s ease-in-out;
 }
 
 #keycontainer {
@@ -97,7 +115,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: fadein 4s ease-in-out;
+    animation: fadein 3s ease-in-out;
 
 }
 
@@ -306,7 +324,7 @@ body {
 #seeproj {
     position: fixed;
     top: 70%;
-    right: 1%;
+    left: 1%;
     display: none;
     
 }
@@ -385,6 +403,7 @@ body {
     animation: fadein 8s ease-in-out;
     position: fixed;
     bottom: 5%;
+    right: 2%;
     color: grey;
     font-size: 0.7vw;
 

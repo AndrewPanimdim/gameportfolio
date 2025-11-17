@@ -54,10 +54,48 @@ const aboutmebutton = document.getElementById('abmebutton');
 const contact = document.getElementById('contact');
 const entry = document.getElementById('entry'); 
 
+const loadingBar = document.getElementById('loading');
+const percent = document.getElementById('percent');
+let percentage = 0;
 
-    setInterval(()=>{
-    entry.style.display = 'none';
-    }, 5500);
+function startLoading() {  
+
+    if (percentage < 67) {
+        percentage++;
+        updateBar();
+        setTimeout(startLoading, 50);
+    }
+    else if (percentage === 67) {
+        updateBar();
+        setTimeout(() => {
+            percentage++;
+            finishLoading();
+        }, 1000);
+    }
+}
+
+function finishLoading() {
+    if (percentage <= 100) {
+        updateBar();
+        percentage++;
+        setTimeout(finishLoading, 80);
+    }
+}
+
+function updateBar() {
+    loadingBar.style.width = percentage + '%';
+    percent.innerText = percentage + '%';
+}
+
+startLoading();
+
+
+
+
+setInterval(()=>{
+entry.style.display = 'none';
+percent.style.display = 'none';
+}, 8000);
 
 const originalDisplays = {
     map: map ? (map.style.display || 'block') : 'block',
@@ -327,8 +365,7 @@ if (isMobile()) {
     gamemode.style.display = "block";
     webmode.style.display = "block";
     gamemode.style.color = "rgba(76, 74, 74, 1)";
-    map.style.display = 'none';
-
+    
     setTimeout(() => {
         gamemode.click();
     }, 100); 
@@ -436,7 +473,7 @@ if (isMobile()) {
 
     gamemode.addEventListener("click", () => {
         option.style.display = 'block';
-        keycontainer.style.animation = "fadein 8s ease-in-out forwards";
+        keycontainer.style.animation = "fadein 7s ease-in-out forwards";
         weight.style.display = "none";
         gamemode.style.color = "white";
         webmode.style.color = "grey"
@@ -450,6 +487,7 @@ if (isMobile()) {
         allowProjectAnimation = true;
         stackinfo.style.display = 'none';
         stackcontainer.style.display = 'none';
+        map.style.display = 'none';
 
         setTimeout(() => {
         seemore2.style.display = 'block';
@@ -607,16 +645,12 @@ if (isMobile()) {
             stationary_status = false;
             updateMinimeAnimation();
                 
-            if(pos <= -2){
-                pos = -2;
-                weight.style.display = 'block';
-                minime.style.position = 'fixed'
-                info1.style.display = 'block'
-                    window.scrollTo({
-                    top: 700,
-                    left: 0,
-                    behavior: 'smooth'
-                    });
+            if(pos <= -6){
+                pos = -6;
+                window.location.href = "https://andrewpanimdim.github.io/gameportfolio/projects.html";
+            
+            
+
                 currentScrollIndex++;
                 if(currentScrollIndex >= scrollpositions.length){
                     currentScrollIndex = 0;
@@ -625,7 +659,7 @@ if (isMobile()) {
             }
         }
 
-            if(pos > 60){
+            if(pos < 10){
                 document.body.classList.add("lightmode");
                 document.body.style.transition = "all 0.5s ease-in-out";
                 document.body.style.backgroundColor = "white";
@@ -634,8 +668,10 @@ if (isMobile()) {
                 setTimeout(() => {
                     seeproj.style.display = 'block';
                 }, 400);
+                
+                seeproj.style.animation = 'slideleftright 1s infinite';
                 }
-            if(pos < 60){
+            if(pos > 10){
                     document.body.classList.remove("lightmode");
                     document.body.style.transition = "all 0.5s ease-in-out";
                     document.body.style.backgroundColor = "rgb(9, 9, 9)";
@@ -655,12 +691,19 @@ if (isMobile()) {
             stationary_status = false;
             updateMinimeAnimation();
             
-            if(pos >= 94){
-                pos = 94;
-                window.location.href = "https://andrewpanimdim.github.io/gameportfolio/projects.html";
-            }
+            if(pos >= 90){
+                pos = 90;
+                weight.style.display = 'block';
+                minime.style.position = 'fixed'
+                info1.style.display = 'block'
+                    window.scrollTo({
+                    top: 700,
+                    left: 0,
+                    behavior: 'smooth'
+                    });
+                }
 
-            if(pos > 60){
+            if(pos < 10){
                 document.body.classList.add("lightmode");
                 document.body.style.transition = "all 0.5s ease-in-out";
                 document.body.style.backgroundColor = "white";
@@ -670,9 +713,7 @@ if (isMobile()) {
                     seeproj.style.display = 'block';
                 }, 400);
                 
-                seeproj.style.animation = 'slideleftright 1s infinite';
-            }
-            if(pos < 60){
+            }if(pos > 10){
                 document.body.classList.remove("lightmode");
                 document.body.style.transition = "all 0.5s ease-in-out";
                 document.body.style.backgroundColor = "rgb(9, 9, 9)";
@@ -681,6 +722,8 @@ if (isMobile()) {
                     setTimeout(() => {
                     seeproj.style.display = 'none';
                 }, 400);
+
+                
             }
 
         }
@@ -702,4 +745,4 @@ if (isMobile()) {
 
 }
 
-}, 6000); 
+}, 8000); 
