@@ -6,6 +6,7 @@ let moveright = false;
 let moveleft = false;
 let facingright = true;
 
+const mylocation = document.getElementById("mylocation");
 const hello = document.getElementById("Hello");
 const HTML = document.getElementById("HTML");
 const CSS = document.getElementById("CSS");
@@ -53,7 +54,7 @@ const seeprojects = document.getElementById('seeprojects');
 const aboutmebutton = document.getElementById('abmebutton');
 const contact = document.getElementById('contact');
 const entry = document.getElementById('entry'); 
-
+const projectshow = document.getElementById('projectshow');
 const loadingBar = document.getElementById('loading');
 const percent = document.getElementById('percent');
 let percentage = 0;
@@ -98,6 +99,8 @@ percent.style.display = 'none';
 }, 8000);
 
 const originalDisplays = {
+    projectshow: projectshow ? (projectshow.style.display || 'block') : 'block',
+    mylocation: mylocation ? (mylocation.style.display || 'block') : 'block',
     map: map ? (map.style.display || 'block') : 'block',
     hello: hello ? (hello.style.display || 'block') : 'block',
     HTML: HTML ? (HTML.style.display || 'flex') : 'flex',
@@ -137,6 +140,8 @@ const originalDisplays = {
 };
 
 document.body.style.backgroundColor = "black";
+if(projectshow) projectshow.style.display = 'none';
+if(mylocation) mylocation.style.display = 'none';
 if (map) map.style.display = 'none';
 if (hello) hello.style.display = 'none';
 if (HTML) HTML.style.display = 'none';
@@ -192,6 +197,8 @@ function isMobile() {
     return window.innerWidth <= 568;
 }
 setTimeout(() => {
+    if(projectshow) projectshow.style.display = originalDisplays.projectshow;
+    if (mylocation) mylocation.style.display = originalDisplays.mylocation;
     document.body.style.display = originalDisplays.body;
     if (map) map.style.display = originalDisplays.map;
     if (hello) hello.style.display = originalDisplays.hello;
@@ -404,6 +411,8 @@ if (isMobile()) {
         seemore2.style.opacity = 0;
         seemore2.style.display = 'none';
         message.style.display = 'none';
+        mylocation.style.display = 'block';
+        projects.style.display = 'none';
         
         
         setInterval(()=>{
@@ -484,6 +493,10 @@ if (isMobile()) {
         stackinfo.style.display = 'none';
         stackcontainer.style.display = 'none';
         map.style.display = 'none';
+        mylocation.style.display = 'none';
+        projectshow.style.display = 'none';
+        clearInterval(moveInterval);
+
 
         setTimeout(() => {
         seemore2.style.display = 'block';
