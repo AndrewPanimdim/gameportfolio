@@ -422,22 +422,22 @@ if (isMobile()) {
         clearInterval(moveInterval);
 
         moveInterval = setInterval(() => {
-        if (pos > -2) {
-          pos -= 2; 
-          minime.style.left = pos + "%";
-          moveleft = true;
-          moveright = false;
-          stationary_status = false;
-          updateMinimeAnimation();
-        } else {
-          pos = -2;
-          minime.style.left = pos + "%";
-          moveleft = false;
-          stationary_status = true;
-          updateMinimeAnimation();
-          clearInterval(moveInterval);
-        }
-      }, 100);
+    if (pos < 90) {
+        pos += 2; 
+        minime.style.left = pos + "%";
+        moveright = true;
+        moveleft = false;
+        stationary_status = false;
+        updateMinimeAnimation();
+    } else {
+        pos = 90;
+        minime.style.left = pos + "%";
+        moveright = false;
+        stationary_status = true;
+        updateMinimeAnimation();
+        clearInterval(moveInterval);
+    }
+}, 100);
 
       projects.addEventListener('click', ()=>{
               window.location.href = "https://andrewpanimdim.github.io/gameportfolio/projects.html";   
@@ -466,10 +466,6 @@ if (isMobile()) {
         
 
     });
-
-
-
-
 
     gamemode.addEventListener("click", () => {
         option.style.display = 'block';
