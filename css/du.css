@@ -234,15 +234,16 @@ body {
     animation: slideright 2s ease-in-out;
 }
 #game-mode, #web-mode {
-    display: flex;
-   align-items: center;
+    display: none;
+    align-items: center;
     justify-content: center;
     border-radius: 15px;
     font-size: 1vw;
     cursor: pointer;
     transition: 0.3s;
-    color: grey;
+    color: rgb(72, 72, 72);
     z-index: 999;
+    
 }
 
 
@@ -266,14 +267,16 @@ body {
 
 #infocontainer{
     display: none;
+    z-index: 99;
 }
+
 
 
 
 #boxcontainer {
     background-color: rgb(9, 9, 9);
     position: absolute;
-    top: 500%;
+    top: 350%;
     left: 10%;
     width: 80%;
     height: 12%;

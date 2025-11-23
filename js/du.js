@@ -94,9 +94,6 @@ function updateBar() {
 
 startLoading();
 
-
-
-
 setInterval(()=>{
 entry.style.display = 'none';
 percent.style.display = 'none';
@@ -127,7 +124,6 @@ const originalDisplays = {
     stacks: stacks ? (stacks.style.display || 'flex') : 'flex',
     certificates: certificates ? (certificates.style.display || 'flex') : 'flex',
     projects: projects ? (projects.style.display || 'flex') : 'flex',
-    infocontainer: infocontainer ? (infocontainer.style.display || 'none') : 'none',
     boxcontainer: boxcontainer ? (boxcontainer.style.display || 'flex') : 'flex',
     message: message ? (message.style.display || 'none') : 'none',
     py: py ? (py.style.display || 'flex') : 'flex',
@@ -167,7 +163,6 @@ if (seeproj) seeproj.style.display = 'none';
 if (stacks) stacks.style.display = 'none';
 if (certificates) certificates.style.display = 'none';
 if (projects) projects.style.display = 'none';
-if (infocontainer) infocontainer.style.display = 'none';
 if (boxcontainer) boxcontainer.style.display = 'none';
 if (message) message.style.display = 'none';
 if (py) py.style.display = 'none';
@@ -200,6 +195,7 @@ function updateMinimeAnimation() {
 function isMobile() {
     return window.innerWidth <= 568;
 }
+
 setTimeout(() => {
     if(projectshow) projectshow.style.display = originalDisplays.projectshow;
     if (mylocation) mylocation.style.display = originalDisplays.mylocation;
@@ -271,7 +267,7 @@ if (isMobile()) {
 
         aboutmebutton.style.display = 'flex';
 
-        infocontainer.style.display = 'block';
+        infocontainer.style.display = 'none';
 
         contact.addEventListener('click', ()=>{
             window.scrollTo({
@@ -313,6 +309,7 @@ if (isMobile()) {
                     });
         
             stackinfo.style.display = 'block';
+            boxcontainer.style.position.top = '500%';
 
             setTimeout(() => {
                 cs.style.display = 'flex';
@@ -373,8 +370,8 @@ if (isMobile()) {
     entry.style.display = 'none';
     }, 5600);
 
-    gamemode.style.display = "block";
-    webmode.style.display = "block";
+    gamemode.style.display = "none";
+    webmode.style.display = "none";
     gamemode.style.color = "rgba(76, 74, 74, 1)";
     
     setTimeout(() => {
@@ -402,7 +399,7 @@ if (isMobile()) {
     });
 
 
-
+/*
 
     webmode.addEventListener("click", () => {
         gamemode.style.color = 'grey';
@@ -417,6 +414,8 @@ if (isMobile()) {
         message.style.display = 'none';
         mylocation.style.display = 'block';
         projects.style.display = 'none';
+        certificates.style.display = 'none';
+        stacks.style.display = 'none';
         
         
         setInterval(()=>{
@@ -461,24 +460,61 @@ if (isMobile()) {
             if(scrolly > 710){
                 infocontainer.style.display = 'block';
                 message.style.display = 'none'
-            }else{
-                stackcontainer.style.display = 'none';
-                infocontainer.style.display = 'none';
             }
         });
 
-        window.addEventListener('scroll', ()=>{
-        let scrolly = window.scrollY;
-        if(scrolly <= 650){
-            message.style.display = 'block'
-            setTimeout(() => {
-                message.style.animation = 'bouncing 3s infinite';
-            }, 2000);
-        }});
-
         
+    window.addEventListener('scroll', () => {
+    const scrolly = window.scrollY;
 
+    // Show message below 650px
+    if (scrolly <= 650) {
+        message.style.display = 'block';
+        
+        setTimeout(() => {
+            message.style.animation = 'bouncing 3s infinite';
+        }, 4000);
+    }
+
+    // Show info container at > 720px
+    if (scrolly > 720) {
+        infocontainer.style.display = 'block';
+        projectshow.style.display = 'block';
+        certificates.style.display = 'block';
+        message.style.display = 'none';
+    }
+
+    
+});
+        
+// Move the stacks listener OUTSIDE the gamemode listener (after the gamemode block closes)
+stacks.addEventListener('click', () => {
+    window.scrollTo({
+        top: 1800,
+        left: 0,
+        behavior: 'smooth'
     });
+    
+    stackcontainer.style.display = 'block';
+    stackinfo.style.display = 'block';
+    infocontainer.style.display = 'block';
+});
+
+// Also add listeners for other elements that should work independently
+certificates.addEventListener('click', () => {
+    window.scrollTo({
+        top: 2500,
+        left: 0,
+        behavior: 'smooth'
+    });
+    stackinfo.style.display = 'block';
+});
+
+projects.addEventListener('click', () => {
+    window.location.href = "https://andrewpanimdim.github.io/gameportfolio/projects.html";
+});
+
+    }); */
 
     gamemode.addEventListener("click", () => {
         option.style.display = 'block';
@@ -492,14 +528,27 @@ if (isMobile()) {
         seemore.style.display = 'none';
         info1.style.display = 'none';
         message.style.display = 'none'
-        infocontainer.style.display = 'none';
         allowProjectAnimation = true;
         stackinfo.style.display = 'none';
         stackcontainer.style.display = 'none';
         map.style.display = 'none';
         mylocation.style.display = 'none';
         projectshow.style.display = 'none';
+        stacks.style.display = 'none';
+        projects.style.display = 'none';
+        certificates.style.display = 'none';
+        stackinfo.style.display = 'none';
+        stackcontainer.style.display = 'none';
+        infocontainer.style.display = 'none';
+        certificates.style.display = 'none';
+        projectshow.style.display = 'none';
+        stacks.style.display = 'none';
+        aboutme.style.display = 'none';
+        infocontainer.style.display = 'none';
+
+
         clearInterval(moveInterval);
+    
 
 
         setTimeout(() => {
@@ -556,12 +605,12 @@ if (isMobile()) {
 
         window.addEventListener('scroll', ()=>{
             let scrolly = window.scrollY;
-            if(scrolly > 710){
+            if(scrolly > 720){
                 infocontainer.style.display = 'block';
+                projectshow.style.display = 'block';
+
+
                 message.style.display = 'none'
-            }else{
-                stackcontainer.style.display = 'none';
-                infocontainer.style.display = 'none';
             }
         });
 
@@ -584,33 +633,59 @@ if (isMobile()) {
 
         });
 
-        stacks.addEventListener('click', () => {
-            window.scrollTo({
-                    top: 1800,
-                    left: 0,
-                    behavior: 'smooth'
-                    });
-                    
-            stackcontainer.style.display = 'block';
-            stackinfo.style.display = 'block';
-            infocontainer.style.display = 'block';
-    });
 
-    window.addEventListener('scroll', ()=>{
-        let scrolly = window.scrollY;
-        if(scrolly >= 1400){
-            setTimeout(() => {
-                stackcontainer.style.display = 'block';
-                stackinfo.style.display = 'block';
-                }, 500);
-        }
-    })
-
-
+    
 
     });
 
+    stacks.addEventListener('click', () => {
+    window.scrollTo({
+        top: 1800,
+        left: 0,
+        behavior: 'smooth'
+    });
+    
+    stackcontainer.style.display = 'block';
+    stackinfo.style.display = 'block';
+    infocontainer.style.display = 'block';
+});
 
+
+certificates.addEventListener('click', () => {
+    window.scrollTo({
+        top: 2500,
+        left: 0,
+        behavior: 'smooth'
+    });
+    stackinfo.style.display = 'block';
+});
+
+projects.addEventListener('click', () => {
+    window.location.href = "https://andrewpanimdim.github.io/gameportfolio/projects.html";
+});
+    
+    window.addEventListener('scroll', () => {
+    const scrolly = window.scrollY;
+
+    if (scrolly <= 650) {
+        message.style.display = 'block';
+        
+        setTimeout(() => {
+            message.style.animation = 'bouncing 3s infinite';
+        }, 2000);
+    }
+
+    if (scrolly > 740) {
+        infocontainer.style.display = 'block';
+        projectshow.style.display = 'block';
+        certificates.style.display = 'block';
+        message.style.display = 'none';
+    }
+
+    if (scrolly <= 850) {
+        stackinfo.style.display = 'block';
+    }
+});
 
 
 
@@ -758,4 +833,4 @@ if (isMobile()) {
 
 }
 
-}, 5000); 
+}, 5000);
