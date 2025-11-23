@@ -64,22 +64,26 @@ function startLoading() {
     if (percentage < 67) {
         percentage++;
         updateBar();
-        setTimeout(startLoading, 50);
+        setTimeout(startLoading, 20);
     }
     else if (percentage === 67) {
         updateBar();
         setTimeout(() => {
             percentage++;
             finishLoading();
-        }, 1000);
+        }, 800);
     }
 }
 
 function finishLoading() {
-    if (percentage <= 100) {
+    if (percentage <= 99) {
         updateBar();
         percentage++;
-        setTimeout(finishLoading, 80);
+        setTimeout(finishLoading, 30);
+    }
+    if(percentage == 100){
+        percent.textContent = "Complete :)";
+        percent.style.left = "47%";
     }
 }
 
@@ -96,7 +100,7 @@ startLoading();
 setInterval(()=>{
 entry.style.display = 'none';
 percent.style.display = 'none';
-}, 8000);
+}, 4500);
 
 const originalDisplays = {
     projectshow: projectshow ? (projectshow.style.display || 'block') : 'block',
@@ -380,7 +384,7 @@ if (isMobile()) {
 
     setTimeout(() => {
         seemore2.style.animation = 'slideleftright 2s infinite';
-    }, 7900);
+    }, 2900);
 
 
     window.addEventListener('scroll', ()=>{
@@ -469,7 +473,7 @@ if (isMobile()) {
             message.style.display = 'block'
             setTimeout(() => {
                 message.style.animation = 'bouncing 3s infinite';
-            }, 4000);
+            }, 2000);
         }});
 
         
@@ -500,7 +504,7 @@ if (isMobile()) {
 
         setTimeout(() => {
         seemore2.style.display = 'block';
-        }, 6000);
+        }, 2000);
 
 
 
@@ -706,7 +710,7 @@ if (isMobile()) {
                 minime.style.position = 'fixed'
                 info1.style.display = 'block'
                     window.scrollTo({
-                    top: 700,
+                    top: 730,
                     left: 0,
                     behavior: 'smooth'
                     });
@@ -754,6 +758,4 @@ if (isMobile()) {
 
 }
 
-}, 8000); 
-
-
+}, 5000); 
