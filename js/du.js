@@ -834,3 +834,30 @@ projects.addEventListener('click', () => {
 }
 
 }, 5000);
+
+window.addEventListener('scroll', () => {
+    const scrolly = window.scrollY;
+    const STACK_THRESHOLD = 1500; // adjust to your desired trigger
+
+    if (scrolly >= STACK_THRESHOLD) {
+        // show stack container
+        if (stackcontainer) {
+            stackcontainer.style.display = 'block';
+            stackcontainer.style.animation = 'fadein 0.8s ease-in-out forwards';
+        }
+        if (stackinfo) {
+            stackinfo.style.display = 'block';
+            stackinfo.style.animation = 'fadein 0.8s ease-in-out forwards';
+        }
+    } else {
+        // hide when scrolling back above threshold
+        if (stackcontainer) {
+            stackcontainer.style.animation = 'fadeout 0.5s ease-in-out forwards';
+            setTimeout(() => { stackcontainer.style.display = 'none'; }, 500);
+        }
+        if (stackinfo) {
+            stackinfo.style.animation = 'fadeout 0.5s ease-in-out forwards';
+            setTimeout(() => { stackinfo.style.display = 'none'; }, 500);
+        }
+    }
+});
