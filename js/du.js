@@ -264,10 +264,10 @@ if (isMobile()) {
         
 
         boxcontainer.style.top = '360%';
-
+        
         aboutmebutton.style.display = 'flex';
 
-        infocontainer.style.display = 'none';
+        if (infocontainer) infocontainer.style.display = originalDisplays.infocontainer || 'block';
 
         contact.addEventListener('click', ()=>{
             window.scrollTo({
@@ -837,7 +837,7 @@ projects.addEventListener('click', () => {
 
 window.addEventListener('scroll', () => {
     const scrolly = window.scrollY;
-    const STACK_THRESHOLD = 1500; // adjust to your desired trigger
+    const STACK_THRESHOLD = 1400; // adjust to your desired trigger
 
     if (scrolly >= STACK_THRESHOLD) {
         // show stack container
@@ -853,11 +853,11 @@ window.addEventListener('scroll', () => {
         // hide when scrolling back above threshold
         if (stackcontainer) {
             stackcontainer.style.animation = 'fadeout 0.5s ease-in-out forwards';
-            setTimeout(() => { stackcontainer.style.display = 'none'; }, 500);
+            setTimeout(() => { stackcontainer.style.display = 'none'; }, 100);
         }
         if (stackinfo) {
             stackinfo.style.animation = 'fadeout 0.5s ease-in-out forwards';
-            setTimeout(() => { stackinfo.style.display = 'none'; }, 500);
+            setTimeout(() => { stackinfo.style.display = 'none'; }, 100);
         }
     }
 });
