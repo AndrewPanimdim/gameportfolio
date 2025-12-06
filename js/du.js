@@ -82,7 +82,7 @@ function finishLoading() {
         setTimeout(finishLoading, 30);
     }
     if(percentage == 100){
-        percent.textContent = "Complete :)";
+        percent.textContent = ":)";
         percent.style.left = "47%";
     }
 }
@@ -559,7 +559,7 @@ projects.addEventListener('click', () => {
 
         window.addEventListener('scroll', ()=>{
             let scrolly = window.scrollY;
-            if(scrolly > 100){
+            if(scrolly > 120){
                  seemore2.style.display = 'none';
                  seeprojects.style.display = 'none';
             }else{
