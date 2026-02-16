@@ -28,6 +28,7 @@ const seemore = document.getElementById("seemore");
 const info1 = document.getElementById('info1');
 const seeproj = document.getElementById('seeproj');
 const map = document.getElementById('map-container');
+const projectscontainer = document.getElementById('projectscontainer');
 
 const stacks = document.getElementById('stacks');
 const certificates = document.getElementById('certificates');
@@ -53,129 +54,19 @@ const seeprojects = document.getElementById('seeprojects');
 
 const aboutmebutton = document.getElementById('abmebutton');
 const contact = document.getElementById('contact');
-const entry = document.getElementById('entry'); 
 const projectshow = document.getElementById('projectshow');
-const loadingBar = document.getElementById('loading');
-const percent = document.getElementById('percent');
-let percentage = 0;
 
-function startLoading() {  
+// Debounced reload on window resize: reload once after resizing finishes
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        location.reload();
+    }, 200);
+});
 
-    if (percentage < 67) {
-        percentage++;
-        updateBar();
-        setTimeout(startLoading, 20);
-    }
-    else if (percentage === 67) {
-        updateBar();
-        setTimeout(() => {
-            percentage++;
-            finishLoading();
-        }, 800);
-    }
-}
-
-function finishLoading() {
-    if (percentage <= 99) {
-        updateBar();
-        percentage++;
-        setTimeout(finishLoading, 30);
-    }
-    if(percentage == 100){
-        percent.textContent = ":)";
-        percent.style.left = "47%";
-    }
-}
-
-function updateBar() {
-    loadingBar.style.width = percentage + '%';
-    percent.innerText = percentage + '%';
-}
-
-startLoading();
-
-setInterval(()=>{
-entry.style.display = 'none';
-percent.style.display = 'none';
-}, 4500);
-
-const originalDisplays = {
-    projectshow: projectshow ? (projectshow.style.display || 'block') : 'block',
-    mylocation: mylocation ? (mylocation.style.display || 'block') : 'block',
-    map: map ? (map.style.display || 'block') : 'block',
-    hello: hello ? (hello.style.display || 'block') : 'block',
-    HTML: HTML ? (HTML.style.display || 'flex') : 'flex',
-    CSS: CSS ? (CSS.style.display || 'flex') : 'flex',
-    JavaScript: JavaScript ? (JavaScript.style.display || 'block') : 'block',
-    body: document.body.style.display || 'block',
-    minime: minime ? (minime.style.display || 'block') : 'block',
-    keycontainer: keycontainer ? (keycontainer.style.display || 'flex') : 'flex',
-    akey: akey ? (akey.style.display || 'inline-flex') : 'inline-flex',
-    dkey: dkey ? (dkey.style.display || 'inline-flex') : 'inline-flex',
-    bio: bio ? (bio.style.display || 'flex') : 'flex',
-    aboutme: aboutme ? (aboutme.style.display || 'none') : 'none',
-    option: option ? (option.style.display || 'block') : 'block',
-    gamemode: gamemode ? (gamemode.style.display || 'flex') : 'flex',
-    webmode: webmode ? (webmode.style.display || 'flex') : 'flex',
-    weight: weight ? (weight.style.display || 'none') : 'none',
-    seemore: seemore ? (seemore.style.display || 'none') : 'none',
-    info1: info1 ? (info1.style.display || 'none') : 'none',
-    seeproj: seeproj ? (seeproj.style.display || 'none') : 'none',
-    stacks: stacks ? (stacks.style.display || 'flex') : 'flex',
-    certificates: certificates ? (certificates.style.display || 'flex') : 'flex',
-    projects: projects ? (projects.style.display || 'flex') : 'flex',
-    boxcontainer: boxcontainer ? (boxcontainer.style.display || 'flex') : 'flex',
-    message: message ? (message.style.display || 'none') : 'none',
-    py: py ? (py.style.display || 'flex') : 'flex',
-    js: js ? (js.style.display || 'flex') : 'flex',
-    cs: cs ? (cs.style.display || 'flex') : 'flex',
-    ht: ht ? (ht.style.display || 'flex') : 'flex',
-    java: java ? (java.style.display || 'none') : 'none',
-    stackcontainer: stackcontainer ? (stackcontainer.style.display || 'none') : 'none',
-    stackinfo: stackinfo ? (stackinfo.style.display || 'none') : 'none',
-    seemore2: seemore2 ? (seemore2.style.display || 'block') : 'block',
-    seeprojects: seeprojects ? (seeprojects.style.display || 'block') : 'block',
-    aboutmebutton: aboutmebutton ? (aboutmebutton.style.display || 'none') : 'none',
-    contact: contact ? (contact.style.display || 'none') : 'none'
-};
 
 document.body.style.backgroundColor = "black";
-if(projectshow) projectshow.style.display = 'none';
-if(mylocation) mylocation.style.display = 'none';
-if (map) map.style.display = 'none';
-if (hello) hello.style.display = 'none';
-if (HTML) HTML.style.display = 'none';
-if (CSS) CSS.style.display = 'none';
-if (JavaScript) JavaScript.style.display = 'none';
-if (minime) minime.style.display = 'none';
-if (keycontainer) keycontainer.style.display = 'none';
-if (akey) akey.style.display = 'none';
-if (dkey) dkey.style.display = 'none';
-if (bio) bio.style.display = 'none';
-if (aboutme) aboutme.style.display = 'none';
-if (option) option.style.display = 'none';
-if (gamemode) gamemode.style.display = 'none';
-if (webmode) webmode.style.display = 'none';
-if (weight) weight.style.display = 'none';
-if (seemore) seemore.style.display = 'none';
-if (info1) info1.style.display = 'none';
-if (seeproj) seeproj.style.display = 'none';
-if (stacks) stacks.style.display = 'none';
-if (certificates) certificates.style.display = 'none';
-if (projects) projects.style.display = 'none';
-if (boxcontainer) boxcontainer.style.display = 'none';
-if (message) message.style.display = 'none';
-if (py) py.style.display = 'none';
-if (js) js.style.display = 'none';
-if (cs) cs.style.display = 'none';
-if (ht) ht.style.display = 'none';
-if (stackcontainer) stackcontainer.style.display = 'none';
-if (stackinfo) stackinfo.style.display = 'none';
-if (seemore2) seemore2.style.display = 'none';
-if (seeprojects) seeprojects.style.display = 'none';
-if (aboutmebutton) aboutmebutton.style.display = 'none';
-if (contact) contact.style.display = 'none';
-
 function updateMinimeAnimation() {
     if (stationary_status) {
         if (facingright) {
@@ -195,45 +86,6 @@ function updateMinimeAnimation() {
 function isMobile() {
     return window.innerWidth <= 568;
 }
-
-setTimeout(() => {
-    if(projectshow) projectshow.style.display = originalDisplays.projectshow;
-    if (mylocation) mylocation.style.display = originalDisplays.mylocation;
-    document.body.style.display = originalDisplays.body;
-    if (map) map.style.display = originalDisplays.map;
-    if (hello) hello.style.display = originalDisplays.hello;
-    if (HTML) HTML.style.display = originalDisplays.HTML;
-    if (CSS) CSS.style.display = originalDisplays.CSS;
-    if (JavaScript) JavaScript.style.display = originalDisplays.JavaScript;
-    if (minime) minime.style.display = originalDisplays.minime;
-    if (keycontainer) keycontainer.style.display = originalDisplays.keycontainer;
-    if (akey) akey.style.display = originalDisplays.akey;
-    if (dkey) dkey.style.display = originalDisplays.dkey;
-    if (bio) bio.style.display = originalDisplays.bio;
-    if (aboutme) aboutme.style.display = originalDisplays.aboutme;
-    if (option) option.style.display = originalDisplays.option;
-    if (gamemode) gamemode.style.display = originalDisplays.gamemode;
-    if (webmode) webmode.style.display = originalDisplays.webmode;
-    if (weight) weight.style.display = originalDisplays.weight;
-    if (seemore) seemore.style.display = originalDisplays.seemore;
-    if (info1) info1.style.display = originalDisplays.info1;
-    if (seeproj) seeproj.style.display = originalDisplays.seeproj;
-    if (stacks) stacks.style.display = originalDisplays.stacks;
-    if (certificates) certificates.style.display = originalDisplays.certificates;
-    if (projects) projects.style.display = originalDisplays.projects;
-    if (infocontainer) infocontainer.style.display = originalDisplays.infocontainer;
-    if (boxcontainer) boxcontainer.style.display = originalDisplays.boxcontainer;
-    if (message) message.style.display = originalDisplays.message;
-    if (py) py.style.display = originalDisplays.py;
-    if (js) js.style.display = originalDisplays.js;
-    if (cs) cs.style.display = originalDisplays.cs;
-    if (ht) ht.style.display = originalDisplays.ht;
-    if (stackcontainer) stackcontainer.style.display = originalDisplays.stackcontainer;
-    if (stackinfo) stackinfo.style.display = originalDisplays.stackinfo;
-    if (seemore2) seemore2.style.display = originalDisplays.seemore2;
-    if (seeprojects) seeprojects.style.display = originalDisplays.seeprojects;
-    if (aboutmebutton) aboutmebutton.style.display = originalDisplays.aboutmebutton;
-    if (contact) contact.style.display = originalDisplays.contact;
 
 if (isMobile()) {
     if (weight) weight.style.display = "block";
@@ -261,7 +113,6 @@ if (isMobile()) {
         contact.style.display = 'flex'
         stackinfo.style.display = 'none';
         entry.style.display = 'none';
-        
 
         boxcontainer.style.top = '360%';
         
@@ -325,12 +176,11 @@ if (isMobile()) {
 
         projects.addEventListener('click',()=>{
             window.scrollTo({
-                    top: 10,
+                    top: 2500,
                     left: 0,
                     behavior: 'smooth'
                     });
-                    window.location.href = "https://andrewpanimdim.github.io/gameportfolio/projects.html";   
-
+                    
         });
         
 
@@ -363,20 +213,36 @@ if (isMobile()) {
         
         
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 } else {
 
-    setInterval(()=>{
-    entry.style.display = 'none';
-    }, 5600);
 
-    gamemode.style.display = "none";
-    webmode.style.display = "none";
-    gamemode.style.color = "rgba(76, 74, 74, 1)";
+
     
-    setTimeout(() => {
-        gamemode.click();
-    }, 100); 
+
+
+
+
+
+
+
+
+
+    
 
 
     setTimeout(() => {
@@ -398,123 +264,6 @@ if (isMobile()) {
         }
     });
 
-
-/*
-
-    webmode.addEventListener("click", () => {
-        gamemode.style.color = 'grey';
-        webmode.style.color = 'white';
-        keycontainer.style.animation = "fadeout 1s ease-in-out forwards";
-        weight.style.display = "block";
-        minime.style.position = "fixed";
-        seemore.style.display = "block";
-        seemore.style.animation = "fadein 1s ease-in-out forwards";
-        seemore2.style.opacity = 0;
-        seemore2.style.display = 'none';
-        message.style.display = 'none';
-        mylocation.style.display = 'block';
-        projects.style.display = 'none';
-        certificates.style.display = 'none';
-        stacks.style.display = 'none';
-        
-        
-        setInterval(()=>{
-            seemore.style.animation = "bouncing 1s infinite";
-        },1500);
-
-        window.addEventListener('scroll', ()=>{
-        let scrolly = window.scrollY
-        if(scrolly > 40){
-            seemore.style.animation = "fadeout 1s ease-in-out forwards";
-            setInterval(()=>{
-                seemore.style.display = "none";
-            },950);
-        }
-        });
-        clearInterval(moveInterval);
-
-        moveInterval = setInterval(() => {
-    if (pos < 90) {
-        pos += 2; 
-        minime.style.left = pos + "%";
-        moveright = true;
-        moveleft = false;
-        stationary_status = false;
-        updateMinimeAnimation();
-    } else {
-        pos = 90;
-        minime.style.left = pos + "%";
-        moveright = false;
-        stationary_status = true;
-        updateMinimeAnimation();
-        clearInterval(moveInterval);
-    }
-}, 100);
-
-      projects.addEventListener('click', ()=>{
-              window.location.href = "https://andrewpanimdim.github.io/gameportfolio/projects.html";   
-      });
-
-      window.addEventListener('scroll', ()=>{
-            let scrolly = window.scrollY;
-            if(scrolly > 710){
-                infocontainer.style.display = 'block';
-                message.style.display = 'none'
-            }
-        });
-
-        
-    window.addEventListener('scroll', () => {
-    const scrolly = window.scrollY;
-
-    // Show message below 650px
-    if (scrolly <= 650) {
-        message.style.display = 'block';
-        
-        setTimeout(() => {
-            message.style.animation = 'bouncing 3s infinite';
-        }, 4000);
-    }
-
-    // Show info container at > 720px
-    if (scrolly > 720) {
-        infocontainer.style.display = 'block';
-        projectshow.style.display = 'block';
-        certificates.style.display = 'block';
-        message.style.display = 'none';
-    }
-
-    
-});
-        
-// Move the stacks listener OUTSIDE the gamemode listener (after the gamemode block closes)
-stacks.addEventListener('click', () => {
-    window.scrollTo({
-        top: 1800,
-        left: 0,
-        behavior: 'smooth'
-    });
-    
-    stackcontainer.style.display = 'block';
-    stackinfo.style.display = 'block';
-    infocontainer.style.display = 'block';
-});
-
-// Also add listeners for other elements that should work independently
-certificates.addEventListener('click', () => {
-    window.scrollTo({
-        top: 2500,
-        left: 0,
-        behavior: 'smooth'
-    });
-    stackinfo.style.display = 'block';
-});
-
-projects.addEventListener('click', () => {
-    window.location.href = "https://andrewpanimdim.github.io/gameportfolio/projects.html";
-});
-
-    }); */
 
     gamemode.addEventListener("click", () => {
         option.style.display = 'block';
@@ -545,6 +294,7 @@ projects.addEventListener('click', () => {
         stacks.style.display = 'none';
         aboutme.style.display = 'none';
         infocontainer.style.display = 'none';
+        projectscontainer.style.display = 'none';
 
 
         clearInterval(moveInterval);
@@ -614,28 +364,6 @@ projects.addEventListener('click', () => {
             }
         });
 
-        projects.addEventListener('click',()=>{
-            if (!allowProjectAnimation) return; 
-
-                const interval = setInterval(() => {
-                pos += 4;
-                minime.style.left = pos + '%';
-                moveright = true;
-                moveleft = false;
-                stationary_status = false;
-                updateMinimeAnimation();
-
-                if (pos >= 96) {
-                clearInterval(interval);
-                window.location.href = "https://andrewpanimdim.github.io/gameportfolio/projects.html";
-                }
-            }, 100);
-
-        });
-
-
-    
-
     });
 
     stacks.addEventListener('click', () => {
@@ -661,7 +389,12 @@ certificates.addEventListener('click', () => {
 });
 
 projects.addEventListener('click', () => {
-    window.location.href = "https://andrewpanimdim.github.io/gameportfolio/projects.html";
+    window.scrollTo({
+        top: 2500,
+        left: 0,
+        behavior: 'smooth'
+    });
+
 });
     
     window.addEventListener('scroll', () => {
@@ -686,11 +419,6 @@ projects.addEventListener('click', () => {
         stackinfo.style.display = 'block';
     }
 });
-
-
-
-
-
 
     setInterval(()=>{
         akey.style.animation = "bouncing 1s ease-in-out infinite";
@@ -732,12 +460,14 @@ projects.addEventListener('click', () => {
             moveright = false;
             stationary_status = false;
             updateMinimeAnimation();
-                
+            
             if(pos <= -6){
                 pos = -6;
-                window.location.href = "https://andrewpanimdim.github.io/gameportfolio/projects.html";
-            
-            
+                window.scrollTo({
+                top: 2500,
+                left: 0,
+                behavior: 'smooth'
+            });
 
                 currentScrollIndex++;
                 if(currentScrollIndex >= scrollpositions.length){
@@ -746,8 +476,9 @@ projects.addEventListener('click', () => {
                     currentMinimeIndex = 0;
             }
         }
-
-            if(pos < 10){
+ 
+        if (pos < 10) {
+            if (weight.style.display === 'block') {
                 document.body.classList.add("lightmode");
                 document.body.style.transition = "all 0.5s ease-in-out";
                 document.body.style.backgroundColor = "white";
@@ -756,21 +487,26 @@ projects.addEventListener('click', () => {
                 setTimeout(() => {
                     seeproj.style.display = 'block';
                 }, 400);
-                
                 seeproj.style.animation = 'slideleftright 1s infinite';
-                }
-            if(pos > 10){
-                    document.body.classList.remove("lightmode");
-                    document.body.style.transition = "all 0.5s ease-in-out";
-                    document.body.style.backgroundColor = "rgb(9, 9, 9)";
-                    bio.style.color = "rgba(76, 74, 74, 1)";
-                    seeproj.style.animation = 'fadeout 0.5s ease-in-out';
-                    setTimeout(() => {
-                    seeproj.style.display = 'none';
-                    }, 400);
-                }
-            
+            }
         }
+
+        if (pos > 10) {
+            if (weight.style.display === 'block') {
+                document.body.classList.remove("lightmode");
+                document.body.style.transition = "all 0.5s ease-in-out";
+                document.body.style.backgroundColor = "rgb(9, 9, 9)";
+                bio.style.color = "rgba(76, 74, 74, 1)";
+                seeproj.style.animation = 'fadeout 0.5s ease-in-out';
+                setTimeout(() => {
+                    seeproj.style.display = 'none';
+                }, 400);
+            }
+        }
+
+        }
+
+
         else if(event.key === "D" || event.key === "d"){
             pos += 2;
             minime.style.left = pos + "%";
@@ -791,27 +527,30 @@ projects.addEventListener('click', () => {
                     });
                 }
 
-            if(pos < 10){
-                document.body.classList.add("lightmode");
-                document.body.style.transition = "all 0.5s ease-in-out";
-                document.body.style.backgroundColor = "white";
-                bio.style.color = "rgba(76, 74, 74, 1)";
-                seeproj.style.animation = 'fadein 0.5s ease-in-out';
-                setTimeout(() => {
-                    seeproj.style.display = 'block';
-                }, 400);
-                
-            }if(pos > 10){
-                document.body.classList.remove("lightmode");
-                document.body.style.transition = "all 0.5s ease-in-out";
-                document.body.style.backgroundColor = "rgb(9, 9, 9)";
-                bio.style.color = "rgba(76, 74, 74, 1)";
-                seeproj.style.animation = 'fadeout 0.5s ease-in-out';
+            if (pos < 10) {
+                if (weight.style.display === 'block') {
+                    document.body.classList.add("lightmode");
+                    document.body.style.transition = "all 0.5s ease-in-out";
+                    document.body.style.backgroundColor = "white";
+                    bio.style.color = "rgba(76, 74, 74, 1)";
+                    seeproj.style.animation = 'fadein 0.5s ease-in-out';
                     setTimeout(() => {
-                    seeproj.style.display = 'none';
-                }, 400);
+                        seeproj.style.display = 'block';
+                    }, 400);
+                }
+            }
 
-                
+            if (pos > 10) {
+                if (weight.style.display === 'block') {
+                    document.body.classList.remove("lightmode");
+                    document.body.style.transition = "all 0.5s ease-in-out";
+                    document.body.style.backgroundColor = "rgb(9, 9, 9)";
+                    bio.style.color = "rgba(76, 74, 74, 1)";
+                    seeproj.style.animation = 'fadeout 0.5s ease-in-out';
+                    setTimeout(() => {
+                        seeproj.style.display = 'none';
+                    }, 400);
+                }
             }
 
         }
@@ -833,14 +572,14 @@ projects.addEventListener('click', () => {
 
 }
 
-}, 5000);
+
 
 window.addEventListener('scroll', () => {
     const scrolly = window.scrollY;
-    const STACK_THRESHOLD = 1400; // adjust to your desired trigger
+    const STACK_THRESHOLD = 1400; 
 
     if (scrolly >= STACK_THRESHOLD) {
-        // show stack container
+        
         if (stackcontainer) {
             stackcontainer.style.display = 'block';
             stackcontainer.style.animation = 'fadein 0.8s ease-in-out forwards';
@@ -850,7 +589,7 @@ window.addEventListener('scroll', () => {
             stackinfo.style.animation = 'fadein 0.8s ease-in-out forwards';
         }
     } else {
-        // hide when scrolling back above threshold
+        
         if (stackcontainer) {
             stackcontainer.style.animation = 'fadeout 0.5s ease-in-out forwards';
             setTimeout(() => { stackcontainer.style.display = 'none'; }, 100);

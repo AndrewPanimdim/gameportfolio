@@ -7,44 +7,6 @@
     z-index: 100;
 }
 
-#entry {
-    width: 40%;
-    height: 12px;
-    background: #222;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid #444;
-    margin-bottom: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
-}
-
-#percent {
-    font-size: 20px;
-    letter-spacing: 1px;
-    position: absolute;
-    top: 60%;
-    left: 50%;
-}
-
-#loading {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(90deg, #ae00ffff, #5a0f69ff);
-    transition: width 0.15s ease-out;
-}
-
-@keyframes entryanimation {
-    0% {opacity: 0; transform: translateY(-80%) scale(0.5);background-color: rgb(235, 68, 26); box-shadow: rgba(0, 200, 255, 0.626);}
-    50% {opacity: 1; transform: translateY(0%) scale(4);background-color: rgba(239, 133, 237, 0.908); box-shadow: rgba(0, 200, 255, 0.626);}
-    75% {opacity: 1; transform: translateY(0%) scale(3); background-color: rgb(136, 221, 221); box-shadow: rgba(0, 200, 255, 0.626);}
-    85% {opacity: 1; transform: translateY(0%) scale(30);background-color: rgb(230, 147, 64); box-shadow: rgba(0, 200, 255, 0.626);}
-    100% {opacity: 0; transform: translateY(40%) scale(0.5);background-color: rgb(170, 60, 60); box-shadow: rgba(0, 200, 255, 0.626);}
-}
-
 #mylocation {
     position:absolute;
     top: 513%;
@@ -118,7 +80,7 @@
     background-color: yellow;
     width: 12vw;
     height: 6vh;
-    animation: slideright 10s ease-in-out;
+    animation: slideright 3s ease-in-out;
 }
 
 #keycontainer {
@@ -154,7 +116,7 @@
     position: absolute;
     top: 43%;
     left: 29%;
-    font-size: 0.8vw;
+    font-size: 0.9vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -443,6 +405,22 @@ body {
 #abmebutton, #contact {
     display: none;
 }
+
+
+#projectscontainer {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    width: 100%;
+    height: 40%;
+    background-color: blue;
+    opacity: 99999;
+    display: none;
+}
+
+
+
+
 
 
 
