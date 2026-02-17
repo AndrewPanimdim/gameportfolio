@@ -6,7 +6,7 @@ let moveright = false;
 let moveleft = false;
 let facingright = true;
 
-
+const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 const mylocation = document.getElementById("mylocation");
 const hello = document.getElementById("Hello");
@@ -401,14 +401,48 @@ projects.addEventListener('click', () => {
 });
 
 
+const infos = [
+    "Website 1:",
+    "second info",
+    "third info",
+    "fourth info"
+];
+
+let isRunning = false;
+
+async function startInfoLoop() {
+    if (isRunning) return;
+    isRunning = true;
+
+    while (true) {
+        for (let i = 0; i < infos.length; i++) {
+            if (projectscontainer.style.display !== 'block') {
+                isRunning = false;
+                return;
+            }
+            projectscontainer.textContent = infos[i];
+            await sleep(10000);
+        }
+    }
+}
+
 window.addEventListener('scroll', () => {
     const scrolly = window.scrollY;
-    if(scrolly >= 2170){
+
+    if (scrolly >= 2300) {
         projectscontainer.style.display = 'block';
-    }else{
+        startInfoLoop();
+    } else {
         projectscontainer.style.display = 'none';
+        isRunning = false;
     }
 });
+
+
+
+
+
+
 
     
     window.addEventListener('scroll', () => {
@@ -498,6 +532,7 @@ window.addEventListener('scroll', () => {
                 document.body.style.backgroundColor = "white";
                 bio.style.color = "rgba(76, 74, 74, 1)";
                 seeproj.style.animation = 'fadein 0.5s ease-in-out';
+                boxcontainer.style.color = 'black';
                 setTimeout(() => {
                     seeproj.style.display = 'block';
                 }, 400);
@@ -512,6 +547,7 @@ window.addEventListener('scroll', () => {
                 document.body.style.backgroundColor = "rgb(9, 9, 9)";
                 bio.style.color = "rgba(76, 74, 74, 1)";
                 seeproj.style.animation = 'fadeout 0.5s ease-in-out';
+                boxcontainer.style.color = 'rgba(186, 186, 186, 0.712)';
                 setTimeout(() => {
                     seeproj.style.display = 'none';
                 }, 400);
@@ -548,6 +584,7 @@ window.addEventListener('scroll', () => {
                     document.body.style.backgroundColor = "white";
                     bio.style.color = "rgba(76, 74, 74, 1)";
                     seeproj.style.animation = 'fadein 0.5s ease-in-out';
+                    boxcontainer.style.color = 'black';
                     setTimeout(() => {
                         seeproj.style.display = 'block';
                     }, 400);
@@ -561,6 +598,7 @@ window.addEventListener('scroll', () => {
                     document.body.style.backgroundColor = "rgb(9, 9, 9)";
                     bio.style.color = "rgba(76, 74, 74, 1)";
                     seeproj.style.animation = 'fadeout 0.5s ease-in-out';
+                    boxcontainer.style.color = 'rgba(186, 186, 186, 0.712)';
                     setTimeout(() => {
                         seeproj.style.display = 'none';
                     }, 400);
