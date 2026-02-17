@@ -236,7 +236,7 @@ body {
 
 
 #boxcontainer {
-    background-color: rgb(9, 9, 9);
+    background-color: rgba(9, 9, 9, 0);
     position: absolute;
     top: 450%;
     left: 10%;
@@ -409,13 +409,14 @@ body {
 
 #projectscontainer {
     position: absolute;
-    top: 50%;
+    top: 370%;
     left: 0%;
     width: 100%;
     height: 40%;
-    background-color: blue;
+    background-color: rgba(0, 0, 255, 0.167);
     opacity: 99999;
     display: none;
+    animation: fadein 0.8s ease-in-out;
 }
 
 

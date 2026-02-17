@@ -6,6 +6,8 @@ let moveright = false;
 let moveleft = false;
 let facingright = true;
 
+
+
 const mylocation = document.getElementById("mylocation");
 const hello = document.getElementById("Hello");
 const HTML = document.getElementById("HTML");
@@ -238,7 +240,7 @@ if (isMobile()) {
 
 
 
-
+    
 
 
 
@@ -394,8 +396,20 @@ projects.addEventListener('click', () => {
         left: 0,
         behavior: 'smooth'
     });
+    projectscontainer.style.display = 'block';
 
 });
+
+
+window.addEventListener('scroll', () => {
+    const scrolly = window.scrollY;
+    if(scrolly >= 2170){
+        projectscontainer.style.display = 'block';
+    }else{
+        projectscontainer.style.display = 'none';
+    }
+});
+
     
     window.addEventListener('scroll', () => {
     const scrolly = window.scrollY;

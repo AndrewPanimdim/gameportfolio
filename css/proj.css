@@ -26,7 +26,7 @@
 #return {
     position: fixed;
     bottom: 5%;
-    color: grey;
+    color: rgb(85, 176, 245);
     animation: sliderightleft 2s infinite;
     left: -2%;
     font-size: 0.8rem;
