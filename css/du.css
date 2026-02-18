@@ -233,8 +233,6 @@ body {
 }
 
 
-
-
 #boxcontainer {
     background-color: rgba(9, 9, 9, 0);
     position: absolute;
@@ -434,7 +432,15 @@ body {
     animation: fadein 1.3s ease-in-out;
     justify-content: center;
     text-align: center;
-   
+    font-size: 1.3vw;
+}
+
+#projectsheader{
+    font-family: 'poppins';
+    font-size: 1.5vw;
+    background-color: red;
+
+
 
 }
 
@@ -448,7 +454,7 @@ body {
 #map-container {
     display: none;
     position: absolute;
-    top: 148%;  
+    top: 152%;  
     left: 12%;
     width: 80%;
     text-align: center;

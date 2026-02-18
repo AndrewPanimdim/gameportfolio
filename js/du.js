@@ -8,6 +8,7 @@ let facingright = true;
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
+const projectheader = document.getElementById('projectsheader');
 const mylocation = document.getElementById("mylocation");
 const hello = document.getElementById("Hello");
 const HTML = document.getElementById("HTML");
@@ -402,10 +403,10 @@ projects.addEventListener('click', () => {
 
 
 const infos = [
-    "Website 1:",
-    "second info",
-    "third info",
-    "fourth info"
+    "Experiment 01:",
+    "Practice 02",
+    "Portfolio practice 03",
+    "drew's lil something",
 ];
 
 let isRunning = false;
@@ -420,16 +421,19 @@ async function startInfoLoop() {
                 isRunning = false;
                 return;
             }
-            projectscontainer.textContent = infos[i];
+            projectheader.textContent = infos[i];
             await sleep(10000);
         }
     }
 }
 
+
+
+
 window.addEventListener('scroll', () => {
     const scrolly = window.scrollY;
 
-    if (scrolly >= 2300) {
+    if (scrolly >= 2170) {
         projectscontainer.style.display = 'block';
         startInfoLoop();
     } else {
