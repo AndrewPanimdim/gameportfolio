@@ -356,17 +356,7 @@ if (isMobile()) {
             }, 4000);
     }});
 
-        window.addEventListener('scroll', ()=>{
-            let scrolly = window.scrollY;
-            if(scrolly > 720){
-                infocontainer.style.display = 'block';
-                projectshow.style.display = 'block';
-
-
-                message.style.display = 'none'
-            }
-        });
-
+        
     });
 
     stacks.addEventListener('click', () => {
@@ -465,12 +455,21 @@ window.addEventListener('scroll', () => {
         projectshow.style.display = 'block';
         certificates.style.display = 'block';
         message.style.display = 'none';
+    }else if (scrolly <= 740) {
+        infocontainer.style.display = 'none';
+        projectshow.style.display = 'none';
+        certificates.style.display = 'none';
     }
 
     if (scrolly <= 850) {
         stackinfo.style.display = 'block';
     }
-});
+
+
+
+
+
+    });
 
     setInterval(()=>{
         akey.style.animation = "bouncing 1s ease-in-out infinite";
