@@ -9,6 +9,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Preload GIFs -->
+    <link rel="preload" href="character/runningleft.gif" as="image">
+    <link rel="preload" href="character/runningright.gif" as="image">
+    <link rel="preload" href="character/standing.gif" as="image">
+    <link rel="preload" href="character/standingleft.gif" as="image">
+    
+    <!-- Preload Videos -->
+    <link rel="preload" href="videos/prt2.gif" as="video">
+    <link rel="preload" href="videos/prt3.gif" as="video">
+    <link rel="preload" href="videos/lilsom.gif" as="video">
+
     <title>Drew's lil game</title>
 </head>
 <body  style="background-color: rgb(9, 9, 9); color: white; font-family: 'bungee';  overflow-x: hidden;">
@@ -21,7 +33,7 @@
     <div id="CSS" onclick="window.open('https://github.com/AndrewPanimdim/gameportfolio/tree/main/css/du.css')">CSS</div>
     <div id="JavaScript" onclick="window.open('https://github.com/AndrewPanimdim/gameportfolio/blob/main/js/du.js')">JavaScript</div>
 
-    <img src="character/standing.gif" id="minime"/>
+    <img src="character/standing.gif" id="minime" loading="lazy"/>
 
     <div id="seemore">scroll down to see more</div>
 
@@ -89,11 +101,17 @@
     <div id="seemore2">go here to see more!</div>
     
     <div id="projectscontainer" >
+        <div id="projectstitle"> PROJECTS</div>
         <!-- Projects container content -->
          <div id="projectsheader"></div>
          
-         <img src="photos/image (3).jpg" style="width: 60%; height: 110%;"> 
-
+         
+        <img src="photos/project-screenshot.jpg" 
+        style="pointer-events: none;" 
+        loading="lazy"
+        id="prjctdiv"
+        alt="Project showcase">
+                        
     </div>
 
 

@@ -8,6 +8,7 @@ let facingright = true;
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
+const projectvideodiv = document.getElementById('prjctdiv');
 const projectheader = document.getElementById('projectsheader');
 const mylocation = document.getElementById("mylocation");
 const hello = document.getElementById("Hello");
@@ -399,6 +400,19 @@ const infos = [
     "drew's lil something",
 ];
 
+const projectlinks = [
+    'https://andrewpanimdim.github.io/Portfolio3/',
+    'https://andrewpanimdim.github.io/Andrew-s-Little-Something/'
+
+]
+
+const projectvideo = [
+    "videos/prt2.gif",
+    "videos/prt3.gif",
+    "videos/lilsom.gif"
+]
+
+
 let isRunning = false;
 
 async function startInfoLoop() {
@@ -414,7 +428,23 @@ async function startInfoLoop() {
             projectheader.textContent = infos[i];
             await sleep(10000);
         }
+
+        for (let i  = 0; i < projectvideo.length; i++) {
+            if (projectscontainer.style.display !== 'block') {
+                isRunning = false;
+                return;
+            }   
+
+            projectvideodiv.src = projectvideo[i];
+            projectvideodiv.load();        
+            await sleep(10000);
+        }
+
     }
+
+   
+        
+    
 }
 
 

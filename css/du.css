@@ -219,7 +219,7 @@ body {
 
 #info1 {
     position:absolute;
-    top: 130%;
+    top: 125%;
     left: 35%;
     font-family: 'poppins';
     font-size: 1.3vw;
@@ -291,7 +291,7 @@ body {
 
 #message {
     position: absolute;
-    top: 190%;
+    top: 185%;
     left: 42%;
     display: none;
     animation: fadein 3.9s ease-in-out;
@@ -426,7 +426,7 @@ body {
     left: 0%;
     width: 100%;
     height: 60%;
-    background-color: rgba(0, 0, 0, 0.376);
+    background-color: rgba(0, 0, 0, 0.073);
     opacity: 99999;
     display: none;
     animation: fadein 1.3s ease-in-out;
@@ -436,15 +436,31 @@ body {
 }
 
 #projectsheader{
+    position:absolute;
+    top: 40%;
+    left: 8%;
     font-family: 'poppins';
-    font-size: 1.5vw;
-    background-color: red;
-
-
-
+    font-size: 3vw;
+    background-color: rgba(255, 0, 0, 0);
+    animation: fadein 3.4s ease-in-out;
 }
 
+#projectstitle {
+    font-weight: bold; 
+    font-size: 2.5vw;
+    animation: fadein 1.5s ease-in-out;
+}
 
+#prjctdiv {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    /*width: ;*/
+    height: 65%;
+    border-radius: 20px;
+    pointer-events: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
 
 
 
@@ -454,7 +470,7 @@ body {
 #map-container {
     display: none;
     position: absolute;
-    top: 152%;  
+    top: 145%;  
     left: 12%;
     width: 80%;
     text-align: center;
@@ -557,8 +573,6 @@ body {
 #info1 {
     font-size: 3vw;
     width: 90%;
-    top: 60%;
-    left: 10%;
 }
 
 #aboutme {
