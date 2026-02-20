@@ -423,16 +423,13 @@ async function startInfoLoop() {
             return;
         }
 
-        // Update BOTH at the exact same time with same index
         projectheader.textContent = infos[index];
         projectvideodiv.src = projectvideo[index];
         
-        // Move to next index
         index++;
         if (index >= infos.length) index = 0;
         
-        // Wait 5 seconds before next change
-        await sleep(5000);
+        await sleep(20000);
     }
 }
 
