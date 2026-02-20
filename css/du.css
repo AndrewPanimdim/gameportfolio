@@ -457,11 +457,12 @@ body {
     right: 5%;
     width: 45%;
     height: 40%;
-    pointer-events: none;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     background-color: rgba(8, 166, 240, 0);
     border-radius: 20px;
     animation: fadein 3.5s ease-in-out;
+    cursor: pointer;
+    z-index: 9999
     /*border-radius: 100% 90% 40% 100% / 100% 60% 100% 100%;*/
 }
 

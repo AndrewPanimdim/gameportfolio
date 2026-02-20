@@ -393,10 +393,11 @@ projects.addEventListener('click', () => {
 });
 
 const projectlinks = [
+    'https://andrewpanimdim.github.io/portfolio2/Main/index.html',
     'https://andrewpanimdim.github.io/Portfolio3/',
     'https://andrewpanimdim.github.io/Andrew-s-Little-Something/'
+];
 
-]
 const infos = [
     "Practice 02",
     "Portfolio practice 03",
@@ -408,6 +409,11 @@ const projectvideo = [
     "videos/prt3.gif",
     "videos/lilsom.gif"
 ];
+
+projectvideodiv.addEventListener('click', () => {
+    const link = projectvideodiv.getAttribute('data-link');
+    if (link) window.open(link, '_blank');
+});
 
 let isRunning = false;
 
@@ -425,6 +431,7 @@ async function startInfoLoop() {
 
         projectheader.textContent = infos[index];
         projectvideodiv.src = projectvideo[index];
+        projectvideodiv.setAttribute('data-link', projectlinks[index]);
         
         index++;
         if (index >= infos.length) index = 0;
@@ -432,6 +439,7 @@ async function startInfoLoop() {
         await sleep(20000);
     }
 }
+
 
 
 
