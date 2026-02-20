@@ -392,26 +392,22 @@ projects.addEventListener('click', () => {
 
 });
 
-
-const infos = [
-    "Experiment 01:",
-    "Practice 02",
-    "Portfolio practice 03",
-    "drew's lil something",
-];
-
 const projectlinks = [
     'https://andrewpanimdim.github.io/Portfolio3/',
     'https://andrewpanimdim.github.io/Andrew-s-Little-Something/'
 
 ]
+const infos = [
+    "Practice 02",
+    "Portfolio practice 03",
+    "drew's lil something",
+];
 
 const projectvideo = [
     "videos/prt2.gif",
     "videos/prt3.gif",
     "videos/lilsom.gif"
-]
-
+];
 
 let isRunning = false;
 
@@ -419,34 +415,26 @@ async function startInfoLoop() {
     if (isRunning) return;
     isRunning = true;
 
+    let index = 0;
+
     while (true) {
-        for (let i = 0; i < infos.length; i++) {
-            if (projectscontainer.style.display !== 'block') {
-                isRunning = false;
-                return;
-            }
-            projectheader.textContent = infos[i];
-            await sleep(10000);
+        if (projectscontainer.style.display !== 'block') {
+            isRunning = false;
+            return;
         }
 
-        for (let i  = 0; i < projectvideo.length; i++) {
-            if (projectscontainer.style.display !== 'block') {
-                isRunning = false;
-                return;
-            }   
-
-            projectvideodiv.src = projectvideo[i];
-            projectvideodiv.load();        
-            await sleep(10000);
-        }
-
-    }
-
-   
+        // Update BOTH at the exact same time with same index
+        projectheader.textContent = infos[index];
+        projectvideodiv.src = projectvideo[index];
         
-    
+        // Move to next index
+        index++;
+        if (index >= infos.length) index = 0;
+        
+        // Wait 5 seconds before next change
+        await sleep(5000);
+    }
 }
-
 
 
 

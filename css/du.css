@@ -455,11 +455,13 @@ body {
     position: absolute;
     top: 20%;
     right: 5%;
-    /*width: ;*/
+    width: 40%;
     height: 65%;
-    border-radius: 20px;
     pointer-events: none;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    background-color: rgba(8, 166, 240, 0);
+    border-radius: 20px;
+    /*border-radius: 100% 90% 40% 100% / 100% 60% 100% 100%;*/
 }
 
 
