@@ -8,6 +8,7 @@ let facingright = true;
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
+const buttoncontainer = document.getElementById('buttoncontainer');
 const projectinfo = document.getElementById('projectinfo');
 const projectvideodiv = document.getElementById('prjctdiv');
 const projectheader = document.getElementById('projectsheader');
@@ -35,7 +36,13 @@ const seeproj = document.getElementById('seeproj');
 const map = document.getElementById('map-container');
 const projectscontainer = document.getElementById('projectscontainer');
 
-const stacks = document.getElementById('stacks');
+
+const stacksbutton = document.getElementById('stackbutton');
+const projectsbutton = document.getElementById('projectsbutton');
+const contactsbutton = document.getElementById('contactsbutton');
+
+
+
 const certificates = document.getElementById('certificates');
 const projects =document.getElementById('projects');
 const infocontainer = document.getElementById('infocontainer');
@@ -125,73 +132,9 @@ if (isMobile()) {
 
         if (infocontainer) infocontainer.style.display = originalDisplays.infocontainer || 'block';
 
-        contact.addEventListener('click', ()=>{
-            window.scrollTo({
-                    top: 3200,
-                    left: 0,
-                    behavior: 'smooth'
-                    });
-        });
 
-        setTimeout(() => {
-            stacks.style.display = 'flex';
-            projects.style.display = 'flex';
-
-            stacks.style.opacity = 1;
-            projects.style.opacity = 1;
-        }, 1000);
-
-
-       
-        aboutmebutton.addEventListener('click',()=>{
-            window.scrollTo({
-                    top: 700,
-                    left: 0,
-                    behavior: 'smooth'
-                    });
-            stackinfo.style.display = 'block';
-            aboutme.style.display = 'block';
-            info1.style.display = 'block'    
-        });
-
-
-
-
-        stacks.addEventListener('click', ()=>{
-            window.scrollTo({
-                    top: 1200,
-                    left: 0,
-                    behavior: 'smooth'
-                    });
-        
-            stackinfo.style.display = 'block';
-            boxcontainer.style.position.top = '500%';
-
-            setTimeout(() => {
-                cs.style.display = 'flex';
-                ht.style.display = 'flex';
-                js.style.display = 'flex';
-                py.style.display = 'flex';
-                java.style.display = 'flex';
-            },  1000);
-        });
-
-
-
-
-        projects.addEventListener('click',()=>{
-            window.scrollTo({
-                    top: 2800,
-                    left: 0,
-                    behavior: 'smooth'
-                    });
-                    
-        });
-        
 
         
-
-
         window.addEventListener('scroll',()=>{
             let scrolly = window.scrollY;
             if(scrolly >= 120){
@@ -258,7 +201,7 @@ if (isMobile()) {
     window.addEventListener('scroll', ()=>{
         let scrolly = window.scrollY;
         if(scrolly >100){
-            message.style.display= 'block';
+            //message.style.display= 'block';
             seemore2.style.display = 'none';
             seeprojects.style.display = 'block';
             seemore2.style.opacity = 0;
@@ -352,7 +295,7 @@ if (isMobile()) {
       window.addEventListener('scroll', ()=>{
         let scrolly = window.scrollY;
         if(scrolly <= 650){
-            message.style.display = 'block'
+            //message.style.display = 'block'
             setTimeout(() => {
                 message.style.animation = 'bouncing 3s infinite';
             }, 4000);
@@ -361,37 +304,6 @@ if (isMobile()) {
         
     });
 
-    stacks.addEventListener('click', () => {
-    window.scrollTo({
-        top: 1800,
-        left: 0,
-        behavior: 'smooth'
-    });
-    
-    stackcontainer.style.display = 'block';
-    stackinfo.style.display = 'block';
-    infocontainer.style.display = 'block';
-});
-
-
-certificates.addEventListener('click', () => {
-    window.scrollTo({
-        top: 2500,
-        left: 0,
-        behavior: 'smooth'
-    });
-    stackinfo.style.display = 'block';
-});
-
-projects.addEventListener('click', () => {
-    window.scrollTo({
-        top: 2500,
-        left: 0,
-        behavior: 'smooth'
-    });
-    projectscontainer.style.display = 'block';
-
-});
 
 const projectlinks = [
     'https://andrewpanimdim.github.io/portfolio2/Main/index.html',
@@ -460,8 +372,29 @@ projectvideodiv.addEventListener('mouseleave', () => {
 });
 
 
+stacksbutton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 1420,
+        left: 0,
+        behavior: 'smooth'
+    });
+});
 
+projectsbutton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 2390,
+        left: 0,
+        behavior: 'smooth'
+    });
+});
 
+contactsbutton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 5420,
+        left: 0,
+        behavior: 'smooth'
+    });
+});
 
 
 
@@ -469,7 +402,7 @@ projectvideodiv.addEventListener('mouseleave', () => {
 window.addEventListener('scroll', () => {
     const scrolly = window.scrollY;
 
-    if (scrolly >= 2170) {
+    if (scrolly >= 1800) {
         projectscontainer.style.display = 'block';
         startInfoLoop();
     } else {
@@ -489,22 +422,19 @@ window.addEventListener('scroll', () => {
     const scrolly = window.scrollY;
 
     if (scrolly <= 650) {
-        message.style.display = 'block';
+        ///message.style.display = 'block';
         
         setTimeout(() => {
-            message.style.animation = 'bouncing 3s infinite';
+            //message.style.animation = 'bouncing 3s infinite';
         }, 2000);
     }
 
     if (scrolly > 740) {
         infocontainer.style.display = 'block';
-        projectshow.style.display = 'block';
-        certificates.style.display = 'block';
-        message.style.display = 'none';
+        //message.style.display = 'none';
     }else if (scrolly <= 740) {
         infocontainer.style.display = 'none';
-        projectshow.style.display = 'none';
-        certificates.style.display = 'none';
+        
     }
 
     if (scrolly <= 850) {
@@ -512,10 +442,11 @@ window.addEventListener('scroll', () => {
     }
 
 
-
-
-
     });
+
+
+    
+
 
     setInterval(()=>{
         akey.style.animation = "bouncing 1s ease-in-out infinite";
@@ -559,12 +490,13 @@ window.addEventListener('scroll', () => {
             updateMinimeAnimation();
             
             if(pos <= -6){
-                pos = -6;
+                pos = 96;
                 window.scrollTo({
-                top: 2600,
+                top: 2370,
                 left: 0,
                 behavior: 'smooth'
             });
+            
 
                 currentScrollIndex++;
                 if(currentScrollIndex >= scrollpositions.length){
@@ -616,9 +548,12 @@ window.addEventListener('scroll', () => {
             
             if(pos >= 90){
                 pos = 90;
+                boxcontainer.style.display = 'flex';
                 weight.style.display = 'block';
-                minime.style.position = 'fixed'
-                info1.style.display = 'block'
+                minime.style.position = 'fixed';
+                info1.style.display = 'block';
+                buttoncontainer.style.display = 'block';
+                buttoncontainer.style.display = 'flex';
                     window.scrollTo({
                     top: 730,
                     left: 0,
@@ -677,7 +612,7 @@ window.addEventListener('scroll', () => {
 
 window.addEventListener('scroll', () => {
     const scrolly = window.scrollY;
-    const STACK_THRESHOLD = 1400; 
+    const STACK_THRESHOLD = 1000; 
 
     if (scrolly >= STACK_THRESHOLD) {
         
