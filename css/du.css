@@ -437,18 +437,19 @@ body {
 
 #projectsheader{
     position:absolute;
-    top: 25%;
+    top: 35%;
     left: 8%;
     font-family: 'poppins';
     font-size: 3vw;
     background-color: rgba(255, 0, 0, 0);
     animation: fadein 4.2s ease-in-out;
+    transition: transform 1s ease-in-out;
 }
 
 #projectstitle {
     font-weight: bold; 
-    font-size: 2.5vw;
-    animation: fadein 1.5s ease-in-out;
+    font-size: 3.7vw;
+    animation: fadein 1s ease-in-out;
 }
 
 #prjctdiv {
@@ -462,10 +463,30 @@ body {
     border-radius: 20px;
     animation: fadein 3.5s ease-in-out;
     cursor: pointer;
-    z-index: 9999
+    z-index: 9999;
+    transition: 0.5s ease-in-out;
     /*border-radius: 100% 90% 40% 100% / 100% 60% 100% 100%;*/
 }
 
+#prjctdiv:hover {
+    transition: 1s;
+    transform: scale(1.1);
+    
+}
+
+#projectinfo {
+    position: absolute;
+    top: 38%;
+    left: 5%;
+    background-color: rgba(54, 54, 54, 0.203);
+    width: 40%;
+    height: 20%;
+    display:none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    animation: fadein 1.3s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
 
 
 

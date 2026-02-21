@@ -8,6 +8,7 @@ let facingright = true;
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
+const projectinfo = document.getElementById('projectinfo');
 const projectvideodiv = document.getElementById('prjctdiv');
 const projectheader = document.getElementById('projectsheader');
 const mylocation = document.getElementById("mylocation");
@@ -180,7 +181,7 @@ if (isMobile()) {
 
         projects.addEventListener('click',()=>{
             window.scrollTo({
-                    top: 2500,
+                    top: 2800,
                     left: 0,
                     behavior: 'smooth'
                     });
@@ -410,6 +411,12 @@ const projectvideo = [
     "videos/lilsom.gif"
 ];
 
+const projectabout = [
+    "this is my second website",
+    "this is my third website and shi",
+    "dam girl u wanna fuck?"
+]
+
 projectvideodiv.addEventListener('click', () => {
     const link = projectvideodiv.getAttribute('data-link');
     if (link) window.open(link, '_blank');
@@ -431,14 +438,36 @@ async function startInfoLoop() {
 
         projectheader.textContent = infos[index];
         projectvideodiv.src = projectvideo[index];
+        projectinfo.textContent = projectabout[index]
         projectvideodiv.setAttribute('data-link', projectlinks[index]);
         
         index++;
         if (index >= infos.length) index = 0;
         
-        await sleep(20000);
+        await sleep(12000);
     }
 }
+
+projectvideodiv.addEventListener('mouseenter', () => {
+    projectinfo.style.display = 'block';
+    projectinfo.style.opacity = '1'; // fade in
+    projectheader.style.transform = 'translateY(-130%)';
+    projectheader.style.animation = 'slideup 0.5s ease-in-out';
+});
+
+projectvideodiv.addEventListener('mouseleave', () => {
+    projectinfo.style.opacity = '0'; // start fade-out
+    projectheader.style.transform = 'translateY(0)';
+    setTimeout(() => {
+        if (projectinfo.style.opacity === '0') {
+            projectinfo.style.display = 'none';
+        }
+    }, 500); // match CSS transition
+});
+
+
+
+
 
 
 
@@ -538,7 +567,7 @@ window.addEventListener('scroll', () => {
             if(pos <= -6){
                 pos = -6;
                 window.scrollTo({
-                top: 2500,
+                top: 2600,
                 left: 0,
                 behavior: 'smooth'
             });
