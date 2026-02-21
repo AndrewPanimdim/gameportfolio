@@ -167,13 +167,14 @@ body {
     color: rgb(0, 0, 0);
 }
 #stacks{
-    background-color: rgb(101, 181, 235);
+    background-color: rgb(24, 144, 199);
     width: 10%;
     height: 10%;
     position: absolute;
     top: 220%;
-    left: 25%;
-    animation: slideright 4s ease-in-out;
+    left: 45%;
+    animation: slideright 3s ease-in-out;
+    
 }
 
 #projects {
@@ -182,8 +183,8 @@ body {
     height: 10%;
     position: absolute;
     top: 220%;
-    left: 45%;
-    animation: slideright 3s ease-in-out;
+    left: 25%;
+    animation: slideright 4s ease-in-out;
 }
 
 #certificates {
@@ -615,9 +616,9 @@ body {
 
 #stacks {
     top: 85%;
+    left: 73%;
     width: 20%;
-    left: 28%;
-    background-color: rgb(26, 120, 243);
+    background-color: rgb(0, 76, 175);
     animation: slideright 2.5s ease-in-out;
 }
 
@@ -644,7 +645,7 @@ body {
 
 #projects {
     top: 85%;
-    left: 73%;
+    left: 28%;
     width: 22%;
     animation: slideright 4s ease-in-out;
 }

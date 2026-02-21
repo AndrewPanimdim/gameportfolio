@@ -450,19 +450,13 @@ async function startInfoLoop() {
 
 projectvideodiv.addEventListener('mouseenter', () => {
     projectinfo.style.display = 'block';
-    projectinfo.style.opacity = '1'; // fade in
     projectheader.style.transform = 'translateY(-130%)';
     projectheader.style.animation = 'slideup 0.5s ease-in-out';
 });
 
 projectvideodiv.addEventListener('mouseleave', () => {
-    projectinfo.style.opacity = '0'; // start fade-out
+    projectinfo.style.display = 'none';
     projectheader.style.transform = 'translateY(0)';
-    setTimeout(() => {
-        if (projectinfo.style.opacity === '0') {
-            projectinfo.style.display = 'none';
-        }
-    }, 500); // match CSS transition
 });
 
 
