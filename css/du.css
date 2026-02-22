@@ -22,6 +22,7 @@
     justify-content: space-around;
     animation: fadein 0.5s ease-in-out;
     background-color: rgba(85, 85, 85, 0.374);
+    transition: 1s;
 }
 
 
@@ -249,7 +250,7 @@ body {
 #boxcontainer {
     background-color: rgba(9, 9, 9, 0);
     position: absolute;
-    top: 515%;
+    top: 530%;
     left: 10%;
     width: 80%;
     height: 12%;
@@ -494,15 +495,19 @@ body {
 #projectinfo {
     position: absolute;
     top: 38%;
-    left: 5%;
+    left: 3.5%;
+    font-size: 1vw;
     background-color: rgba(54, 54, 54, 0.203);
     width: 40%;
+    letter-spacing: 0.05em;
     height: 20%;
     display:none;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     animation: fadein 1.3s ease-in-out;
     transition: 0.5s ease-in-out;
+    padding: 15px;
+    z-index: 99999;
 }
 
 

@@ -324,9 +324,9 @@ const projectvideo = [
 ];
 
 const projectabout = [
-    "this is my second website",
-    "this is my third website and shi",
-    "dam girl u wanna fuck?"
+    "I built this little project back when i was grade 12 to practice CSS, focusing on animations and hover effects. The HTML and CSS were mainly hardcoded, while I used AI for the JavaScript since my main goal was to improve my CSS skills. Overall, this project was a great learning experience that helped me develop my skills",
+    "I made this little projects as a way to cure boredom and practice during the summer. its just the same as the previeous project but its less flashy and more simple.",
+    "this little project was me experimenting and just having fun with HTML, CSS, and JavaScript. but mainly i was trying to learn Javascript without any AI help."
 ]
 
 projectvideodiv.addEventListener('click', () => {
@@ -356,7 +356,7 @@ async function startInfoLoop() {
         index++;
         if (index >= infos.length) index = 0;
         
-        await sleep(12000);
+        await sleep(20000);
     }
 }
 
@@ -394,8 +394,17 @@ contactsbutton.addEventListener('click', () => {
         left: 0,
         behavior: 'smooth'
     });
+
 });
 
+window.addEventListener('scroll', () => {
+    let scrolly = window.scrollY;
+    if(scrolly >= 3000){
+        buttoncontainer.style.bottom = '20%';
+    }else {
+        buttoncontainer.style.bottom = '3%';
+    }
+});
 
 
 
