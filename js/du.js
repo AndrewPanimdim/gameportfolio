@@ -501,7 +501,7 @@ window.addEventListener('scroll', () => {
             if(pos <= -6){
                 pos = 96;
                 window.scrollTo({
-                top: 2370,
+                top: 2170,
                 left: 0,
                 behavior: 'smooth'
             });
