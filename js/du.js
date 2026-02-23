@@ -8,6 +8,10 @@ let facingright = true;
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
+
+const projectheader2 = document.getElementById('projectsheader2');
+const projectvideodiv2 = document.getElementById('prjctdiv2');
+const projectinfo2 = document.getElementById('projectinfo2');  
 const buttoncontainer = document.getElementById('buttoncontainer');
 const projectinfo = document.getElementById('projectinfo');
 const projectvideodiv = document.getElementById('prjctdiv');
@@ -315,7 +319,8 @@ const infos = [
     "Practice 02",
     "Portfolio practice 03",
     "drew's lil something",
-];
+];  
+
 
 const projectvideo = [
     "videos/prt2.gif",
@@ -323,14 +328,47 @@ const projectvideo = [
     "videos/lilsom.gif"
 ];
 
+
+
 const projectabout = [
+    "I built this little project back when i was grade 12 to practice CSS, focusing on animations and hover effects. The HTML and CSS were mainly hardcoded, while I used AI for the JavaScript since my main goal was to improve my CSS skills. Overall, this project was a great learning experience that helped me develop my skills",
+    "I made this little projects as a way to cure boredom and practice during the summer. its just the same as the previeous project but its less flashy and more simple.",
+    "this little Javascript project was me experimenting and just having fun learning JavaScript without any AI help. this project was a template for the website you are currently on."
+]
+
+
+const infos2 = [
+    "ASL Model",
+    "Transparent Notes",
+    "My First Ever Website"
+];
+
+const projectvideo2 = [
+    "videos/prt3.gif",
+    "videos/lilsom.gif",
+    "videos/first.gif"
+];
+
+const projectabout2 = [
     "I built this little project back when i was grade 12 to practice CSS, focusing on animations and hover effects. The HTML and CSS were mainly hardcoded, while I used AI for the JavaScript since my main goal was to improve my CSS skills. Overall, this project was a great learning experience that helped me develop my skills",
     "I made this little projects as a way to cure boredom and practice during the summer. its just the same as the previeous project but its less flashy and more simple.",
     "this little project was me experimenting and just having fun with HTML, CSS, and JavaScript. but mainly i was trying to learn Javascript without any AI help."
 ]
 
+const projectlinks2 = [
+    'https://andrewpanimdim.github.io/portfolio2/Main/index.html',
+    'https://andrewpanimdim.github.io/Portfolio3/',
+    'https://andrewpanimdim.github.io/DrewsFirstWebsite/'
+];
+
+
 projectvideodiv.addEventListener('click', () => {
     const link = projectvideodiv.getAttribute('data-link');
+    if (link) window.open(link, '_blank');
+});
+
+projectvideodiv2.addEventListener('click', () => {
+    const link = projectvideodiv2.getAttribute('data-link');
     if (link) window.open(link, '_blank');
 });
 
@@ -352,13 +390,45 @@ async function startInfoLoop() {
         projectvideodiv.src = projectvideo[index];
         projectinfo.textContent = projectabout[index]
         projectvideodiv.setAttribute('data-link', projectlinks[index]);
+
         
         index++;
         if (index >= infos.length) index = 0;
-        
         await sleep(20000);
+        
     }
 }
+
+
+let isRunning2 = false;
+
+async function startInfoLoop2() {
+    if (isRunning2) return;
+    isRunning2 = true;
+
+    let index2 = 0;
+
+    while (true) {
+        if (projectscontainer.style.display !== 'block') {
+            isRunning2 = false;
+            return;
+        }
+
+        projectheader2.textContent = infos2[index2];
+        projectvideodiv2.src = projectvideo2[index2];
+        projectinfo2.textContent = projectabout2[index2]
+        projectvideodiv2.setAttribute('data-link', projectlinks2[index2]);
+
+        
+        index2++;
+        if (index2 >= infos2.length) index2 = 0;
+        await sleep(10000);
+        
+    }
+}
+
+
+
 
 projectvideodiv.addEventListener('mouseenter', () => {
     projectinfo.style.display = 'block';
@@ -382,7 +452,7 @@ stacksbutton.addEventListener('click', () => {
 
 projectsbutton.addEventListener('click', () => {
     window.scrollTo({
-        top: 2390,
+        top: 2590,
         left: 0,
         behavior: 'smooth'
     });
@@ -399,7 +469,7 @@ contactsbutton.addEventListener('click', () => {
 
 window.addEventListener('scroll', () => {
     let scrolly = window.scrollY;
-    if(scrolly >= 3000){
+    if(scrolly >= 3400){
         buttoncontainer.style.bottom = '20%';
     }else {
         buttoncontainer.style.bottom = '3%';
@@ -414,9 +484,11 @@ window.addEventListener('scroll', () => {
     if (scrolly >= 1800) {
         projectscontainer.style.display = 'block';
         startInfoLoop();
+        startInfoLoop2();
     } else {
         projectscontainer.style.display = 'none';
         isRunning = false;
+        isRunning2 = false;
     }
 });
 
@@ -501,7 +573,7 @@ window.addEventListener('scroll', () => {
             if(pos <= -6){
                 pos = 96;
                 window.scrollTo({
-                top: 2390,
+                top: 2590,
                 left: 0,
                 behavior: 'smooth'
             });
@@ -564,7 +636,7 @@ window.addEventListener('scroll', () => {
                 buttoncontainer.style.display = 'block';
                 buttoncontainer.style.display = 'flex';
                     window.scrollTo({
-                    top: 730,
+                    top: 720,
                     left: 0,
                     behavior: 'smooth'
                     });
