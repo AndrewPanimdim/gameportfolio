@@ -316,7 +316,7 @@ const projectlinks = [
 ];
 
 const infos = [
-    "Practice 02",
+    "Portfolio 02",
     "Portfolio practice 03",
     "drew's lil something",
 ];  
@@ -338,14 +338,14 @@ const projectabout = [
 
 
 const infos2 = [
-    "ASL Model",
+    "American Sign Language Model",
     "Transparent Notes",
-    "My First Ever Website"
+    "My First Website"
 ];
 
 const projectvideo2 = [
-    "videos/prt3.gif",
-    "videos/lilsom.gif",
+    "photos/asl.gif",
+    "photos/transparentnotes.gif",
     "videos/first.gif"
 ];
 
@@ -356,8 +356,8 @@ const projectabout2 = [
 ]
 
 const projectlinks2 = [
-    'https://andrewpanimdim.github.io/portfolio2/Main/index.html',
-    'https://andrewpanimdim.github.io/Portfolio3/',
+    'https://github.com/AndrewPanimdim/mini-ASL-reader-ML-',
+    'https://github.com/AndrewPanimdim/TransparentNotes',
     'https://andrewpanimdim.github.io/DrewsFirstWebsite/'
 ];
 
@@ -394,7 +394,7 @@ async function startInfoLoop() {
         
         index++;
         if (index >= infos.length) index = 0;
-        await sleep(20000);
+        await sleep(15000);
         
     }
 }
