@@ -367,7 +367,7 @@ body {
     display: 'none';
 }
 
-#js, #py, #ht, #cs, #java, #cpp {
+#js, #py, #ht, #cs, #java, #cpp, #supabase {
     position: absolute;
     top: 90%;
     border-radius:20px;
@@ -393,6 +393,15 @@ body {
     background-color:rgb(11, 77, 175) ;
     width:6%;
     
+}
+
+#supabase {
+    top: 110% ;
+    left:52%;
+    animation: slideright 4.6s ease-in-out;
+    background-color:rgb(32, 32, 32) ;
+    width:7%;
+    color: rgb(53, 204, 53);
 }
 
 #stackinfo {
@@ -689,6 +698,8 @@ body {
     left: 38%;
     animation: slideright 2.5s ease-in-out;
 }
+
+
 
 
 
