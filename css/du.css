@@ -250,7 +250,7 @@ body {
 #boxcontainer {
     background-color: rgba(9, 9, 9, 0);
     position: absolute;
-    top: 530%;
+    top: 535%;
     left: 10%;
     width: 80%;
     height: 12%;
@@ -404,6 +404,7 @@ body {
     animation: fadein 2s ease-in-out;
     font-size: 1.3vw;
     display: none;
+    transition: 2s;
 }
 
 #seemore2 {
@@ -463,12 +464,12 @@ body {
 }
 
 #projectsheader{
-    top: 35%;
+    top: 45%;
     left: 8%;
 }
 
 #projectsheader2 {
-    top: 95%;
+    top: 120%;
     right: 2%;
 }
 
@@ -476,7 +477,7 @@ body {
 
 #projectstitle {
     font-weight: bold; 
-    font-size: 3.7vw;
+    font-size: 4.7vw;
     animation: fadein 1s ease-in-out;
 }
 
@@ -495,12 +496,12 @@ body {
 }
 
 #prjctdiv {
-    top: 18%;
+    top: 30%;
     right: 5%;
 }
 
 #prjctdiv2 {
-    top: 80%;
+    top: 100%;
     left: 5%;
 }
 
@@ -522,21 +523,21 @@ body {
     display:none;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
-    transition: 0.5s ease-in-out;
+    transition: 2s ease-in-out;
     padding: 15px;
     z-index: 99999;
 }
 
 #projectinfo{
-    top: 38%;
+    top: 50%;
     left: 5%;
-    animation: fadein 1.3s ease-in-out;
+    animation: fadein 2s ease-in-out;
 }
 
 #projectinfo2 {
-    top: 100%;
+    top: 120%;
     right: 5%;   
-    animation: fadein 3s ease-in-out;
+    animation: fadein 2s ease-in-out;
 }
 
 #map-container {

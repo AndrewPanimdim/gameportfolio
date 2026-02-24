@@ -312,28 +312,33 @@ if (isMobile()) {
 const projectlinks = [
     'https://andrewpanimdim.github.io/portfolio2/Main/index.html',
     'https://github.com/AndrewPanimdim/mini-ASL-reader-ML-',
-    'https://andrewpanimdim.github.io/Andrew-s-Little-Something/'
+    'https://andrewpanimdim.github.io/Andrew-s-Little-Something/',
+    'https://andrewpanimdim.github.io/gameportfolio'
+
 ];
 
 const infos = [
     "Portfolio 02",
     'ASL Mediapipe Reader ',
-    "drew's lil something",
+    "Drew's lil something",
+    "Drew's lil game"
 ];  
 
 
 const projectvideo = [
     "videos/prt2.gif",
     "photos/asl.gif",
-    "videos/lilsom.gif"
+    "videos/lilsom.gif",
+    "photos/lilgame.gif"
 ];
 
 
 
 const projectabout = [
-    "I built this little project back when i was grade 12 to practice CSS, focusing on animations and hover effects. The HTML and CSS were mainly hardcoded, while I used AI for the JavaScript since my main goal was to improve my CSS skills. Overall, this project was a great learning experience that helped me develop my skills",
-    "i created this asl reader out of curiosity, as i once saw a Sign Language reader online but it used images as data instead of hand landmarks. so i wanted to see if i could make one that used hand landmarks instead. and it turned out pretty good, it can read the whole alphabet and except J",
-    "this little Javascript project was me experimenting and just having fun learning JavaScript without any AI help. this project was a template for the website you are currently on."
+    "I built this little hardcoded project back when i was grade 12 to practice CSS, focusing on animations and hover effects. The HTML and CSS were mainly hardcoded, while I used AI for the JavaScript since my main goal was to improve my CSS skills. Overall, this project was a great learning experience that helped me develop my skills",
+    "I created this asl reader out of curiosity, as i once saw a Sign Language reader online but it used images as data instead of hand landmarks. so i wanted to see if i could make one that used hand landmarks instead. and it turned out pretty good, it can read the whole alphabet and except J",
+    "this little Javascript project was me experimenting and just having fun learning JavaScript without any AI help. this project was a template for the website you are currently on.",
+    "This little hardcoded website is a portfolio that i made to practice my fundamentals, the gif idea was inspired by a senior of mine in engineering who used gifs in their final project. from there it just snowballed into me trying to make a portfolio that used gifs as project showcases, and it turned out pretty good, i just wish i could make the gifs look better but overall im happy with how it turned out."
 ]
 
 
@@ -350,8 +355,8 @@ const projectvideo2 = [
 ];
 
 const projectabout2 = [
-    "I built this little project back when i was grade 12 to practice CSS, focusing on animations and hover effects. The HTML and CSS were mainly hardcoded, while I used AI for the JavaScript since my main goal was to improve my CSS skills. Overall, this project was a great learning experience that helped me develop my skills",
-    "i created this asl reader out of curiosity, as i once saw an Sign Language reader online but it used images as basis instead of hand landmarks. so i wanted to see if i could make one that used hand landmarks instead. and it turned out pretty good, it can read the whole alphabet and except J",
+    "I created this little hardcoded website as practice and also as a way to cure boredom during the summmer break, its just a simple website that i tried to make the hovering effects interactive",
+    "The inspiration for this project came from a classmate of mine who struggled with non script presentations, it just gave me the idea to try making a note taking software that can only be seen by the user during presentations to maybe help people like her.",
     "this little project was me experimenting and just having fun with HTML, CSS, and JavaScript. but mainly i was trying to learn Javascript without any AI help."
 ]
 
@@ -359,6 +364,7 @@ const projectlinks2 = [
     'https://andrewpanimdim.github.io/Portfolio3/',
     'https://github.com/AndrewPanimdim/TransparentNotes',
     'https://andrewpanimdim.github.io/DrewsFirstWebsite/'
+
 ];
 
 
@@ -441,6 +447,16 @@ projectvideodiv.addEventListener('mouseleave', () => {
     projectheader.style.transform = 'translateY(0)';
 });
 
+projectvideodiv2.addEventListener('mouseenter', () => {
+    projectinfo2.style.display = 'block';
+    projectheader2.style.transform = 'translateY(-130%)';
+    projectheader2.style.animation = 'slideup 0.5s ease-in-out';
+});
+
+projectvideodiv2.addEventListener('mouseleave', () => {
+    projectinfo2.style.display = 'none';
+    projectheader2.style.transform = 'translateY(0)';
+});
 
 stacksbutton.addEventListener('click', () => {
     window.scrollTo({
@@ -469,7 +485,7 @@ contactsbutton.addEventListener('click', () => {
 
 window.addEventListener('scroll', () => {
     let scrolly = window.scrollY;
-    if(scrolly >= 3400){
+    if(scrolly >= 3500){
         buttoncontainer.style.bottom = '20%';
     }else {
         buttoncontainer.style.bottom = '3%';
