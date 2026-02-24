@@ -335,11 +335,15 @@ const projectvideo = [
 
 
 const projectabout = [
-    "I built this little hardcoded project back when i was grade 12 to practice CSS, focusing on animations and hover effects. The HTML and CSS were mainly hardcoded, while I used AI for the JavaScript since my main goal was to improve my CSS skills. Overall, this project was a great learning experience that helped me develop my skills",
-    "I created this asl reader out of curiosity, as i once saw a Sign Language reader online but it used images as data instead of hand landmarks. so i wanted to see if i could make one that used hand landmarks instead. and it turned out pretty good, it can read the whole alphabet and except J",
-    "this little Javascript project was me experimenting and just having fun learning JavaScript without any AI help. this project was a template for the website you are currently on.",
-    "This little hardcoded website is a portfolio that i made to practice my fundamentals, the gif idea was inspired by a senior of mine in engineering who used gifs in their final project. from there it just snowballed into me trying to make a portfolio that used gifs as project showcases, and it turned out pretty good, i just wish i could make the gifs look better but overall im happy with how it turned out."
-]
+    "I built this small hardcoded project back in Grade 12 to focus on improving my CSS skills, especially animations and hover effects. The HTML and CSS were written manually since that was my main priority. I used AI for the JavaScript, but overall it was a great learning experience that strengthened my front-end foundation.",
+
+    "I created this vibe-coded ASL reader out of curiosity after seeing a sign language reader that relied on static images instead of hand landmarks. I wanted to try building one that used hand landmarks instead. It turned out better than I expected—it can recognize the entire alphabet except for J.",
+
+    "This small JavaScript project was me experimenting and learning the language on my own, without AI. It eventually became the template for the website you're currently viewing.",
+
+    "This hardcoded portfolio was built to practice my fundamentals. The idea of showcasing projects through GIFs was inspired by a senior in engineering, and it slowly evolved into this design. I still wish I could improve the GIF quality, but overall, I’m proud of how it turned out."    
+
+];
 
 
 const infos2 = [
@@ -355,10 +359,13 @@ const projectvideo2 = [
 ];
 
 const projectabout2 = [
-    "I created this little hardcoded website as practice and also as a way to cure boredom during the summmer break, its just a simple website that i tried to make the hovering effects interactive",
-    "The inspiration for this project came from a classmate of mine who struggled with non script presentations, it just gave me the idea to try making a note taking software that can only be seen by the user during presentations to maybe help people like her.",
-    "this little project was me experimenting and just having fun with HTML, CSS, and JavaScript. but mainly i was trying to learn Javascript without any AI help."
-]
+    "I built this small hard-coded website as a way to practice my front-end skills and stay productive during summer break. It’s a simple project, but I focused on making the hover effects feel interactive and engaging to improve the overall user experience.",
+
+    "The idea for this project came from a classmate who struggled with unscripted presentations. That inspired me to create a note-taking tool that only the presenter can see during a presentation—something subtle that could help people feel more confident without relying on obvious scripts. I explored the concept using AI-assisted coding to experiment with how it could work.",
+
+    "Overall, this project was about experimenting, learning, and enjoying the process of working with HTML, CSS, and JavaScript. More importantly, I challenged myself to improve my JavaScript skills independently, without relying on AI, so I could better understand how everything works behind the scenes."
+
+];
 
 const projectlinks2 = [
     'https://andrewpanimdim.github.io/Portfolio3/',

@@ -470,7 +470,7 @@ body {
 
 #projectsheader2 {
     top: 120%;
-    right: 2%;
+    right: 8%;
 }
 
 
@@ -516,12 +516,12 @@ body {
 #projectinfo, #projectinfo2 {
     position: absolute;
     font-size: 1vw;
-    background-color: rgba(54, 54, 54, 0.203);
+    background-color: rgba(54, 54, 54, 0);
     width: 30%;
     letter-spacing: 0.05em;
     height: 20%;
     display:none;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0);
     border-radius: 20px;
     transition: 2s ease-in-out;
     padding: 15px;
