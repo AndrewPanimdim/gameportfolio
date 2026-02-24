@@ -311,20 +311,20 @@ if (isMobile()) {
 
 const projectlinks = [
     'https://andrewpanimdim.github.io/portfolio2/Main/index.html',
-    'https://andrewpanimdim.github.io/Portfolio3/',
+    'https://github.com/AndrewPanimdim/mini-ASL-reader-ML-',
     'https://andrewpanimdim.github.io/Andrew-s-Little-Something/'
 ];
 
 const infos = [
     "Portfolio 02",
-    "Portfolio practice 03",
+    'ASL Mediapipe Reader ',
     "drew's lil something",
 ];  
 
 
 const projectvideo = [
     "videos/prt2.gif",
-    "videos/prt3.gif",
+    "photos/asl.gif",
     "videos/lilsom.gif"
 ];
 
@@ -332,31 +332,31 @@ const projectvideo = [
 
 const projectabout = [
     "I built this little project back when i was grade 12 to practice CSS, focusing on animations and hover effects. The HTML and CSS were mainly hardcoded, while I used AI for the JavaScript since my main goal was to improve my CSS skills. Overall, this project was a great learning experience that helped me develop my skills",
-    "I made this little projects as a way to cure boredom and practice during the summer. its just the same as the previeous project but its less flashy and more simple.",
+    "i created this asl reader out of curiosity, as i once saw a Sign Language reader online but it used images as data instead of hand landmarks. so i wanted to see if i could make one that used hand landmarks instead. and it turned out pretty good, it can read the whole alphabet and except J",
     "this little Javascript project was me experimenting and just having fun learning JavaScript without any AI help. this project was a template for the website you are currently on."
 ]
 
 
 const infos2 = [
-    "American Sign Language Model",
+    "Portfolio practice 03",
     "Transparent Notes",
     "My First Website"
 ];
 
 const projectvideo2 = [
-    "photos/asl.gif",
+    "videos/prt3.gif",
     "photos/transparentnotes.gif",
     "videos/first.gif"
 ];
 
 const projectabout2 = [
     "I built this little project back when i was grade 12 to practice CSS, focusing on animations and hover effects. The HTML and CSS were mainly hardcoded, while I used AI for the JavaScript since my main goal was to improve my CSS skills. Overall, this project was a great learning experience that helped me develop my skills",
-    "I made this little projects as a way to cure boredom and practice during the summer. its just the same as the previeous project but its less flashy and more simple.",
+    "i created this asl reader out of curiosity, as i once saw an Sign Language reader online but it used images as basis instead of hand landmarks. so i wanted to see if i could make one that used hand landmarks instead. and it turned out pretty good, it can read the whole alphabet and except J",
     "this little project was me experimenting and just having fun with HTML, CSS, and JavaScript. but mainly i was trying to learn Javascript without any AI help."
 ]
 
 const projectlinks2 = [
-    'https://github.com/AndrewPanimdim/mini-ASL-reader-ML-',
+    'https://andrewpanimdim.github.io/Portfolio3/',
     'https://github.com/AndrewPanimdim/TransparentNotes',
     'https://andrewpanimdim.github.io/DrewsFirstWebsite/'
 ];
@@ -422,7 +422,7 @@ async function startInfoLoop2() {
         
         index2++;
         if (index2 >= infos2.length) index2 = 0;
-        await sleep(10000);
+        await sleep(20000);
         
     }
 }
