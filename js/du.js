@@ -492,7 +492,7 @@ contactsbutton.addEventListener('click', () => {
 
 window.addEventListener('scroll', () => {
     let scrolly = window.scrollY;
-    if(scrolly >= 3500){
+    if(scrolly >= 3400){
         buttoncontainer.style.bottom = '20%';
     }else {
         buttoncontainer.style.bottom = '3%';
