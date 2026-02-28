@@ -166,6 +166,7 @@ if (isMobile()) {
         
     }
 
+    
 
 
 
@@ -194,8 +195,9 @@ if (isMobile()) {
 
 
 
-    
 
+    
+    console.log('Andrew Panimdim created this little software;)');
 
     setTimeout(() => {
         seemore2.style.animation = 'slideleftright 2s infinite';
@@ -489,12 +491,16 @@ contactsbutton.addEventListener('click', () => {
     });
 
 });
-
 window.addEventListener('scroll', () => {
     let scrolly = window.scrollY;
+    
+    if(scrolly >= 740){
+        buttoncontainer.style.display = 'flex';
+    }
+    
     if(scrolly >= 3400){
         buttoncontainer.style.bottom = '20%';
-    }else {
+    } else {
         buttoncontainer.style.bottom = '3%';
     }
 });
