@@ -510,7 +510,7 @@ window.addEventListener('scroll', () => {
 window.addEventListener('scroll', () => {
     const scrolly = window.scrollY;
 
-    if (scrolly >= 1800) {
+    if (scrolly >= 1700) {
         projectscontainer.style.display = 'block';
         startInfoLoop();
         startInfoLoop2();
@@ -602,7 +602,7 @@ window.addEventListener('scroll', () => {
             if(pos <= -6){
                 pos = 96;
                 window.scrollTo({
-                top: 2590,
+                top: 2450,
                 left: 0,
                 behavior: 'smooth'
             });
