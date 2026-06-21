@@ -477,7 +477,7 @@ stacksbutton.addEventListener('click', () => {
 
 projectsbutton.addEventListener('click', () => {
     window.scrollTo({
-        top: 2590,
+        top: 2450,
         left: 0,
         behavior: 'smooth'
     });
@@ -498,7 +498,7 @@ window.addEventListener('scroll', () => {
         buttoncontainer.style.display = 'flex';
     }
     
-    if(scrolly >= 3400){
+    if(scrolly >= 3530){
         buttoncontainer.style.bottom = '20%';
     } else {
         buttoncontainer.style.bottom = '3%';

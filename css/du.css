@@ -468,7 +468,7 @@ body {
     font-family: 'poppins';
     font-size: 3vw;
     background-color: rgba(255, 0, 0, 0);
-    animation: fadein 4.2s ease-in-out;
+    animation: fadein 5.2s ease-in-out;
     transition: transform 1s ease-in-out;
 }
 
