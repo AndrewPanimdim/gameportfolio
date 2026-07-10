@@ -253,6 +253,9 @@ if (isMobile()) {
 
         clearInterval(moveInterval);
     
+        
+        
+
 
 
         setTimeout(() => {

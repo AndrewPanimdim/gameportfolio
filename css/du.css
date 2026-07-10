@@ -83,9 +83,18 @@
     top: 15%;
     right: 20%;
     animation: slideleft 2s ease-in-out;
-    transition: 3s;
+    transition: 1s;
     font-size: 5vw;
     cursor: pointer;
+}
+
+#Hello:hover {
+    font-size: 6vw;
+    transition: 1s;
+    right: 12%;
+    top: 10%;
+    color: rgba(0, 255, 217, 0.414);
+    
 }
 
 #HTML, #CSS, #JavaScript {
