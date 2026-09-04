@@ -88,14 +88,6 @@
     cursor: pointer;
 }
 
-#Hello:hover {
-    font-size: 6vw;
-    transition: 1s;
-    right: 12%;
-    top: 10%;
-    color: rgba(0, 255, 217, 0.414);
-    
-}
 
 #HTML, #CSS, #JavaScript {
     display: flex;
