@@ -6,6 +6,6 @@ although hardcoding in the age of ai is not super effecient, but the main goal o
 
 you can access my portfolio through this links: 
 
-https://andrewpanimdim.github.io/portfolio1/
+https://andrewpanimdim.github.io/practiceportfolio/
 
 https://andrewpanimdim.vercel.app/
